@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Door.png-59dc1597c29c318f98176d362317287e.stex"
+path="res://.import/Tree.png-86440534e5d410cc21c63efa661b0431.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMaps/Door.png"
-dest_files=[ "res://.import/Door.png-59dc1597c29c318f98176d362317287e.stex" ]
+source_file="res://TileMaps/Items/Tree.png"
+dest_files=[ "res://.import/Tree.png-86440534e5d410cc21c63efa661b0431.stex" ]
 
 [params]
 

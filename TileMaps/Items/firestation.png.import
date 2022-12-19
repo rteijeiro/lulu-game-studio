@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Building.png-6edec0234d0863ea4d063e6da63e077c.stex"
+path="res://.import/firestation.png-c24a64871f1b2536f697d39387980b94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMaps/Building.png"
-dest_files=[ "res://.import/Building.png-6edec0234d0863ea4d063e6da63e077c.stex" ]
+source_file="res://TileMaps/Items/firestation.png"
+dest_files=[ "res://.import/firestation.png-c24a64871f1b2536f697d39387980b94.stex" ]
 
 [params]
 
