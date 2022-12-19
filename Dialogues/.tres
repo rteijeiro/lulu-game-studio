@@ -1,0 +1,144 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 4
+syntax_version = 2
+raw_text = "~ this_is_a_node_title
+
+
+if has_meet_human == false
+	Lulu: Hello!
+else
+	Human: Hello little dog! You're so cute!
+	- First one
+		Nathan: You picked the first one.
+	- Second one
+		Nathan: You picked the second one.
+	- Start again => this_is_a_node_title
+	- End the conversation => END
+	Nathan: For more information about conditional dialogue, mutations, and all the fun stuff, see the online documentation."
+errors = [  ]
+titles = {
+"this_is_a_node_title": "3"
+}
+lines = {
+"0": {
+"next_id": "3",
+"text": "this_is_a_node_title",
+"type": "title"
+},
+"10": {
+"character": "Nathan",
+"character_replacements": [  ],
+"next_id": "13",
+"parent_id": "9",
+"replacements": [  ],
+"text": "You picked the second one.",
+"translation_key": "You picked the second one.",
+"type": "dialogue"
+},
+"11": {
+"next_id": "3",
+"next_id_after": "13",
+"parent_id": "5",
+"replacements": [  ],
+"text": "Start again",
+"translation_key": "Start again",
+"type": "response"
+},
+"12": {
+"next_id": "end",
+"next_id_after": "13",
+"parent_id": "5",
+"replacements": [  ],
+"text": "End the conversation",
+"translation_key": "End the conversation",
+"type": "response"
+},
+"13": {
+"character": "Nathan",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "5",
+"replacements": [  ],
+"text": "For more information about conditional dialogue, mutations, and all the fun stuff, see the online documentation.",
+"translation_key": "For more information about conditional dialogue, mutations, and all the fun stuff, see the online documentation.",
+"type": "dialogue"
+},
+"3": {
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "has_meet_human"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_conditional_id": "5",
+"next_id": "4",
+"next_id_after": "end!",
+"type": "condition"
+},
+"4": {
+"character": "Lulu",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "3",
+"replacements": [  ],
+"text": "Hello!",
+"translation_key": "Hello!",
+"type": "dialogue"
+},
+"5": {
+"next_conditional_id": "end!",
+"next_id": "6",
+"next_id_after": "end!",
+"type": "condition"
+},
+"6": {
+"character": "Human",
+"character_replacements": [  ],
+"next_id": "7",
+"parent_id": "5",
+"replacements": [  ],
+"text": "Hello little dog! You're so cute!",
+"translation_key": "Hello little dog! You're so cute!",
+"type": "dialogue"
+},
+"7": {
+"next_id": "8",
+"next_id_after": "13",
+"parent_id": "5",
+"replacements": [  ],
+"responses": PoolStringArray( "7", "9", "11", "12" ),
+"text": "First one",
+"translation_key": "First one",
+"type": "response"
+},
+"8": {
+"character": "Nathan",
+"character_replacements": [  ],
+"next_id": "13",
+"parent_id": "7",
+"replacements": [  ],
+"text": "You picked the first one.",
+"translation_key": "You picked the first one.",
+"type": "dialogue"
+},
+"9": {
+"next_id": "10",
+"next_id_after": "13",
+"parent_id": "5",
+"replacements": [  ],
+"text": "Second one",
+"translation_key": "Second one",
+"type": "response"
+}
+}
