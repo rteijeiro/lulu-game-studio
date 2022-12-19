@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/doorgreen.png-f002699d35e72ea072674aacbb6f9450.stex"
+path="res://.import/sit.png-6a13f9fd5c3fe9c29f6c292969bcd5aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMaps/doorgreen.png"
-dest_files=[ "res://.import/doorgreen.png-f002699d35e72ea072674aacbb6f9450.stex" ]
+source_file="res://Sprites/Player/sit.png"
+dest_files=[ "res://.import/sit.png-6a13f9fd5c3fe9c29f6c292969bcd5aa.stex" ]
 
 [params]
 

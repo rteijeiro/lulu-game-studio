@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bark.png-f96b72c51134ace9684c96ab53fe4f49.stex"
+path="res://.import/Pinkbuilding.png-0303ed4c6e2ecde1a70c1289dffdda67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bark.png"
-dest_files=[ "res://.import/bark.png-f96b72c51134ace9684c96ab53fe4f49.stex" ]
+source_file="res://TileMaps/Buildings/Pinkbuilding.png"
+dest_files=[ "res://.import/Pinkbuilding.png-0303ed4c6e2ecde1a70c1289dffdda67.stex" ]
 
 [params]
 

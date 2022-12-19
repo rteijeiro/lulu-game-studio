@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://TileMaps/Pinkbuilding.png" type="Texture" id=1]
+[ext_resource path="res://TileMaps/Buildings/Pinkbuilding.png" type="Texture" id=1]
 [ext_resource path="res://TileMaps/Floor.png" type="Texture" id=2]
-[ext_resource path="res://TileMaps/Buildinggreen.png" type="Texture" id=3]
+[ext_resource path="res://TileMaps/Buildings/Buildinggreen.png" type="Texture" id=3]
 [ext_resource path="res://TileMaps/Items/Door.png" type="Texture" id=4]
 [ext_resource path="res://TileMaps/Background/background_tileset_city_free (2).png" type="Texture" id=5]
 [ext_resource path="res://TileMaps/Items/firestation.png" type="Texture" id=6]
@@ -16,6 +16,7 @@
 [ext_resource path="res://TileMaps/Items/Neons.png" type="Texture" id=14]
 [ext_resource path="res://TileMaps/Items/Door2.png" type="Texture" id=15]
 [ext_resource path="res://TileMaps/Items/machine.png" type="Texture" id=16]
+[ext_resource path="res://Map.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 4.06572, 63.9455, 4.06572 )
@@ -298,6 +299,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 4.06572, 63.9455, 4.06572 )
 9/z_index = 0
 
 [node name="Map" type="Node2D"]
+script = ExtResource( 17 )
 
 [node name="Buildings" type="TileMap" parent="."]
 position = Vector2( 24, -24 )

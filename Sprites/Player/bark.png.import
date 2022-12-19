@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sit.png-3f6a4cb8c8b68cc98d9e52a88e96daa9.stex"
+path="res://.import/bark.png-a722b2d1b5997c66539f27b625cb26aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/sit.png"
-dest_files=[ "res://.import/sit.png-3f6a4cb8c8b68cc98d9e52a88e96daa9.stex" ]
+source_file="res://Sprites/Player/bark.png"
+dest_files=[ "res://.import/bark.png-a722b2d1b5997c66539f27b625cb26aa.stex" ]
 
 [params]
 

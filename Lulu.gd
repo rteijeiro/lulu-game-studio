@@ -9,7 +9,6 @@ export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
 export var life:int = 100
 
-
 # States.
 enum States {
 	IDLE,
@@ -123,14 +122,8 @@ func set_state(new_state):
 	
 	state = new_state
 
-
-	
 # When bark action is finished.
 func on_bark_finished():
 	is_barking = false
 	self.state = States.IDLE
-
-
-
-
 

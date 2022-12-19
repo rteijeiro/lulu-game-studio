@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Buildinggreen.png-ac633c5b7b2402f1679b951fd4f4be26.stex"
+path="res://.import/walk.png-6ec2bfbc3ce4251aac9736bd8b3e1253.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMaps/Buildinggreen.png"
-dest_files=[ "res://.import/Buildinggreen.png-ac633c5b7b2402f1679b951fd4f4be26.stex" ]
+source_file="res://Sprites/Player/walk.png"
+dest_files=[ "res://.import/walk.png-6ec2bfbc3ce4251aac9736bd8b3e1253.stex" ]
 
 [params]
 

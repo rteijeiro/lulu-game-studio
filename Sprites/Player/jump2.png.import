@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Buildinggrey.png-f9cd465537844ffbe70171427a7fa18a.stex"
+path="res://.import/jump2.png-5600374dd224a0eb5121e2dac0e58b86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMaps/Buildinggrey.png"
-dest_files=[ "res://.import/Buildinggrey.png-f9cd465537844ffbe70171427a7fa18a.stex" ]
+source_file="res://Sprites/Player/jump2.png"
+dest_files=[ "res://.import/jump2.png-5600374dd224a0eb5121e2dac0e58b86.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

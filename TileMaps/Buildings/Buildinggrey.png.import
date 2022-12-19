@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump.png-dd6821ab9d1d8b3d8b3c49a9ffaf30e5.stex"
+path="res://.import/Buildinggrey.png-854c8633967f159f8ab7f876fef538dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/jump.png"
-dest_files=[ "res://.import/jump.png-dd6821ab9d1d8b3d8b3c49a9ffaf30e5.stex" ]
+source_file="res://TileMaps/Buildings/Buildinggrey.png"
+dest_files=[ "res://.import/Buildinggrey.png-854c8633967f159f8ab7f876fef538dd.stex" ]
 
 [params]
 
