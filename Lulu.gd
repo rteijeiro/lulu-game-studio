@@ -127,3 +127,6 @@ func on_bark_finished():
 	is_barking = false
 	self.state = States.IDLE
 
+func on_jump_finished():
+	is_jumping = false
+	self.state = States.IDLE

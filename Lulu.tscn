@@ -353,6 +353,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Jump" ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_jump_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=64]
 resource_name = "Poop"
@@ -437,8 +451,7 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "Idle"
-frame = 3
+animation = "Jump"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
