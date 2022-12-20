@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Luluhead.png-24715b6fa5b6fa0bf635655e972c108b.stex"
+path="res://.import/LuluHead.png-464125564c99bc3537d30c806afc3b1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Luluhead.png"
-dest_files=[ "res://.import/Luluhead.png-24715b6fa5b6fa0bf635655e972c108b.stex" ]
+source_file="res://Sprites/Player/LuluHead.png"
+dest_files=[ "res://.import/LuluHead.png-464125564c99bc3537d30c806afc3b1b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
