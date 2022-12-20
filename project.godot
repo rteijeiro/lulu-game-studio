@@ -9,18 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "DialogueResource",
-"language": "GDScript",
-"path": "res://addons/dialogue_manager/dialogue_resource.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Lulu.gd"
 } ]
 _global_script_class_icons={
-"DialogueResource": "",
 "Player": ""
 }
 
@@ -32,12 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://game_state.gd"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/dialogue_manager/plugin.cfg" )
 
 [gui]
 
