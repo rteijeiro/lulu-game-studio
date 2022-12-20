@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/Map/Items/Advertisement/Sprites/1.png" type="Texture" id=1]
+[ext_resource path="res://World/Map/Items/Advertisement/Sprites/3.png" type="Texture" id=2]
+[ext_resource path="res://World/Map/Items/Advertisement/Sprites/2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "UpDown",
+"speed": 5.0
+} ]
+
+[node name="Advertaisment" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "UpDown"
+frame = 2
+speed_scale = 0.25
+playing = true
