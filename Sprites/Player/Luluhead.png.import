@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/guy1.png-2f5688609699e63d414f0814314da91c.stex"
+path="res://.import/Luluhead.png-24715b6fa5b6fa0bf635655e972c108b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/BlondGuy/guy1.png"
-dest_files=[ "res://.import/guy1.png-2f5688609699e63d414f0814314da91c.stex" ]
+source_file="res://Sprites/Player/Luluhead.png"
+dest_files=[ "res://.import/Luluhead.png-24715b6fa5b6fa0bf635655e972c108b.stex" ]
 
 [params]
 

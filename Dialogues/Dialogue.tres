@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 15
+resource_version = 16
 syntax_version = 2
 raw_text = "~ this_is_a_node_title
 
@@ -13,6 +13,7 @@ if lulu_has_met_human == false
 	set lulu_has_met_human = true
 else
 	Human: Hello little dog! You're so cute!
+	
 #do move_over_there()
 Human: Here are some choices.
 - First one
@@ -29,7 +30,7 @@ Human: For more information about conditional dialogue, mutations, and all the f
 Character: This is a new node."
 errors = [  ]
 titles = {
-"another_node": "20",
+"another_node": "21",
 "this_is_a_node_title": "2"
 }
 lines = {
@@ -39,34 +40,43 @@ lines = {
 "type": "title"
 },
 "10": {
+"next_id": "11",
+"next_id_after": "16",
+"replacements": [  ],
+"responses": PoolStringArray( "10", "12", "14", "15" ),
+"text": "First one",
+"translation_key": "First one",
+"type": "response"
+},
+"11": {
 "character": "Human",
 "character_replacements": [  ],
-"next_id": "15",
-"parent_id": "9",
+"next_id": "16",
+"parent_id": "10",
 "replacements": [  ],
 "text": "You picked the first one.",
 "translation_key": "You picked the first one.",
 "type": "dialogue"
 },
-"11": {
-"next_id": "12",
-"next_id_after": "15",
+"12": {
+"next_id": "13",
+"next_id_after": "16",
 "replacements": [  ],
 "text": "Second one",
 "translation_key": "Second one",
 "type": "response"
 },
-"12": {
+"13": {
 "character": "Human",
 "character_replacements": [  ],
-"next_id": "15",
-"parent_id": "11",
+"next_id": "16",
+"parent_id": "12",
 "replacements": [  ],
 "text": "You picked the second one.",
 "translation_key": "You picked the second one.",
 "type": "dialogue"
 },
-"13": {
+"14": {
 "condition": {
 "expression": [ {
 "type": "variable",
@@ -80,21 +90,21 @@ lines = {
 } ]
 },
 "next_id": "2",
-"next_id_after": "15",
+"next_id_after": "16",
 "replacements": [  ],
 "text": "Start again",
 "translation_key": "Start again",
 "type": "response"
 },
-"14": {
+"15": {
 "next_id": "end",
-"next_id_after": "15",
+"next_id_after": "16",
 "replacements": [  ],
 "text": "End the conversation",
 "translation_key": "End the conversation",
 "type": "response"
 },
-"15": {
+"16": {
 "character": "Human",
 "character_replacements": [  ],
 "next_id": "",
@@ -103,8 +113,8 @@ lines = {
 "translation_key": "For more information about conditional dialogue, mutations, and all the fun stuff, see the online documentation.",
 "type": "dialogue"
 },
-"18": {
-"next_id": "20",
+"19": {
+"next_id": "21",
 "text": "another_node",
 "type": "title"
 },
@@ -123,10 +133,10 @@ lines = {
 },
 "next_conditional_id": "5",
 "next_id": "3",
-"next_id_after": "8",
+"next_id_after": "9",
 "type": "condition"
 },
-"20": {
+"21": {
 "character": "Character",
 "character_replacements": [  ],
 "next_id": "",
@@ -158,42 +168,33 @@ lines = {
 "value": true
 } ]
 },
-"next_id": "8",
+"next_id": "9",
 "parent_id": "2",
 "type": "mutation"
 },
 "5": {
-"next_conditional_id": "8",
+"next_conditional_id": "9",
 "next_id": "6",
-"next_id_after": "8",
+"next_id_after": "9",
 "type": "condition"
 },
 "6": {
 "character": "Human",
 "character_replacements": [  ],
-"next_id": "8",
+"next_id": "9",
 "parent_id": "5",
 "replacements": [  ],
 "text": "Hello little dog! You're so cute!",
 "translation_key": "Hello little dog! You're so cute!",
 "type": "dialogue"
 },
-"8": {
+"9": {
 "character": "Human",
 "character_replacements": [  ],
-"next_id": "9",
+"next_id": "10",
 "replacements": [  ],
 "text": "Here are some choices.",
 "translation_key": "Here are some choices.",
 "type": "dialogue"
-},
-"9": {
-"next_id": "10",
-"next_id_after": "15",
-"replacements": [  ],
-"responses": PoolStringArray( "9", "11", "13", "14" ),
-"text": "First one",
-"translation_key": "First one",
-"type": "response"
 }
 }

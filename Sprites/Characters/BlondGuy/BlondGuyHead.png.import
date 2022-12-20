@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/guy1.png-2f5688609699e63d414f0814314da91c.stex"
+path="res://.import/BlondGuyHead.png-7f983aadcee9f80c8a7390281be203f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/BlondGuy/guy1.png"
-dest_files=[ "res://.import/guy1.png-2f5688609699e63d414f0814314da91c.stex" ]
+source_file="res://Sprites/Characters/BlondGuy/BlondGuyHead.png"
+dest_files=[ "res://.import/BlondGuyHead.png-7f983aadcee9f80c8a7390281be203f1.stex" ]
 
 [params]
 

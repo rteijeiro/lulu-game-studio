@@ -20,7 +20,7 @@ func _ready() -> void:
 	if dialogue_line.size() == 0:
 		queue_free()
 		return
-	
+
 	response_template.hide()
 	balloon.hide()
 	
@@ -47,6 +47,7 @@ func _ready() -> void:
 			item.connect("gui_input", self, "_on_response_gui_input", [item])
 			item.show()
 			responses_menu.add_child(item)
+
 	
 	# Make sure our responses get included in the height reset
 	responses_menu.visible = true
@@ -155,3 +156,6 @@ func _on_Balloon_gui_input(event):
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed("ui_accept") and balloon.get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
+
+		
+
