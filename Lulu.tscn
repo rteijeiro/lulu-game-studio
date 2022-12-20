@@ -308,20 +308,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Bark" ]
 }
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "on_bark_finished"
-} ]
-}
 
 [sub_resource type="Animation" id=61]
 resource_name = "Idle"
@@ -352,20 +338,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Jump" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "on_jump_finished"
-} ]
 }
 
 [sub_resource type="Animation" id=64]
@@ -412,20 +384,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Sit" ]
 }
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "is_not_sit"
-} ]
-}
 
 [sub_resource type="Animation" id=67]
 resource_name = "Walk"
@@ -451,7 +409,7 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "Idle"
+animation = "Walk"
 frame = 4
 playing = true
 
