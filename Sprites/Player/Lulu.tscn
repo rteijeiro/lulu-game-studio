@@ -482,8 +482,8 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "Walk"
-frame = 2
+animation = "Idle"
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -516,6 +516,7 @@ shape = SubResource( 79 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 99 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 100 )
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-f305185a2a40abc6b71fe6b252e9b1d4.stex"
+path="res://.import/3.png-b5ee3b2d86eba55e73e779237e2f28ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Map/Items/Advertisement/Sprites/2.png"
-dest_files=[ "res://.import/2.png-f305185a2a40abc6b71fe6b252e9b1d4.stex" ]
+source_file="res://World/Map/Items/Hamburguer/Sprites/3.png"
+dest_files=[ "res://.import/3.png-b5ee3b2d86eba55e73e779237e2f28ca.stex" ]
 
 [params]
 
