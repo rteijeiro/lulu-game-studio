@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://World/Map/Buildings/Pinkbuilding.png" type="Texture" id=1]
 [ext_resource path="res://World/Map/Floor.png" type="Texture" id=2]
@@ -20,6 +20,11 @@
 [ext_resource path="res://World/Map/Buildings/64x64_2.png" type="Texture" id=18]
 [ext_resource path="res://World/Map/Items/Hamburguer/Sprites/3.png" type="Texture" id=19]
 [ext_resource path="res://World/Map/Items/Hamburguer/Sprites/1.png" type="Texture" id=20]
+[ext_resource path="res://World/Map/Items/Fence.png" type="Texture" id=21]
+[ext_resource path="res://World/Map/Items/LifeNeon/banner-b3.png" type="Texture" id=22]
+[ext_resource path="res://World/Map/Items/LifeNeon/banner-b4.png" type="Texture" id=23]
+[ext_resource path="res://World/Map/Items/LifeNeon/banner-b1.png" type="Texture" id=24]
+[ext_resource path="res://World/Map/Items/LifeNeon/banner-b2.png" type="Texture" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 4.06572, 63.9455, 4.06572 )
@@ -214,6 +219,20 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 4.06572, 63.9455, 4.06572 )
 16/shape_one_way_margin = 0.0
 16/shapes = [  ]
 16/z_index = 0
+17/name = "Fence.png 17"
+17/texture = ExtResource( 21 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( -3, -2, 56, 68 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
 
 [sub_resource type="TileSet" id=3]
 2/name = "windows.png 2"
@@ -323,6 +342,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "OnOff",
+"speed": 5.0
+} ]
+
 [node name="Map" type="Node2D"]
 
 [node name="Buildings" type="TileMap" parent="."]
@@ -347,11 +374,18 @@ tile_set = SubResource( 3 )
 format = 1
 tile_data = PoolIntArray( 327689, 2, 0, 393220, 6, 0, 393225, 2, 0, 458754, 9, 0, 458755, 7, 0, 458756, 5, 0, 458759, 3, 0, 458760, 8, 0, 458761, 5, 0, 458762, 9, 0 )
 
-[node name="Advertisement" type="AnimatedSprite" parent="."]
+[node name="Hamburguer" type="AnimatedSprite" parent="."]
 position = Vector2( 674, 426 )
 scale = Vector2( 0.862903, 0.862903 )
 frames = SubResource( 4 )
 animation = "UpDown"
-frame = 1
 speed_scale = 0.25
+playing = true
+
+[node name="LifeNeon" type="AnimatedSprite" parent="."]
+position = Vector2( 310, 415 )
+frames = SubResource( 5 )
+animation = "OnOff"
+frame = 3
+speed_scale = 0.5
 playing = true

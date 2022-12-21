@@ -1,20 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Characters/BlondGuy/BlondGuy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Map/Items/Hamburguer/Sprites/2.png" type="Texture" id=3]
 [ext_resource path="res://World/Map2/Map2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Player/Lulu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Map/Items/Hamburguer/Sprites/3.png" type="Texture" id=6]
-[ext_resource path="res://World/Map/Items/Hamburguer/Sprites/1.png" type="Texture" id=7]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "UpDown",
-"speed": 5.0
-} ]
 
 [node name="World" type="Node2D"]
 
@@ -24,15 +13,6 @@ animations = [ {
 
 [node name="BlondGuy" parent="Map/Characters" instance=ExtResource( 2 )]
 position = Vector2( -255, 58 )
-
-[node name="Hamburguer" type="AnimatedSprite" parent="Map"]
-position = Vector2( 673.5, 426 )
-scale = Vector2( 0.887097, 0.903226 )
-frames = SubResource( 1 )
-animation = "UpDown"
-frame = 1
-speed_scale = 0.25
-playing = true
 
 [node name="Map2" parent="." instance=ExtResource( 4 )]
 
