@@ -89,10 +89,6 @@ _global_script_class_icons={
 config/name="Lulu Game Studio"
 run/main_scene="res://World.tscn"
 
-[autoload]
-
-GameState="*res://game_state.gd"
-
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
