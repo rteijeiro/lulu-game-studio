@@ -20,12 +20,10 @@ enum States {
 	WALK,
 }
 var state = States.IDLE setget set_state
-
+onready var animation_state = $AnimationTree.get('parameters/playback')
 
 # Actions.
-var is_barking:bool = false
 var is_jumping:bool = false
-var is_pooping:bool = false
 
 
 # Get input from controller.
@@ -33,14 +31,15 @@ func get_input():
 	velocity.x = 0
 	
 	# Moving Right.
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and state != States.POOP and state != States.BARK:
 		$AnimatedSprite.flip_h = false
 		velocity.x += speed
 		if !is_jumping:
 			self.state = States.WALK
+		
 	
 	# Moving Left.
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and state != States.POOP and state != States.BARK:
 		$AnimatedSprite.flip_h = true
 		velocity.x -= speed
 		if !is_jumping:
@@ -79,7 +78,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	# Detect if player is idle or falling.
+	# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.BARK \
 		and state != States.POOP and state != States.SIT:
 		self.state = States.IDLE
@@ -88,22 +87,27 @@ func _physics_process(delta):
 # States setter.
 func set_state(new_state):
 	
-	match state :
+	match new_state:
 		States.IDLE:
-			$AnimationPlayer.play("Idle")
+			animation_state.travel("Idle")
 		States.BARK:
-			$AnimationPlayer.play("Bark")
+			animation_state.travel("Bark")
 		States.SIT:
-			$AnimationPlayer.play("Sit")
+			animation_state.travel("Sit")
 		States.JUMP:
-			$AnimationPlayer.play("Jump")
+			animation_state.travel("Jump")
 		States.RUN:
-			$AnimationPlayer.play("Run")
+			animation_state.travel("Run")
 		States.WALK:
-			$AnimationPlayer.play("Walk")
+			animation_state.travel("Walk")
 		States.POOP:
-			$AnimationPlayer.play("Poop")
+			animation_state.travel("Poop")
 			
 	state = new_state
 
+#Finished actions:
+func pooping_finished():
+	self.state = States.IDLE
 
+func barking_finished():
+	self.state = States.IDLE

@@ -307,9 +307,24 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Bark" ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "barking_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=61]
 resource_name = "Idle"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -352,6 +367,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Poop" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "pooping_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=65]
@@ -438,8 +467,6 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=91]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=93]
 
@@ -459,7 +486,7 @@ auto_advance = true
 states/Bark/node = SubResource( 80 )
 states/Bark/position = Vector2( -536, 2 )
 states/Idle/node = SubResource( 81 )
-states/Idle/position = Vector2( -750, -3 )
+states/Idle/position = Vector2( -750, 2 )
 states/Jump/node = SubResource( 82 )
 states/Jump/position = Vector2( -750, -125 )
 states/Poop/node = SubResource( 83 )
@@ -472,7 +499,7 @@ states/Walk/node = SubResource( 86 )
 states/Walk/position = Vector2( -942, 2 )
 transitions = [ "Idle", "Jump", SubResource( 87 ), "Jump", "Idle", SubResource( 88 ), "Idle", "Bark", SubResource( 89 ), "Bark", "Idle", SubResource( 90 ), "Idle", "Sit", SubResource( 91 ), "Sit", "Idle", SubResource( 92 ), "Idle", "Poop", SubResource( 93 ), "Poop", "Idle", SubResource( 94 ), "Idle", "Walk", SubResource( 95 ), "Walk", "Idle", SubResource( 96 ), "Walk", "Run", SubResource( 97 ), "Run", "Walk", SubResource( 98 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -1200, -203 )
+graph_offset = Vector2( -1200, -151.293 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=100]
 
@@ -482,8 +509,8 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "Idle"
-frame = 4
+animation = "Bark"
+frame = 8
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
