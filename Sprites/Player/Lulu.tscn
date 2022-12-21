@@ -509,8 +509,8 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "Bark"
-frame = 8
+animation = "Idle"
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

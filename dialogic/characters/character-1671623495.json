@@ -1,0 +1,21 @@
+{
+	"color": "#ff86d957",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671623495.json",
+	"mirror_portraits": false,
+	"name": "BlondGuy",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -130,
+	"offset_y": -200,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Sprites/Characters/BlondGuy/Dialogue/BlondGuyHead.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

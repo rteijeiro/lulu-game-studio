@@ -1,0 +1,78 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1671622090.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1671622090.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello my friend!!"
+		},
+		{
+			"character": "character-1671623495.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Hello little dog, are you hungry?"
+		},
+		{
+			"choice": "Yes!!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1671623495.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll give you food then, follow me!"
+		},
+		{
+			"choice": "No, I don't want food!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1671623495.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ok! See you around!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1671622464.json",
+		"name": "first"
+	}
+}
