@@ -15,6 +15,3 @@ func _on_BlondGuy_body_exited(body):
 		active = false 
 
 
-
-
-

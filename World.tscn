@@ -15,6 +15,7 @@
 position = Vector2( -255, 58 )
 
 [node name="Map2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1200, 247 )
 
 [node name="Lulu" parent="." instance=ExtResource( 5 )]
 position = Vector2( 142, 489 )

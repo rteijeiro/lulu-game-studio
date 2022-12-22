@@ -20,7 +20,7 @@ enum States {
 	WALK,
 }
 var state = States.IDLE setget set_state
-
+onready var animation_state = $AnimationTree.get("paraments/playback")
 
 # Actions.
 var is_barking:bool = false
@@ -33,14 +33,14 @@ func get_input():
 	velocity.x = 0
 	
 	# Moving Right.
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and state != States.POOP:
 		$AnimatedSprite.flip_h = false
 		velocity.x += speed
 		if !is_jumping:
 			self.state = States.WALK
 	
 	# Moving Left.
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and state != States.POOP:
 		$AnimatedSprite.flip_h = true
 		velocity.x -= speed
 		if !is_jumping:
@@ -106,4 +106,5 @@ func set_state(new_state):
 			
 	state = new_state
 
-
+func pooping_finish():
+	self.state = States.IDLE
