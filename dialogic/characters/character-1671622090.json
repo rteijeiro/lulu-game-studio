@@ -1,0 +1,21 @@
+{
+	"color": "#ffd692d5",
+	"description": "Lulu is the main character of the game.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671622090.json",
+	"mirror_portraits": false,
+	"name": "Lulu",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -140,
+	"offset_y": -210,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Maps/Map1/Dialogs/LuluHead.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

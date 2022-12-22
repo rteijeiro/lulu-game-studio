@@ -1,0 +1,21 @@
+{
+	"color": "#ff86d957",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671623495.json",
+	"mirror_portraits": false,
+	"name": "BlondeGuy",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -130,
+	"offset_y": -210,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Maps/Map1/Dialogs/BlondeGuyHead.png"
+		}
+	],
+	"scale": 25,
+	"theme": ""
+}

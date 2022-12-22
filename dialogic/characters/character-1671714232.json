@@ -1,0 +1,21 @@
+{
+	"color": "#ffe6291f",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1671714232.json",
+	"mirror_portraits": false,
+	"name": "WalkingWoman",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 200,
+	"offset_y": -210,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Maps/Map1/Dialogs/WalkingWomanHead.png"
+		}
+	],
+	"scale": 25,
+	"theme": ""
+}
