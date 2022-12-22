@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlondGuyHead.png-2253fec854cecd64cb7d20eea337467b.stex"
+path="res://.import/lululogo3.png-adb08983cf20ff2aca392099c87f0544.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Map1/Dialogs/BlondGuyHead.png"
-dest_files=[ "res://.import/BlondGuyHead.png-2253fec854cecd64cb7d20eea337467b.stex" ]
+source_file="res://Maps/Map1/Items/LuluLogo/lululogo3.png"
+dest_files=[ "res://.import/lululogo3.png-adb08983cf20ff2aca392099c87f0544.stex" ]
 
 [params]
 

@@ -13,7 +13,7 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Sprites/Player/Dialogue/LuluHead.png"
+			"path": "res://Maps/Map1/Dialogs/LuluHead.png"
 		}
 	],
 	"scale": 100,

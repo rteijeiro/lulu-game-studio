@@ -67,7 +67,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scripts/Map1/Lulu.gd"
+"path": "res://Scripts/Lulu.gd"
 } ]
 _global_script_class_icons={
 "DTS": "",
