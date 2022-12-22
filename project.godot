@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "DTS",
-"language": "GDScript",
-"path": "res://addons/dialogic/Localization/translation_service.gd"
-}, {
 "base": "Node",
 "class": "Dialogic",
 "language": "GDScript",
@@ -67,10 +62,9 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scripts/Lulu.gd"
+"path": "res://Lulu.gd"
 } ]
 _global_script_class_icons={
-"DTS": "",
 "Dialogic": "",
 "DialogicAnimaPropertiesHelper": "",
 "DialogicAnimaResources": "",
@@ -87,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Lulu Game Studio"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Maps/StartMenu.tscn"
 
 [editor_plugins]
 
