@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 # Movement.
-export (int) var speed = 250
+export (int) var speed = 200
 export (int) var jump_speed = -500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300

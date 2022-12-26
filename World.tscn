@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Characters/BlondGuy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/WalkingWoman.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Lulu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Map1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/SingingMan.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/LittleTV.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Maps/Objects/Computer.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node2D"]
 
@@ -18,7 +20,7 @@ visible = false
 position = Vector2( 501, 483 )
 
 [node name="WalkingWoman" parent="Map1/Characters" instance=ExtResource( 2 )]
-position = Vector2( -642, 478 )
+position = Vector2( -568, 476 )
 
 [node name="SingingMan" parent="Map1/Characters" instance=ExtResource( 6 )]
 position = Vector2( 1546, 787 )
@@ -26,6 +28,14 @@ position = Vector2( 1546, 787 )
 [node name="BlondeGuy" parent="Map1/Characters" instance=ExtResource( 1 )]
 position = Vector2( -255, 58 )
 
+[node name="LittleTV" parent="Map1/Characters" instance=ExtResource( 7 )]
+position = Vector2( 248, 311 )
+
+[node name="Objects" type="Node2D" parent="Map1"]
+
+[node name="Computer" parent="Map1/Objects" instance=ExtResource( 8 )]
+position = Vector2( 1468, 496 )
+
 [node name="Lulu" parent="." instance=ExtResource( 4 )]
-position = Vector2( 73, 489 )
+position = Vector2( 1307, 489 )
 scale = Vector2( 0.25, 0.25 )

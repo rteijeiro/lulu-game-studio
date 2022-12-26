@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PalmTree.png-2e2d633bdb71773155306b496462fc9d.stex"
+path="res://.import/jab.png-5aeb92d2043a54eeaf85cec1a63e34c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Items/Trees/PalmTree.png"
-dest_files=[ "res://.import/PalmTree.png-2e2d633bdb71773155306b496462fc9d.stex" ]
+source_file="res://Maps/MiniGame/Sprites/FighterPlayer/jab.png"
+dest_files=[ "res://.import/jab.png-5aeb92d2043a54eeaf85cec1a63e34c9.stex" ]
 
 [params]
 

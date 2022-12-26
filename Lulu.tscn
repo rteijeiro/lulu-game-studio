@@ -276,7 +276,7 @@ animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=60]
@@ -502,7 +502,7 @@ animation = "Idle"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -60 )
+offset = Vector2( 0, -90 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 smoothing_enabled = true
