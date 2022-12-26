@@ -8,5 +8,5 @@ func _on_Computer_body_entered(body):
 		$InteractionMessage.visible = true
 		showed = true
 	if body.name == "Lulu" :
-		get_tree().change_scene("res://Maps/MiniGame/ChaosInTheCity.tscn")
+		get_tree().change_scene("res://RogueLike.tscn")
 	

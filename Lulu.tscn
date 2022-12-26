@@ -499,10 +499,10 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "Idle"
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -90 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 smoothing_enabled = true
