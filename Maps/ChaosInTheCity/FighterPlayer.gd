@@ -2,12 +2,18 @@ extends KinematicBody2D
 class_name FighterPlayer
 
 # Movement.
-export (int) var speed = 200
+export (int) var speed = 80
+export (int) var speed_y = 50
 export (int) var jump_speed = -500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
 
+
+var motion= Vector2()
+var z = 0
+#var jump_multiplayer = 8
+var GRAVITY = 5
 
 # States.
 enum States {
@@ -27,10 +33,13 @@ onready var animation_state = $AnimationTreeFighter.get("parameters/playback")
 ## Actions.
 var fighter_is_jumping:bool = false
 
-
 #Get input from controller.
 func get_input():
 	velocity.x = 0
+	velocity.y = 0
+	motion.y = 0
+	z = 0
+
 
 	# Moving Right.
 	if Input.is_action_pressed("right") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
@@ -45,12 +54,29 @@ func get_input():
 		velocity.x -= speed
 		if !fighter_is_jumping:
 			self.state = States.WALK
-#
+
+	#Moving Up.
+	if Input.is_action_pressed("up") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
+		velocity.y -= speed_y
+		if !fighter_is_jumping:
+			self.state = States.WALK
+
+	# Moving Down.
+	if Input.is_action_pressed("down") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
+		velocity.y += speed_y
+		if !fighter_is_jumping:
+			self.state = States.WALK
+
 	# Start Jumping.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			self.state = States.IDLE
-			velocity.y = jump_speed	
+			fighter_is_jumping = false
+			z = 0
+			motion.y = 0
+		if fighter_is_jumping == true:
+			z += GRAVITY
+			motion.y = z
 		else:
 			self.state = States.JUMP
 
@@ -84,12 +110,13 @@ func _physics_process(delta):
 
 	get_input()
 
-	velocity.y += gravity * delta
+
 	velocity = move_and_slide(velocity, Vector2.UP)
+
 
 	# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
-		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
+		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP:
 		self.state = States.IDLE
 
 
@@ -133,4 +160,6 @@ func kicking_finished():
 
 func punching_finished():
 	self.state = States.IDLE
-	
+
+func jumping_finished():
+	self.state = States.IDLE

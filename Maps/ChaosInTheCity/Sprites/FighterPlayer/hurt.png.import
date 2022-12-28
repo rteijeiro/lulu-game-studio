@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump_kick.png-0d0cd8c1a8897598cd287a675ba41809.stex"
+path="res://.import/hurt.png-ce760156b61e1e9ff7b4c8e8192b194b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/FighterPlayer/jump_kick.png"
-dest_files=[ "res://.import/jump_kick.png-0d0cd8c1a8897598cd287a675ba41809.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png"
+dest_files=[ "res://.import/hurt.png-ce760156b61e1e9ff7b4c8e8192b194b.stex" ]
 
 [params]
 

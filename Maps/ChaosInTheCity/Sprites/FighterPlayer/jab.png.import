@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/antenna.png-a2d81508b3c7378b995eaf485c0ea26c.stex"
+path="res://.import/jab.png-1b0b4e2f98e73466c5e6e9b6b13323f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/TileMap/antenna.png"
-dest_files=[ "res://.import/antenna.png-a2d81508b3c7378b995eaf485c0ea26c.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jab.png"
+dest_files=[ "res://.import/jab.png-1b0b4e2f98e73466c5e6e9b6b13323f8.stex" ]
 
 [params]
 

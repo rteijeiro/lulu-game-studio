@@ -9,6 +9,7 @@
 [ext_resource path="res://Characters/LittleTV.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/Objects/Computer.tscn" type="PackedScene" id=8]
 
+
 [node name="World" type="Node2D"]
 
 [node name="Map1" parent="." instance=ExtResource( 5 )]

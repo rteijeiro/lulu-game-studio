@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Floor.npg.png-a779f9f0d3d5866079f3c919ff84f83f.stex"
+path="res://.import/dive_kick.png-0d6c577ae5b54a1f3a1bb9a671589318.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/TileMap/Floor.npg.png"
-dest_files=[ "res://.import/Floor.npg.png-a779f9f0d3d5866079f3c919ff84f83f.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/dive_kick.png"
+dest_files=[ "res://.import/dive_kick.png-0d6c577ae5b54a1f3a1bb9a671589318.stex" ]
 
 [params]
 

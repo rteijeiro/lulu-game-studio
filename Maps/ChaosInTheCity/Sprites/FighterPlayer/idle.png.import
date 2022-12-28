@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/punch.png-8b694db2a8c40c3b5f191041ef97c295.stex"
+path="res://.import/idle.png-2b097f14d63f821b6fc79f523b872896.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/FighterPlayer/punch.png"
-dest_files=[ "res://.import/punch.png-8b694db2a8c40c3b5f191041ef97c295.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png"
+dest_files=[ "res://.import/idle.png-2b097f14d63f821b6fc79f523b872896.stex" ]
 
 [params]
 

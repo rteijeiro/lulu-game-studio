@@ -1,15 +1,15 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=87 format=2]
 
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/dive_kick.png" type="Texture" id=3]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/jab.png" type="Texture" id=4]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/jump_kick.png" type="Texture" id=5]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/kick.png" type="Texture" id=6]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/jump.png" type="Texture" id=7]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/walk.png" type="Texture" id=8]
-[ext_resource path="res://Maps/MiniGame/Sprites/FighterPlayer/punch.png" type="Texture" id=9]
-[ext_resource path="res://Maps/MiniGame/FighterPlayer.gd" type="Script" id=10]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/dive_kick.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jab.png" type="Texture" id=4]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jump_kick.png" type="Texture" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/kick.png" type="Texture" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jump.png" type="Texture" id=7]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walk.png" type="Texture" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/punch.png" type="Texture" id=9]
+[ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=42]
 resource_name = "DiveKick"
@@ -113,6 +113,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Jump" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "jumping_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=47]
@@ -292,6 +306,14 @@ region = Rect2( 192, 0, 96, 63 )
 atlas = ExtResource( 7 )
 region = Rect2( 288, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 96, 63 )
+
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 96, 63 )
@@ -398,10 +420,10 @@ animations = [ {
 "name": "Jab",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
-"loop": true,
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 96 ), SubResource( 97 ) ],
+"loop": false,
 "name": "Jump",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": false,
@@ -421,7 +443,7 @@ animations = [ {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 9.0
 } ]
 
 [sub_resource type="AnimationNodeAnimation" id=76]
@@ -463,6 +485,8 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=85]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=86]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=87]
 
@@ -505,7 +529,7 @@ states/Walk/node = SubResource( 93 )
 states/Walk/position = Vector2( 879, 245 )
 transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 0, -102.345 )
+graph_offset = Vector2( 0, 41.751 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
@@ -532,7 +556,6 @@ position = Vector2( 88, -15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

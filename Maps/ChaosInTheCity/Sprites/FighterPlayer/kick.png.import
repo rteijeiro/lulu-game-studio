@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sushi-2.png-69d220a2579208c1fdedab39ff9b31af.stex"
+path="res://.import/kick.png-d328a56e129a8a9df24a1b66f2d8fa2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/TileMap/Sushi/sushi-2.png"
-dest_files=[ "res://.import/sushi-2.png-69d220a2579208c1fdedab39ff9b31af.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/kick.png"
+dest_files=[ "res://.import/kick.png-d328a56e129a8a9df24a1b66f2d8fa2c.stex" ]
 
 [params]
 

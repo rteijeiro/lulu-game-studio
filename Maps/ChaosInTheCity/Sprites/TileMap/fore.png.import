@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk.png-abc65eceb0a58c0bc50cbadd3ed3b7c6.stex"
+path="res://.import/fore.png-3c632a3241b0b9fef19a130e179e7951.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/FighterPlayer/walk.png"
-dest_files=[ "res://.import/walk.png-abc65eceb0a58c0bc50cbadd3ed3b7c6.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/TileMap/fore.png"
+dest_files=[ "res://.import/fore.png-3c632a3241b0b9fef19a130e179e7951.stex" ]
 
 [params]
 

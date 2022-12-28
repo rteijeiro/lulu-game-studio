@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle.png-038d346b65026031544d232b75291c06.stex"
+path="res://.import/Flooronly.png-900c1176c4de1e74c60236c5cfbc2607.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/MiniGame/Sprites/FighterPlayer/idle.png"
-dest_files=[ "res://.import/idle.png-038d346b65026031544d232b75291c06.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/TileMap/Flooronly.png"
+dest_files=[ "res://.import/Flooronly.png-900c1176c4de1e74c60236c5cfbc2607.stex" ]
 
 [params]
 
