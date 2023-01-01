@@ -1,33 +1,34 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Characters/BlondGuy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/WalkingWoman.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/Thief.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Lulu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Map1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/SingingMan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Characters/LittleTV.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/Objects/Computer.tscn" type="PackedScene" id=8]
-
+[ext_resource path="res://Maps/Objects/VRGlasses.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Maps/UserInterface.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Maps/UserInterface.gd" type="Script" id=11]
 
 [node name="World" type="Node2D"]
+light_mask = 0
 
 [node name="Map1" parent="." instance=ExtResource( 5 )]
 
 [node name="Characters" type="Node2D" parent="Map1"]
 
-[node name="Thief" parent="Map1/Characters" instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 501, 483 )
-
 [node name="WalkingWoman" parent="Map1/Characters" instance=ExtResource( 2 )]
-position = Vector2( -568, 476 )
+position = Vector2( 1060, 486 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="SingingMan" parent="Map1/Characters" instance=ExtResource( 6 )]
-position = Vector2( 1546, 787 )
+position = Vector2( 1327, 787 )
 
 [node name="BlondeGuy" parent="Map1/Characters" instance=ExtResource( 1 )]
-position = Vector2( -255, 58 )
+position = Vector2( 252, 60 )
+collision_mask = 5
 
 [node name="LittleTV" parent="Map1/Characters" instance=ExtResource( 7 )]
 position = Vector2( 248, 311 )
@@ -36,7 +37,15 @@ position = Vector2( 248, 311 )
 
 [node name="Computer" parent="Map1/Objects" instance=ExtResource( 8 )]
 position = Vector2( 1468, 496 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="VRGlasses" parent="Map1/Objects" instance=ExtResource( 9 )]
+position = Vector2( 359, 489 )
 
 [node name="Lulu" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1307, 489 )
+position = Vector2( 851, 488 )
 scale = Vector2( 0.25, 0.25 )
+
+[node name="UserInterface" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 11 )

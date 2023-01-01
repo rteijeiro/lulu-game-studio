@@ -3,7 +3,7 @@ class_name Player
 
 # Movement.
 export (int) var speed = 200
-export (int) var jump_speed = -500
+export (int) var jump_speed = -450
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
@@ -24,7 +24,6 @@ onready var animation_state = $AnimationTree.get("parameters/playback")
 
 # Actions.
 var is_jumping:bool = false
-
 
 # Get input from controller.
 func get_input():
@@ -48,15 +47,18 @@ func get_input():
 	# Start Jumping.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			self.state = States.IDLE
+			self.state = States.JUMP
 			velocity.y = jump_speed	
 		else:
-			self.state = States.JUMP
-
+			self.state = States.IDLE
+#
 	# Stop Jumping.
 	if Input.is_action_just_released("jump"):
 		self.state = States.IDLE
-		
+	
+	#Walking+Jump
+	
+	
 	# Barking.
 	if Input.is_action_pressed("bark"):
 		self.state = States.BARK
@@ -68,7 +70,7 @@ func get_input():
 	# Sit.
 	if Input.is_action_pressed("sit"):
 		self.state = States.SIT
-	
+		
 	
 # Physics processing.
 func _physics_process(delta):
@@ -80,10 +82,10 @@ func _physics_process(delta):
 	
 	# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.BARK \
-		and state != States.POOP and state != States.SIT:
+		and state != States.POOP and state != States.SIT and state != States.JUMP:
 		self.state = States.IDLE
 
-
+			
 # States setter.
 func set_state(new_state):
 	
@@ -104,10 +106,27 @@ func set_state(new_state):
 			animation_state.travel("Poop")
 			
 	state = new_state
-
+	
 #Finished actions:
 func pooping_finished():
 	self.state = States.IDLE
 
 func barking_finished():
 	self.state = States.IDLE
+
+func jumping_finished():
+	self.state = States.IDLE
+	
+
+#Collect items
+func _input(event):
+	if event.is_action_pressed("pickup"):
+		if $PickUpZone.items_in_range.size() > 0:
+			var pickup_item = $PickUpZone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			$PickUpZone.items_in_range.erase(pickup_item)
+			
+			
+var player = null
+func pick_up_item(body):
+	player = body

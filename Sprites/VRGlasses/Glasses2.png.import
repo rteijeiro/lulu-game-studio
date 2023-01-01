@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bark.png-23dfbb4981e054864f94df775f293732.stex"
+path="res://.import/Glasses2.png-72e7e445ad9b8944912d10198a22f11c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Bark/bark.png"
-dest_files=[ "res://.import/bark.png-23dfbb4981e054864f94df775f293732.stex" ]
+source_file="res://Sprites/VRGlasses/Glasses2.png"
+dest_files=[ "res://.import/Glasses2.png-72e7e445ad9b8944912d10198a22f11c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

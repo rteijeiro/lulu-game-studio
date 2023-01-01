@@ -23,6 +23,7 @@
 [ext_resource path="res://World/Map2/craftpix-net-753737-free-green-zone-tileset-pixel-art/3 Objects/Other/Tree2.png" type="Texture" id=21]
 [ext_resource path="res://Lulu.tscn" type="PackedScene" id=22]
 
+
 [sub_resource type="TileSet" id=1]
 0/name = "1.png 0"
 0/texture = ExtResource( 3 )

@@ -12,7 +12,6 @@ var velocity:Vector2 = Vector2.ZERO
 
 var motion= Vector2()
 var z = 0
-#var jump_multiplayer = 8
 var GRAVITY = 5
 
 # States.
@@ -25,10 +24,15 @@ enum States {
 	JUMPKICK,
 	KICK,
 	PUNCH,
-	WALK
+	WALK, 
+	IDLEGUN,
+	SHOOT
 }
 var state = States.IDLE setget set_state
 onready var animation_state = $AnimationTreeFighter.get("parameters/playback")
+
+#Bullet
+onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
 
 ## Actions.
 var fighter_is_jumping:bool = false
@@ -103,20 +107,27 @@ func get_input():
 	# Punching.
 	if Input.is_action_pressed("punch"):
 		self.state = States.PUNCH
+	
+	if Input.is_action_just_pressed("idlegun"):
+		self.state = States.IDLEGUN
+
+	if Input.is_action_pressed("shoot"):
+		self.state = States.SHOOT
+		
 
 
 # Physics processing.
 func _physics_process(delta):
 
 	get_input()
-
+	shoot()
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
 	# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
-		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP:
+		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state != States.IDLEGUN and state != States.SHOOT:
 		self.state = States.IDLE
 
 
@@ -142,6 +153,10 @@ func set_state(new_state):
 			animation_state.travel("Punch")
 		States.WALK:
 			animation_state.travel("Walk")
+		States.IDLEGUN:
+			animation_state.travel("IdleGun")
+		States.SHOOT:
+			animation_state.travel("Shoot")
 
 	state = new_state
 
@@ -163,3 +178,12 @@ func punching_finished():
 
 func jumping_finished():
 	self.state = States.IDLE
+
+func shooting_finished():
+	self.state =States.IDLEGUN
+	
+var b
+func shoot():
+	if Input.is_action_just_pressed("shoot"):
+		b = Bullet.instance()
+		add_child(b)

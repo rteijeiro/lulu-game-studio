@@ -19,22 +19,22 @@ animations = [ {
 } ]
 
 [node name="WalkingWoman" type="KinematicBody2D"]
-position = Vector2( 16, 1 )
+position = Vector2( 4, 5 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 871.5, 1.5 )
+position = Vector2( -5, -8 )
 shape = SubResource( 3 )
 
 [node name="WalkingWoman" type="Area2D" parent="."]
+position = Vector2( -13, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WalkingWoman"]
-position = Vector2( 855, 1 )
-scale = Vector2( 1, 1 )
+position = Vector2( 14, -10 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="WalkingWoman"]
-position = Vector2( 872, 1 )
+position = Vector2( 9.00002, -9.99999 )
 scale = Vector2( 0.0876172, 0.0876172 )
 frames = SubResource( 1 )
 animation = "Walking"
