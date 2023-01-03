@@ -1,9 +1,13 @@
 extends Area2D
 
-	
-func _on_Area2D_body_entered(body):
-	if body.name == "FighterPlayer":
-		$Idle.hide()
-		$Broken.show() 
+func _on_AreaBarrel_area_entered(area):
+	 if area.get_name() == "PunchZone":
+			$Idle.hide()
+			$Broken.show() 
+	 if area.get_name() == "KickZone":
+			$Idle.hide()
+			$Broken.show()
+
+
 
 

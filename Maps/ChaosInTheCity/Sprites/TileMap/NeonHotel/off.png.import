@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Broken.png-1968db852073c72e4fc8266cb62c5ec6.stex"
+path="res://.import/off.png-35b28f2323de5c59f461ca10808595db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Objects/Broken.png"
-dest_files=[ "res://.import/Broken.png-1968db852073c72e4fc8266cb62c5ec6.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/TileMap/NeonHotel/off.png"
+dest_files=[ "res://.import/off.png-35b28f2323de5c59f461ca10808595db.stex" ]
 
 [params]
 

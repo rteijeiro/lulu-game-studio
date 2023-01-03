@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Maps/ChaosInTheCity/Objects/Idle.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Barrel.gd" type="Script" id=2]
-[ext_resource path="res://Maps/ChaosInTheCity/Objects/Broken.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Broken.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 23, 29 )
@@ -11,6 +11,8 @@ extents = Vector2( 23, 29 )
 extents = Vector2( 23.5, 29 )
 
 [node name="Barrel" type="Area2D"]
+collision_layer = 16
+collision_mask = 9
 script = ExtResource( 2 )
 
 [node name="Idle" type="Sprite" parent="."]
@@ -28,10 +30,12 @@ texture = ExtResource( 3 )
 position = Vector2( 8, -11 )
 shape = SubResource( 6 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaBarrel" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBarrel"]
 position = Vector2( 8.5, -11 )
 shape = SubResource( 5 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="AreaBarrel" to="." method="_on_AreaBarrel_area_entered"]

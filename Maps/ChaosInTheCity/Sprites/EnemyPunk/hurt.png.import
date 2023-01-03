@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle.png-89157c8c1d03a1a8cefe06e18f48c698.stex"
+path="res://.import/hurt.png-3595a31a9a0202e755bb6336ea5f3800.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Objects/Idle.png"
-dest_files=[ "res://.import/Idle.png-89157c8c1d03a1a8cefe06e18f48c698.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/hurt.png"
+dest_files=[ "res://.import/hurt.png-3595a31a9a0202e755bb6336ea5f3800.stex" ]
 
 [params]
 

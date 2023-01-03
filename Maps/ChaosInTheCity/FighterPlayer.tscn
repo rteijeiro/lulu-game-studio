@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=122 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
@@ -12,261 +12,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.gd" type="Script" id=10]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idlegun.png" type="Texture" id=11]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/shoot.png" type="Texture" id=12]
-[ext_resource path="res://Maps/ChaosInTheCity/Bullet.tscn" type="PackedScene" id=13]
-
-[sub_resource type="Animation" id=42]
-resource_name = "DiveKick"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "DiveKick" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "divekicking_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=43]
-resource_name = "Hurt"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Kick" ]
-}
-
-[sub_resource type="Animation" id=44]
-resource_name = "Idle"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Idle" ]
-}
-
-[sub_resource type="Animation" id=102]
-resource_name = "IdleGun"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "IdleGun" ]
-}
-
-[sub_resource type="Animation" id=45]
-resource_name = "Jab"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Jab" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "jabbing_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=46]
-resource_name = "Jump"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Jump" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "jumping_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=47]
-resource_name = "JumpKick"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "JumpKick" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "jumpkicking_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=48]
-resource_name = "Kick"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Kick" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "kicking_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=49]
-resource_name = "Punch"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Punch" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "punching_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=106]
-resource_name = "Shoot"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "shoot" ]
-}
-
-[sub_resource type="Animation" id=50]
-resource_name = "Walk"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Walk" ]
-}
-
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 19, 4.5 )
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walkGun.png" type="Texture" id=13]
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
@@ -310,22 +56,6 @@ region = Rect2( 192, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 288, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=98]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=99]
-atlas = ExtResource( 11 )
-region = Rect2( 96, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=100]
-atlas = ExtResource( 11 )
-region = Rect2( 192, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=101]
-atlas = ExtResource( 11 )
 region = Rect2( 288, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=13]
@@ -448,20 +178,12 @@ region = Rect2( 768, 0, 96, 63 )
 atlas = ExtResource( 8 )
 region = Rect2( 864, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=107]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=108]
-atlas = ExtResource( 12 )
-region = Rect2( 96, 0, 96, 63 )
-
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": false,
 "name": "DiveKick",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
@@ -471,11 +193,6 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 4.0
-}, {
-"frames": [ SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ) ],
-"loop": true,
-"name": "IdleGun",
 "speed": 4.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
@@ -507,21 +224,302 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 9.0
-}, {
-"frames": [ SubResource( 107 ), SubResource( 108 ) ],
-"loop": false,
-"name": "shoot",
-"speed": 2.0
 } ]
+
+[sub_resource type="Animation" id=42]
+resource_name = "DiveKick"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "DiveKick" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "divekicking_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "Hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Kick" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "is_not_hit"
+} ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "Jab"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Jab" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "jabbing_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Jump" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "jumping_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "JumpKick"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "JumpKick" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "jumpkicking_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "Kick"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Kick" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "kicking_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KickZone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KickZone:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "Punch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Punch" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "is_punching"
+}, {
+"args": [  ],
+"method": "punching_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PunchZone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PunchZone:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "Walk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Walk" ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=76]
 animation = "DiveKick"
 
 [sub_resource type="AnimationNodeAnimation" id=77]
 animation = "Idle"
-
-[sub_resource type="AnimationNodeAnimation" id=103]
-animation = "IdleGun"
 
 [sub_resource type="AnimationNodeAnimation" id=78]
 animation = "Jab"
@@ -537,9 +535,6 @@ animation = "Kick"
 
 [sub_resource type="AnimationNodeAnimation" id=57]
 animation = "Punch"
-
-[sub_resource type="AnimationNodeAnimation" id=109]
-animation = "Shoot"
 
 [sub_resource type="AnimationNodeAnimation" id=93]
 animation = "Walk"
@@ -584,23 +579,11 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=104]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=105]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=110]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=111]
-switch_mode = 2
-auto_advance = true
-
 [sub_resource type="AnimationNodeStateMachine" id=73]
 states/DiveKick/node = SubResource( 76 )
 states/DiveKick/position = Vector2( 417, 76 )
 states/Idle/node = SubResource( 77 )
 states/Idle/position = Vector2( 417, 238 )
-states/IdleGun/node = SubResource( 103 )
-states/IdleGun/position = Vector2( 862, 184.135 )
 states/Jab/node = SubResource( 78 )
 states/Jab/position = Vector2( 417, 401 )
 states/Jump/node = SubResource( 54 )
@@ -611,49 +594,222 @@ states/Kick/node = SubResource( 56 )
 states/Kick/position = Vector2( 714, 76 )
 states/Punch/node = SubResource( 57 )
 states/Punch/position = Vector2( 571, 401 )
-states/Shoot/node = SubResource( 109 )
-states/Shoot/position = Vector2( 1105.64, 184.135 )
 states/Walk/node = SubResource( 93 )
-states/Walk/position = Vector2( 862, 311 )
-transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "IdleGun", SubResource( 104 ), "IdleGun", "Idle", SubResource( 105 ), "IdleGun", "Shoot", SubResource( 110 ), "Shoot", "IdleGun", SubResource( 111 ) ]
+states/Walk/position = Vector2( 879, 238 )
+transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 267.636, 25.4077 )
+graph_offset = Vector2( 267.636, 165.127 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 19, 4 )
+
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 8, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=115]
+extents = Vector2( 22, 21.5 )
+
+[sub_resource type="RectangleShape2D" id=117]
+extents = Vector2( 11, 2.5 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 11 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 11 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 11 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 13 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 13 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 13 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 13 )
+region = Rect2( 384, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 13 )
+region = Rect2( 480, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=156]
+atlas = ExtResource( 13 )
+region = Rect2( 576, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=157]
+atlas = ExtResource( 13 )
+region = Rect2( 672, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=158]
+atlas = ExtResource( 13 )
+region = Rect2( 768, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=159]
+atlas = ExtResource( 13 )
+region = Rect2( 864, 0, 96, 63 )
+
+[sub_resource type="SpriteFrames" id=135]
+animations = [ {
+"frames": [ SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ) ],
+"loop": true,
+"name": "IdleGun",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 123 ), SubResource( 124 ) ],
+"loop": false,
+"name": "Shoot",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ) ],
+"loop": true,
+"name": "WalkGun",
+"speed": 9.0
+} ]
+
+[sub_resource type="Animation" id=136]
+resource_name = "IdleGun"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpriteGun:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "IdleGun" ]
+}
+
+[sub_resource type="Animation" id=137]
+resource_name = "Shoot"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpriteGun:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Shoot" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shooting_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=138]
+resource_name = "WalkGun"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpriteGun:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "WalkGun", "WalkGun" ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=139]
+animation = "IdleGun"
+
+[sub_resource type="AnimationNodeAnimation" id=140]
+animation = "Shoot"
+
+[sub_resource type="AnimationNodeAnimation" id=141]
+animation = "WalkGun"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=142]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=143]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=144]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=145]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=148]
+states/IdleGun/node = SubResource( 139 )
+states/IdleGun/position = Vector2( 334, 152 )
+states/Shoot/node = SubResource( 140 )
+states/Shoot/position = Vector2( 334, 52 )
+states/WalkGun/node = SubResource( 141 )
+states/WalkGun/position = Vector2( 572, 152 )
+transitions = [ "IdleGun", "WalkGun", SubResource( 142 ), "WalkGun", "IdleGun", SubResource( 143 ), "IdleGun", "Shoot", SubResource( 144 ), "Shoot", "IdleGun", SubResource( 145 ) ]
+start_node = "IdleGun"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=149]
+
 [node name="FighterPlayer" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 17
 script = ExtResource( 10 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/DiveKick = SubResource( 42 )
-anims/Hurt = SubResource( 43 )
-anims/Idle = SubResource( 44 )
-anims/IdleGun = SubResource( 102 )
-anims/Jab = SubResource( 45 )
-anims/Jump = SubResource( 46 )
-anims/JumpKick = SubResource( 47 )
-anims/Kick = SubResource( 48 )
-anims/Punch = SubResource( 49 )
-anims/Shoot = SubResource( 106 )
-anims/Walk = SubResource( 50 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -18, 47.5 )
-shape = SubResource( 41 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 125, -80 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-smoothing_enabled = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DiveKick = SubResource( 42 )
+anims/Hurt = SubResource( 43 )
+anims/Idle = SubResource( 44 )
+anims/Jab = SubResource( 45 )
+anims/Jump = SubResource( 46 )
+anims/JumpKick = SubResource( 47 )
+anims/Kick = SubResource( 48 )
+anims/Punch = SubResource( 49 )
+anims/Walk = SubResource( 50 )
 
 [node name="AnimationTreeFighter" type="AnimationTree" parent="."]
 tree_root = SubResource( 73 )
@@ -661,10 +817,68 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 74 )
 
-[node name="Bullet" parent="." instance=ExtResource( 13 )]
-position = Vector2( 44, -6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -18, 46 )
+shape = SubResource( 41 )
+
+[node name="PunchZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchZone"]
+position = Vector2( 36, -3.5 )
+shape = SubResource( 116 )
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( -16, 2.5 )
+shape = SubResource( 115 )
+
+[node name="KickZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickZone"]
+position = Vector2( 33, -13.5 )
+shape = SubResource( 117 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 77, -48 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+
+[node name="AnimatedSpriteGun" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -15, -2 )
+scale = Vector2( 1.643, 1.643 )
+frames = SubResource( 135 )
+animation = "IdleGun"
+frame = 2
+playing = true
+
+[node name="AnimationPlayerGun" type="AnimationPlayer" parent="."]
+autoplay = "IdleGun"
+anims/IdleGun = SubResource( 136 )
+anims/Shoot = SubResource( 137 )
+anims/WalkGun = SubResource( 138 )
+
+[node name="AnimationTreeGun" type="AnimationTree" parent="."]
+tree_root = SubResource( 148 )
+anim_player = NodePath("../AnimationPlayerGun")
+active = true
+parameters/playback = SubResource( 149 )
 
 [node name="Mullet" type="Position2D" parent="."]
 position = Vector2( 60, -6 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
