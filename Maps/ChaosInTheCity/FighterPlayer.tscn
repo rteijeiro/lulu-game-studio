@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
@@ -13,6 +13,14 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idlegun.png" type="Texture" id=11]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/shoot.png" type="Texture" id=12]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walkGun.png" type="Texture" id=13]
+
+[sub_resource type="AtlasTexture" id=182]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=183]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
@@ -56,6 +64,22 @@ region = Rect2( 192, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 11 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 11 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 11 )
 region = Rect2( 288, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=13]
@@ -138,6 +162,14 @@ region = Rect2( 96, 0, 96, 63 )
 atlas = ExtResource( 9 )
 region = Rect2( 192, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 0, 96, 63 )
+
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 96, 63 )
@@ -178,8 +210,53 @@ region = Rect2( 768, 0, 96, 63 )
 atlas = ExtResource( 8 )
 region = Rect2( 864, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=156]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=157]
+atlas = ExtResource( 13 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=158]
+atlas = ExtResource( 13 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=159]
+atlas = ExtResource( 13 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=160]
+atlas = ExtResource( 13 )
+region = Rect2( 384, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=161]
+atlas = ExtResource( 13 )
+region = Rect2( 480, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=162]
+atlas = ExtResource( 13 )
+region = Rect2( 576, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=163]
+atlas = ExtResource( 13 )
+region = Rect2( 672, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=164]
+atlas = ExtResource( 13 )
+region = Rect2( 768, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=165]
+atlas = ExtResource( 13 )
+region = Rect2( 864, 0, 96, 63 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ SubResource( 182 ), SubResource( 183 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 2.0
+}, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": false,
 "name": "DiveKick",
@@ -193,6 +270,11 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ) ],
+"loop": true,
+"name": "IdleGun",
 "speed": 4.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
@@ -220,11 +302,36 @@ animations = [ {
 "name": "Punch",
 "speed": 3.0
 }, {
+"frames": [ SubResource( 154 ), SubResource( 155 ) ],
+"loop": false,
+"name": "Shoot",
+"speed": 2.0
+}, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 165 ) ],
+"loop": true,
+"name": "WalkGun",
+"speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=184]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Dead" ]
+}
 
 [sub_resource type="Animation" id=42]
 resource_name = "DiveKick"
@@ -299,6 +406,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Idle" ]
+}
+
+[sub_resource type="Animation" id=166]
+resource_name = "IdleGun"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "IdleGun" ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -500,6 +623,35 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=168]
+resource_name = "Shoot"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Shoot" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shooting_finished"
+} ]
+}
+
 [sub_resource type="Animation" id=50]
 resource_name = "Walk"
 tracks/0/type = "value"
@@ -514,6 +666,24 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Walk" ]
 }
+
+[sub_resource type="Animation" id=167]
+resource_name = "WalkGun"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "WalkGun" ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=185]
+animation = "Dead"
 
 [sub_resource type="AnimationNodeAnimation" id=76]
 animation = "DiveKick"
@@ -579,213 +749,93 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=186]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=187]
+
 [sub_resource type="AnimationNodeStateMachine" id=73]
+states/Dead/node = SubResource( 185 )
+states/Dead/position = Vector2( 1166.6, 6.423 )
 states/DiveKick/node = SubResource( 76 )
-states/DiveKick/position = Vector2( 417, 76 )
+states/DiveKick/position = Vector2( 624, 33 )
 states/Idle/node = SubResource( 77 )
-states/Idle/position = Vector2( 417, 238 )
+states/Idle/position = Vector2( 790, 238 )
 states/Jab/node = SubResource( 78 )
-states/Jab/position = Vector2( 417, 401 )
+states/Jab/position = Vector2( 618, 401 )
 states/Jump/node = SubResource( 54 )
-states/Jump/position = Vector2( 571, 76 )
+states/Jump/position = Vector2( 790, 33 )
 states/JumpKick/node = SubResource( 55 )
-states/JumpKick/position = Vector2( 737, 401 )
+states/JumpKick/position = Vector2( 947, 401 )
 states/Kick/node = SubResource( 56 )
-states/Kick/position = Vector2( 714, 76 )
+states/Kick/position = Vector2( 947, 33 )
 states/Punch/node = SubResource( 57 )
-states/Punch/position = Vector2( 571, 401 )
+states/Punch/position = Vector2( 790, 401 )
 states/Walk/node = SubResource( 93 )
-states/Walk/position = Vector2( 879, 238 )
-transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ) ]
+states/Walk/position = Vector2( 1044, 238 )
+transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Dead", SubResource( 186 ), "Walk", "Dead", SubResource( 187 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 267.636, 165.127 )
+graph_offset = Vector2( 221.598, 179.807 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
+[sub_resource type="AnimationNodeAnimation" id=188]
+animation = "Dead"
+
+[sub_resource type="AnimationNodeAnimation" id=169]
+animation = "IdleGun"
+
+[sub_resource type="AnimationNodeAnimation" id=170]
+animation = "Shoot"
+
+[sub_resource type="AnimationNodeAnimation" id=171]
+animation = "WalkGun"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=172]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=173]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=174]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=175]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=180]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=181]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=189]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=190]
+
+[sub_resource type="AnimationNodeStateMachine" id=178]
+states/Dead/node = SubResource( 188 )
+states/Dead/position = Vector2( 771, 29 )
+states/IdleGun/node = SubResource( 169 )
+states/IdleGun/position = Vector2( 457, 154 )
+states/Shoot/node = SubResource( 170 )
+states/Shoot/position = Vector2( 457, 29 )
+states/WalkGun/node = SubResource( 171 )
+states/WalkGun/position = Vector2( 712, 154 )
+transitions = [ "IdleGun", "WalkGun", SubResource( 172 ), "WalkGun", "IdleGun", SubResource( 173 ), "IdleGun", "Shoot", SubResource( 174 ), "Shoot", "IdleGun", SubResource( 175 ), "WalkGun", "Shoot", SubResource( 180 ), "Shoot", "WalkGun", SubResource( 181 ), "IdleGun", "Dead", SubResource( 189 ), "WalkGun", "Dead", SubResource( 190 ) ]
+start_node = "IdleGun"
+graph_offset = Vector2( 0, -32.5445 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=179]
+
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 19, 4 )
+extents = Vector2( 22.5, 8 )
 
 [sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 8, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=115]
-extents = Vector2( 22, 21.5 )
+extents = Vector2( 16, 21.5 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 11, 2.5 )
-
-[sub_resource type="AtlasTexture" id=119]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=120]
-atlas = ExtResource( 11 )
-region = Rect2( 96, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=121]
-atlas = ExtResource( 11 )
-region = Rect2( 192, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=122]
-atlas = ExtResource( 11 )
-region = Rect2( 288, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=123]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=124]
-atlas = ExtResource( 12 )
-region = Rect2( 96, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=150]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=151]
-atlas = ExtResource( 13 )
-region = Rect2( 96, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=152]
-atlas = ExtResource( 13 )
-region = Rect2( 192, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=153]
-atlas = ExtResource( 13 )
-region = Rect2( 288, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=154]
-atlas = ExtResource( 13 )
-region = Rect2( 384, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=155]
-atlas = ExtResource( 13 )
-region = Rect2( 480, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=156]
-atlas = ExtResource( 13 )
-region = Rect2( 576, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=157]
-atlas = ExtResource( 13 )
-region = Rect2( 672, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=158]
-atlas = ExtResource( 13 )
-region = Rect2( 768, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=159]
-atlas = ExtResource( 13 )
-region = Rect2( 864, 0, 96, 63 )
-
-[sub_resource type="SpriteFrames" id=135]
-animations = [ {
-"frames": [ SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ) ],
-"loop": true,
-"name": "IdleGun",
-"speed": 4.0
-}, {
-"frames": [ SubResource( 123 ), SubResource( 124 ) ],
-"loop": false,
-"name": "Shoot",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ) ],
-"loop": true,
-"name": "WalkGun",
-"speed": 9.0
-} ]
-
-[sub_resource type="Animation" id=136]
-resource_name = "IdleGun"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteGun:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "IdleGun" ]
-}
-
-[sub_resource type="Animation" id=137]
-resource_name = "Shoot"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteGun:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Shoot" ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "shooting_finished"
-} ]
-}
-
-[sub_resource type="Animation" id=138]
-resource_name = "WalkGun"
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteGun:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ "WalkGun", "WalkGun" ]
-}
-
-[sub_resource type="AnimationNodeAnimation" id=139]
-animation = "IdleGun"
-
-[sub_resource type="AnimationNodeAnimation" id=140]
-animation = "Shoot"
-
-[sub_resource type="AnimationNodeAnimation" id=141]
-animation = "WalkGun"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=142]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=143]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=144]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=145]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachine" id=148]
-states/IdleGun/node = SubResource( 139 )
-states/IdleGun/position = Vector2( 334, 152 )
-states/Shoot/node = SubResource( 140 )
-states/Shoot/position = Vector2( 334, 52 )
-states/WalkGun/node = SubResource( 141 )
-states/WalkGun/position = Vector2( 572, 152 )
-transitions = [ "IdleGun", "WalkGun", SubResource( 142 ), "WalkGun", "IdleGun", SubResource( 143 ), "IdleGun", "Shoot", SubResource( 144 ), "Shoot", "IdleGun", SubResource( 145 ) ]
-start_node = "IdleGun"
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=149]
 
 [node name="FighterPlayer" type="KinematicBody2D"]
 collision_layer = 8
@@ -797,19 +847,24 @@ position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Dead = SubResource( 184 )
 anims/DiveKick = SubResource( 42 )
 anims/Hurt = SubResource( 43 )
 anims/Idle = SubResource( 44 )
+anims/IdleGun = SubResource( 166 )
 anims/Jab = SubResource( 45 )
 anims/Jump = SubResource( 46 )
 anims/JumpKick = SubResource( 47 )
 anims/Kick = SubResource( 48 )
 anims/Punch = SubResource( 49 )
+anims/Shoot = SubResource( 168 )
 anims/Walk = SubResource( 50 )
+anims/WalkGun = SubResource( 167 )
 
 [node name="AnimationTreeFighter" type="AnimationTree" parent="."]
 tree_root = SubResource( 73 )
@@ -817,8 +872,13 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 74 )
 
+[node name="AnimationTreeGun" type="AnimationTree" parent="."]
+tree_root = SubResource( 178 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 179 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -18, 46 )
+position = Vector2( -21.5, 42 )
 shape = SubResource( 41 )
 
 [node name="PunchZone" type="Area2D" parent="."]
@@ -836,7 +896,7 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( -16, 2.5 )
+position = Vector2( -23, 3 )
 shape = SubResource( 115 )
 
 [node name="KickZone" type="Area2D" parent="."]
@@ -854,27 +914,6 @@ position = Vector2( 77, -48 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
-
-[node name="AnimatedSpriteGun" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -15, -2 )
-scale = Vector2( 1.643, 1.643 )
-frames = SubResource( 135 )
-animation = "IdleGun"
-frame = 2
-playing = true
-
-[node name="AnimationPlayerGun" type="AnimationPlayer" parent="."]
-autoplay = "IdleGun"
-anims/IdleGun = SubResource( 136 )
-anims/Shoot = SubResource( 137 )
-anims/WalkGun = SubResource( 138 )
-
-[node name="AnimationTreeGun" type="AnimationTree" parent="."]
-tree_root = SubResource( 148 )
-anim_player = NodePath("../AnimationPlayerGun")
-active = true
-parameters/playback = SubResource( 149 )
 
 [node name="Mullet" type="Position2D" parent="."]
 position = Vector2( 60, -6 )

@@ -4,9 +4,7 @@ extends KinematicBody2D
 enum States {
 	IDLE,
 	WALK,
-	HURT,
 	ATTACK, 
-	DEAD
 }
 #
 var direction:Vector2 = Vector2.ZERO
@@ -19,7 +17,6 @@ var target = null
 
 func _physics_process(delta: float) -> void:
 
-	if state != States.DEAD:
 		if state != States.ATTACK:
 			$AnimatedSprite.play("Walk")
 			var collision = move_and_collide(direction)
@@ -51,8 +48,6 @@ func set_state(new_state):
 			animation_state.travel("Walk")
 		States.ATTACK:
 			animation_state.travel("Attack")
-		States.HURT:
-			animation_state.travel("Hurt")
 	
 	state = new_state
 
@@ -61,17 +56,12 @@ func check_direction():
 	if direction.x > 0: # Move right.
 		$AnimatedSprite.flip_h = true
 		$CollisionShape2D.position.x = -3.2
-		$DetectionArea/CollisionShape2D.position.x = 9.5
 		$AttackArea/CollisionShape2D.position.x = 45
-		$HitBox/CollisionShape2D.position.x = -5.5
-		$PunchArea/CollisionShape2D.position.x = 40
 	else: # Move left.
 		$AnimatedSprite.flip_h = false
 		$CollisionShape2D.position.x = -3.2
-		$DetectionArea/CollisionShape2D.position.x = -18
 		$AttackArea/CollisionShape2D.position.x = -50
-		$HitBox/CollisionShape2D.position.x = -5.5
-		$PunchArea/CollisionShape2D.position.x = -44.5
+	
 	
 func attacking():
 	is_attacking = true
@@ -81,39 +71,39 @@ func attacking():
 func _on_Timer_timeout():
 	is_attacking = false 
 
-func hit():
-	life = life - 1
-	if life <= 0 :
-		state = States.DEAD
-		$AnimationPlayer.play("Dead")
+#func hit():
+#	life = life - 1
+#	if life <= 0 :
+#		state = States.DEAD
+#		$AnimationPlayer.play("Dead")
 
-func is_not_hit():
-	self.state = States.IDLE
-
-
-func _on_AttackArea_body_entered(body):
-	if body.name == "FighterPlayer":
-		self.state = States.ATTACK
-
-func _on_DetectionArea_body_entered(body):
-	if body.name == "FighterPlayer":
-		target = body
-		
-func _on_DetectionArea_body_exited(body):
-	if body.name == "FighterPlayer":
-		target = null
-		self.state = States.WALK
-
-
-func _on_HitBox_body_entered(body):
-	if body.name == "FighterPlayer":
-		self.state = States.HURT
-		body.is_hit("up", 10)
-	if body.name == "Bullet":
-		self.state = States.HURT
-	
-func death():
-	queue_free()
+#func is_not_hit():
+#	self.state = States.IDLE
+#
+#
+#func _on_AttackArea_body_entered(body):
+#	if body.name == "FighterPlayer":
+#		self.state = States.ATTACK
+#
+#func _on_DetectionArea_body_entered(body):
+#	if body.name == "FighterPlayer":
+#		target = body
+#
+#func _on_DetectionArea_body_exited(body):
+#	if body.name == "FighterPlayer":
+#		target = null
+#		self.state = States.WALK
+#
+#
+#func _on_HitBox_body_entered(body):
+#	if body.name == "FighterPlayer":
+#		self.state = States.HURT
+#		body.is_hit("up", 10)
+#	if body.name == "Bullet":
+#		self.state = States.HURT
+#
+#func death():
+#	queue_free()
 
 
 

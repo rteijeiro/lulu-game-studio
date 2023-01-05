@@ -8,7 +8,11 @@ export (int) var jump_speed = -500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
+var life:int = 5
+var direction:Vector2 = Vector2.ZERO
 
+# HUD.
+#var hud = null
 
 var motion= Vector2()
 var z = 0
@@ -28,12 +32,13 @@ enum States {
 	IDLEGUN,
 	WALKGUN,
 	SHOOT,
+	DEAD
 }
 var state = States.IDLE setget set_state
 onready var animation_state_nogun = $AnimationTreeFighter.get("parameters/playback")
 onready var animation_state_gun = $AnimationTreeGun.get("parameters/playback")
 var animation_state = null
-#
+
 
 #Bullet
 onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
@@ -41,6 +46,10 @@ onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
 ## Actions.
 var fighter_is_jumping:bool = false
 
+#func _ready() -> void:  
+#	randomize()
+#	hud = get_parent().get_node("HUD")	    
+	
 #Get input from controller.
 func get_input():
 	velocity.x = 0
@@ -51,20 +60,28 @@ func get_input():
 	# Moving Right.
 	if Input.is_action_pressed("right") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 			$AnimatedSprite.flip_h = false
+			$KickZone/CollisionShape2D.position.x = 33
+			$PunchZone/CollisionShape2D.position.x = 36
 			velocity.x += speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
 				if animation_state_gun:
-					$AnimationPlayerGun.play("WalkGun")
+					$AnimationPlayer.play("WalkGun")
+				if animation_state_nogun:
+					$AnimationPlayer.play("Walk")
 
 	# Moving Left.
 	if Input.is_action_pressed("left") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 		$AnimatedSprite.flip_h = true
+		$KickZone/CollisionShape2D.position.x = -66
+		$PunchZone/CollisionShape2D.position.x = -72
 		velocity.x -= speed
 		if !fighter_is_jumping:
 			self.state = States.WALK
 			if animation_state_gun:
-					$AnimationPlayerGun.play("WalkGun")
+					$AnimationPlayer.play("WalkGun")
+			if animation_state_nogun:
+					$AnimationPlayer.play("Walk")
 
 	#Moving Up.
 	if Input.is_action_pressed("up") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
@@ -72,7 +89,9 @@ func get_input():
 		if !fighter_is_jumping:
 			self.state = States.WALK
 			if animation_state_gun:
-					$AnimationPlayerGun.play("WalkGun")
+					$AnimationPlayer.play("WalkGun")
+			if animation_state_nogun:
+					$AnimationPlayer.play("Walk")
 
 	# Moving Down.
 	if Input.is_action_pressed("down") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
@@ -80,7 +99,9 @@ func get_input():
 		if !fighter_is_jumping:
 			self.state = States.WALK
 			if animation_state_gun:
-					$AnimationPlayerGun.play("WalkGun")
+					$AnimationPlayer.play("WalkGun")
+			if animation_state_nogun:
+					$AnimationPlayer.play("Walk")
 
 	# Start Jumping.
 	if Input.is_action_just_pressed("jump"):
@@ -121,21 +142,19 @@ func get_input():
 	
 	if Input.is_action_pressed("shoot"):
 		self.state = States.SHOOT
-	
+		
 	if Input.is_action_pressed("idlegun"):
-		$AnimatedSprite.hide()
-		$AnimatedSpriteGun.show()
-		self.state = States.IDLEGUN
 		animation_state = animation_state_gun
 	else:
 		animation_state = animation_state_nogun
-
+	
 
 # Physics processing.
 func _physics_process(delta):
 
 	get_input()
 	shoot()
+
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 
@@ -151,27 +170,27 @@ func set_state(new_state):
 
 	match new_state:
 		States.IDLE:
-			animation_state.travel("Idle")
+			animation_state_nogun.travel("Idle")
 		States.DIVEKICK:
-			animation_state.travel("DiveKick")
+			animation_state_nogun.travel("DiveKick")
 		States.JAB:
-			animation_state.travel("Jab")
+			animation_state_nogun.travel("Jab")
 		States.JUMP:
-			animation_state.travel("Jump")
+			animation_state_nogun.travel("Jump")
 		States.JUMPKICK:
-			animation_state.travel("JumpKick")
+			animation_state_nogun.travel("JumpKick")
 		States.KICK:
-			animation_state.travel("Kick")
+			animation_state_nogun.travel("Kick")
 		States.PUNCH:
-			animation_state.travel("Punch")
+			animation_state_nogun.travel("Punch")
 		States.WALK:
-			animation_state.travel("Walk")
+			animation_state_nogun.travel("Walk")
 		States.IDLEGUN:
-			animation_state.travel("IdleGun")
+			animation_state_gun.travel("IdleGun")
 		States.SHOOT:
-			animation_state.travel("Shoot")
+			animation_state_gun.travel("Shoot")
 		States.WALKGUN:
-			animation_state.travel("WalkGun")
+			animation_state_gun.travel("WalkGun")
 
 	state = new_state
 
@@ -202,7 +221,6 @@ func punching_finished():
 	is_punching = false
 	self.state = States.IDLE
 
-
 #Shooting
 var b
 func shoot():
@@ -210,9 +228,38 @@ func shoot():
 		b = Bullet.instance()
 		add_child(b)
 
+#Hit
+# warning-ignore:unused_argument
+func is_hit(direction, hurt):
+	if state != States.DEAD and life > 0:
+		self.state = States.HURT
+	
+	if $AnimatedSprite.flip_h:
+		velocity = Vector2(500, -50)
+	else:
+		velocity = Vector2(-500, -50)
+
+		move_and_slide(velocity, Vector2.UP)
+		life -= hurt
+#		hud.update_life(life)
+	if life <= 0:
+		self.state = States.DEAD
+
 #Not hit.
 func is_not_hit():
 		state = States.IDLE
-	
+
+
+func get_life(value):
+	life += value
+	if life > 5:
+		life = 5
+		
+#	hud.update_life(life)
+
+func _on_HitBox_body_entered(body):
+	if body.name == "EnemyPunk":
+		self.state = States.HURT
+
 
 

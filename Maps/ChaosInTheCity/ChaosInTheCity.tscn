@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/EnemyPunk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/EnemySoldier.tscn" type="PackedScene" id=4]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26, 1 )
 
 [node name="FighterPlayer" parent="." instance=ExtResource( 2 )]
 position = Vector2( -181, 457 )
@@ -14,4 +16,7 @@ position = Vector2( -181, 457 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="EnemyPunk" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 76, 499 )
+position = Vector2( 81, 538 )
+
+[node name="KinematicBody2D" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 17, 473 )
