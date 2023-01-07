@@ -8,15 +8,15 @@
 [node name="ChaosInTheCity" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
-position = Vector2( 26, 1 )
+position = Vector2( -2, -8 )
 
 [node name="FighterPlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( -181, 457 )
+position = Vector2( 182, 523 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="EnemyPunk" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 81, 538 )
+position = Vector2( 609, 538 )
 
-[node name="KinematicBody2D" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 17, 473 )
+[node name="EnemySoldier" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 485, 618 )

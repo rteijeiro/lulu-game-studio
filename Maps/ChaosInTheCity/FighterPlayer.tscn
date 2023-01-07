@@ -847,7 +847,7 @@ position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -910,9 +910,9 @@ position = Vector2( 33, -13.5 )
 shape = SubResource( 117 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 77, -48 )
+position = Vector2( 166, -106 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
 
 [node name="Mullet" type="Position2D" parent="."]

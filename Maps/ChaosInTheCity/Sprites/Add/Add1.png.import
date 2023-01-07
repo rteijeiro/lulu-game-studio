@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/antenna.png-63b24d54b19eded186bf3fa2ca8b9e10.stex"
+path="res://.import/Add1.png-58805c318df3121b20c2008fe5b35632.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/TileMap/antenna.png"
-dest_files=[ "res://.import/antenna.png-63b24d54b19eded186bf3fa2ca8b9e10.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/Add/Add1.png"
+dest_files=[ "res://.import/Add1.png-58805c318df3121b20c2008fe5b35632.stex" ]
 
 [params]
 
