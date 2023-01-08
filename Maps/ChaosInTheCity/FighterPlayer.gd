@@ -36,9 +36,8 @@ enum States {
 }
 var state = States.IDLE setget set_state
 onready var animation_state_nogun = $AnimationTreeFighter.get("parameters/playback")
-onready var animation_state_gun = $AnimationTreeGun.get("parameters/playback")
+onready var animation_state_gun = $AnimationTreeGun.get("arameters/playback")
 var animation_state = null
-
 
 #Bullet
 onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
@@ -49,7 +48,8 @@ var fighter_is_jumping:bool = false
 #func _ready() -> void:  
 #	randomize()
 #	hud = get_parent().get_node("HUD")	    
-	
+
+
 #Get input from controller.
 func get_input():
 	velocity.x = 0
@@ -140,14 +140,16 @@ func get_input():
 	if Input.is_action_pressed("punch"):
 		self.state = States.PUNCH
 	
+#Change AnimationTrees:
+	if Input.is_action_just_pressed("gun"):
+		$AnimationTreeGun.active = true
+		$AnimationTreeFighter.active = false
+	if Input.is_action_pressed("fight"):
+		$AnimationTreeGun.active = false
+		$AnimationTreeFighter.active = true
+
 	if Input.is_action_pressed("shoot"):
 		self.state = States.SHOOT
-		
-	if Input.is_action_pressed("idlegun"):
-		animation_state = animation_state_gun
-	else:
-		animation_state = animation_state_nogun
-	
 
 # Physics processing.
 func _physics_process(delta):
@@ -161,7 +163,7 @@ func _physics_process(delta):
 
 	# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
-		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT:
+		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT:
 		self.state = States.IDLE
 
 
@@ -185,12 +187,12 @@ func set_state(new_state):
 			animation_state_nogun.travel("Punch")
 		States.WALK:
 			animation_state_nogun.travel("Walk")
-		States.IDLEGUN:
-			animation_state_gun.travel("IdleGun")
-		States.SHOOT:
-			animation_state_gun.travel("Shoot")
-		States.WALKGUN:
-			animation_state_gun.travel("WalkGun")
+		States.HURT:
+			animation_state_nogun.travel("Hurt")
+#		States.SHOOT:
+#			animation_state_gun.travel("Shoot")
+#		States.WALKGUN:
+#			animation_state_gun.travel("WalkGun")
 
 	state = new_state
 
@@ -228,22 +230,16 @@ func shoot():
 		b = Bullet.instance()
 		add_child(b)
 
-#Hit
-# warning-ignore:unused_argument
-func is_hit(direction, hurt):
+
+#Is Hit.
+func is_hit(hurt):
 	if state != States.DEAD and life > 0:
 		self.state = States.HURT
-	
-	if $AnimatedSprite.flip_h:
-		velocity = Vector2(500, -50)
-	else:
-		velocity = Vector2(-500, -50)
-
-		move_and_slide(velocity, Vector2.UP)
 		life -= hurt
 #		hud.update_life(life)
 	if life <= 0:
 		self.state = States.DEAD
+
 
 #Not hit.
 func is_not_hit():
@@ -257,9 +253,7 @@ func get_life(value):
 		
 #	hud.update_life(life)
 
-func _on_HitBox_body_entered(body):
-	if body.name == "EnemyPunk":
+
+func _on_HitZone_area_entered(area):
+	if area.get_name() == "PunchArea":
 		self.state = States.HURT
-
-
-

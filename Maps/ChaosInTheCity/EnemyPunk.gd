@@ -11,9 +11,9 @@ enum States {
 #
 var direction:Vector2 = Vector2.ZERO
 onready var animation_state = $AnimationTree.get('parameters/playback')
-var state = States.WALK
+var state = States.IDLE
 var is_attacking = false
-var life = 2
+var life = 5
 var is_switching_direction:bool = false
 var target = null
 
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 			var collision = move_and_collide(direction)
 			if collision != null:
 				if collision.collider.name == "FighterPlayer" :
-						collision.collider.is_hit("up", 10)
+						collision.collider.is_hit(10)
 				else:
 						direction = target
 						scale.x = 1
@@ -40,11 +40,13 @@ func _physics_process(delta: float) -> void:
 				$AnimationPlayer.play("Attack")
 				state = States.ATTACK
 			else:
-				state = States.WALK
+				state = States.IDLE
 
 
 func set_state(new_state):
+	
 	match new_state:
+		
 		States.IDLE:
 			animation_state.travel("Idle")
 		States.WALK:
@@ -53,6 +55,8 @@ func set_state(new_state):
 			animation_state.travel("Attack")
 		States.HURT:
 			animation_state.travel("Hurt")
+		States.DEAD:
+			animation_state.travel("Dead")
 	
 	state = new_state
 
@@ -82,10 +86,13 @@ func _on_Timer_timeout():
 	is_attacking = false 
 
 func hit():
-	life = life - 1
-	if life <= 0 :
-		state = States.DEAD
+	self.state = States.HURT
+	life -= 1
+	print(life)
+	if life <= 0:
 		$AnimationPlayer.play("Dead")
+		self.state = States.DEAD
+
 
 func is_not_hit():
 	self.state = States.IDLE
@@ -104,16 +111,21 @@ func _on_DetectionArea_body_exited(body):
 		target = null
 		self.state = States.WALK
 
-
 func _on_HitBox_body_entered(body):
-	if body.name == "FighterPlayer":
-		self.state = States.HURT
-		body.is_hit("up", 10)
 	if body.name == "Bullet":
 		self.state = States.HURT
-	
-func death():
-	queue_free()
+		self.hit()
+
+func _on_HitBox_area_entered(area):
+	if area.get_name() == "PunchZone":
+		$AnimationPlayer.play("Hurt")
+		self.hit()
+	if area.get_name() == "KickZone":
+		$AnimationPlayer.play("Hurt")
+		self.hit()
 
 
-
+#func death():
+#	if life == 0:
+#		$AnimationPlayer.play("Dead")
+#		queue_free()

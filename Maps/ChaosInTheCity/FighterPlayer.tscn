@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
@@ -375,7 +375,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Kick" ]
+"values": [ "Hurt" ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -688,6 +688,9 @@ animation = "Dead"
 [sub_resource type="AnimationNodeAnimation" id=76]
 animation = "DiveKick"
 
+[sub_resource type="AnimationNodeAnimation" id=191]
+animation = "Hurt"
+
 [sub_resource type="AnimationNodeAnimation" id=77]
 animation = "Idle"
 
@@ -753,11 +756,27 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=187]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=192]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=193]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=194]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=195]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=196]
+
 [sub_resource type="AnimationNodeStateMachine" id=73]
 states/Dead/node = SubResource( 185 )
 states/Dead/position = Vector2( 1166.6, 6.423 )
 states/DiveKick/node = SubResource( 76 )
 states/DiveKick/position = Vector2( 624, 33 )
+states/Hurt/node = SubResource( 191 )
+states/Hurt/position = Vector2( 1254.6, 123.791 )
 states/Idle/node = SubResource( 77 )
 states/Idle/position = Vector2( 790, 238 )
 states/Jab/node = SubResource( 78 )
@@ -771,10 +790,10 @@ states/Kick/position = Vector2( 947, 33 )
 states/Punch/node = SubResource( 57 )
 states/Punch/position = Vector2( 790, 401 )
 states/Walk/node = SubResource( 93 )
-states/Walk/position = Vector2( 1044, 238 )
-transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Dead", SubResource( 186 ), "Walk", "Dead", SubResource( 187 ) ]
+states/Walk/position = Vector2( 1046, 238 )
+transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "Idle", "JumpKick", SubResource( 91 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Dead", SubResource( 186 ), "Walk", "Dead", SubResource( 187 ), "Idle", "Hurt", SubResource( 192 ), "Hurt", "Idle", SubResource( 193 ), "Walk", "Hurt", SubResource( 194 ), "Hurt", "Walk", SubResource( 195 ), "Hurt", "Dead", SubResource( 196 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 221.598, 179.807 )
+graph_offset = Vector2( 181.277, -44.305 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
@@ -821,7 +840,7 @@ states/WalkGun/node = SubResource( 171 )
 states/WalkGun/position = Vector2( 712, 154 )
 transitions = [ "IdleGun", "WalkGun", SubResource( 172 ), "WalkGun", "IdleGun", SubResource( 173 ), "IdleGun", "Shoot", SubResource( 174 ), "Shoot", "IdleGun", SubResource( 175 ), "WalkGun", "Shoot", SubResource( 180 ), "Shoot", "WalkGun", SubResource( 181 ), "IdleGun", "Dead", SubResource( 189 ), "WalkGun", "Dead", SubResource( 190 ) ]
 start_node = "IdleGun"
-graph_offset = Vector2( 0, -32.5445 )
+graph_offset = Vector2( 0, 10.1885 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=179]
 
@@ -847,7 +866,6 @@ position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -891,11 +909,11 @@ monitorable = false
 position = Vector2( 36, -3.5 )
 shape = SubResource( 116 )
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitZone" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
 position = Vector2( -23, 3 )
 shape = SubResource( 115 )
 
@@ -920,4 +938,4 @@ position = Vector2( 60, -6 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="area_entered" from="HitZone" to="." method="_on_HitZone_area_entered"]

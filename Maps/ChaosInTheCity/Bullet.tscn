@@ -4,7 +4,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Bullet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2, 4 )
+extents = Vector2( 12.5, 3.5 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -27,7 +27,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 10, 4.5 )
+extents = Vector2( 7.5, 4.5 )
 
 [node name="Bullet" type="KinematicBody2D"]
 position = Vector2( 14, 0 )
@@ -36,13 +36,14 @@ collision_mask = 49
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -7, -4 )
+position = Vector2( 3.5, -4.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -5 )
 frames = SubResource( 5 )
 animation = "Bullet"
+frame = 2
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
@@ -54,7 +55,7 @@ collision_layer = 8
 collision_mask = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBullet"]
-position = Vector2( 1, -4 )
+position = Vector2( -1.5, -4 )
 shape = SubResource( 6 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

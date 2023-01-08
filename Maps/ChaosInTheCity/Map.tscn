@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/TileMap/Sushi/sushi-1.png" type="Texture" id=2]
@@ -20,6 +20,13 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Background/City-Background-Evening.png" type="Texture" id=18]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Add/Add1.png" type="Texture" id=19]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Add/Add2.png" type="Texture" id=20]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/3windows.png" type="Texture" id=21]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/Sushi.png" type="Texture" id=22]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/chair.png" type="Texture" id=23]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Ramen/Environment_Pub_02.png" type="Texture" id=24]
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=2]
 3/name = "Buildings.png 3"
@@ -88,9 +95,16 @@
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 29 )
 7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 29 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 7/z_index = 0
 8/name = "tileset.png 8"
 8/texture = ExtResource( 1 )
@@ -120,20 +134,6 @@
 9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
-13/name = "tileset.png 13"
-13/texture = ExtResource( 1 )
-13/tex_offset = Vector2( 0, 0 )
-13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 93, 4, 119, 92 )
-13/tile_mode = 0
-13/occluder_offset = Vector2( 0, 0 )
-13/navigation_offset = Vector2( 0, 0 )
-13/shape_offset = Vector2( 0, 0 )
-13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
-13/z_index = 0
 14/name = "tileset.png 14"
 14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
@@ -246,6 +246,188 @@
 23/shape_one_way_margin = 0.0
 23/shapes = [  ]
 23/z_index = 0
+24/name = "tileset.png 24"
+24/texture = ExtResource( 1 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 100, 22, 103, 22 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
+25/name = "tileset.png 25"
+25/texture = ExtResource( 1 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 178, 29, 0, 0 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
+26/name = "Buildings.png 26"
+26/texture = ExtResource( 10 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 161, 112, 46, 31 )
+26/tile_mode = 0
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shape_offset = Vector2( 0, 0 )
+26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+26/shape_one_way = false
+26/shape_one_way_margin = 0.0
+26/shapes = [  ]
+26/z_index = 0
+27/name = "Buildings.png 27"
+27/texture = ExtResource( 10 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 33, 143, 47, 18 )
+27/tile_mode = 0
+27/occluder_offset = Vector2( 0, 0 )
+27/navigation_offset = Vector2( 0, 0 )
+27/shape_offset = Vector2( 0, 0 )
+27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+27/shape_one_way = false
+27/shape_one_way_margin = 0.0
+27/shapes = [  ]
+27/z_index = 0
+28/name = "Buildings.png 28"
+28/texture = ExtResource( 10 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 159, 48, 34, 37 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape_one_way = false
+28/shape_one_way_margin = 0.0
+28/shapes = [  ]
+28/z_index = 0
+29/name = "Buildings.png 29"
+29/texture = ExtResource( 10 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 272, 48, 64, 47 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shape_offset = Vector2( 0, 0 )
+29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape_one_way = false
+29/shape_one_way_margin = 0.0
+29/shapes = [  ]
+29/z_index = 0
+30/name = "Buildings.png 30"
+30/texture = ExtResource( 10 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 224, 112, 16, 48 )
+30/tile_mode = 0
+30/occluder_offset = Vector2( 0, 0 )
+30/navigation_offset = Vector2( 0, 0 )
+30/shape_offset = Vector2( 0, 0 )
+30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape_one_way = false
+30/shape_one_way_margin = 0.0
+30/shapes = [  ]
+30/z_index = 0
+31/name = "Buildings.png 31"
+31/texture = ExtResource( 10 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 224, 111, 16, 34 )
+31/tile_mode = 0
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shape_offset = Vector2( 0, 0 )
+31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape_one_way = false
+31/shape_one_way_margin = 0.0
+31/shapes = [  ]
+31/z_index = 0
+32/name = "tileset.png 32"
+32/texture = ExtResource( 1 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 309, 240, 97, 80 )
+32/tile_mode = 0
+32/occluder_offset = Vector2( 0, 0 )
+32/navigation_offset = Vector2( 0, 0 )
+32/shape_offset = Vector2( 0, 0 )
+32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+32/shape_one_way = false
+32/shape_one_way_margin = 0.0
+32/shapes = [  ]
+32/z_index = 0
+34/name = "tileset.png 34"
+34/texture = ExtResource( 1 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 336, 31, 19, 33 )
+34/tile_mode = 0
+34/occluder_offset = Vector2( 0, 0 )
+34/navigation_offset = Vector2( 0, 0 )
+34/shape_offset = Vector2( 0, 0 )
+34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+34/shape_one_way = false
+34/shape_one_way_margin = 0.0
+34/shapes = [  ]
+34/z_index = 0
+35/name = "tileset.png 35"
+35/texture = ExtResource( 1 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 355, 31, 14, 33 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 0, 0 )
+35/navigation_offset = Vector2( 0, 0 )
+35/shape_offset = Vector2( 0, 0 )
+35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape_one_way = false
+35/shape_one_way_margin = 0.0
+35/shapes = [  ]
+35/z_index = 0
+36/name = "3windows.png 36"
+36/texture = ExtResource( 21 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 0, -2, 179, 59 )
+36/tile_mode = 0
+36/occluder_offset = Vector2( 0, 0 )
+36/navigation_offset = Vector2( 0, 0 )
+36/shape_offset = Vector2( 0, 0 )
+36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+36/shape_one_way = false
+36/shape_one_way_margin = 0.0
+36/shapes = [  ]
+36/z_index = 0
+37/name = "Sushi.png 37"
+37/texture = ExtResource( 22 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 1, 1, 103, 80 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 0, 0 )
+37/navigation_offset = Vector2( 0, 0 )
+37/shape_offset = Vector2( 0, 0 )
+37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape_one_way = false
+37/shape_one_way_margin = 0.0
+37/shapes = [  ]
+37/z_index = 0
 
 [sub_resource type="TileSet" id=11]
 0/name = "tileset.png 0"
@@ -316,6 +498,9 @@ points = PoolVector2Array( 96, 160, 0, 160, 0, 144.482, 96, 144.321 )
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
+
+[sub_resource type="StreamTexture" id=28]
+load_path = "res://.import/chair.png-0bb9678d92cdbafa63a0ba58d9d265bf.stex"
 
 [sub_resource type="TileSet" id=3]
 0/name = "antenna.png 0"
@@ -542,6 +727,34 @@ points = PoolVector2Array( 96, 160, 0, 160, 0, 144.482, 96, 144.321 )
 22/shape_one_way_margin = 0.0
 22/shapes = [  ]
 22/z_index = 0
+23/name = "chair.png 23"
+23/texture = SubResource( 28 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 3, 1, 14, 17 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shape_offset = Vector2( 0, 0 )
+23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape_one_way = false
+23/shape_one_way_margin = 0.0
+23/shapes = [  ]
+23/z_index = 0
+24/name = "chair.png 24"
+24/texture = ExtResource( 23 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 4, 0, 23, 30 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 19 )
@@ -556,6 +769,46 @@ animations = [ {
 "frames": [ SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "Neon",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 24 )
+region = Rect2( 35, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 24 )
+region = Rect2( 70, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 24 )
+region = Rect2( 105, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 24 )
+region = Rect2( 140, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 24 )
+region = Rect2( 175, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 24 )
+region = Rect2( 210, 0, 35, 57 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 24 )
+region = Rect2( 245, 0, 35, 57 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -643,7 +896,7 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_mask = 24
 format = 1
-tile_data = PoolIntArray( 655327, 14, 0, 655328, 14, 0, 655329, 14, 0, 655330, 14, 0, 655331, 14, 0, 655332, 14, 0, 655333, 14, 0, 655334, 14, 0, 655335, 14, 0, 655336, 14, 0, 655337, 14, 0, 655338, 14, 0, 655339, 14, 0, 655340, 14, 0, 655341, 14, 0, 655342, 14, 0, 655343, 14, 0, 655344, 14, 0, 655345, 14, 0, 655346, 14, 0, 655347, 14, 0, 655348, 14, 0, 655349, 14, 0, 655350, 14, 0, 655351, 14, 0, 655352, 14, 0, 851935, 17, 0, 851961, 17, 0, 983027, 7, 0, 983030, 7, 0, 983033, 17, 0, 1048563, 7, 0, 983057, 7, 0, 1114079, 17, 0, 1114080, 9, 0, 1114089, 7, 0, 1114092, 9, 0, 1114101, 7, 0, 1114105, 17, 0, 1048576, 5, 0, 1048578, 5, 0, 1048580, 5, 0, 1048582, 5, 0, 1048584, 5, 0, 1048592, 7, 0, 1048596, 7, 0, 1048597, 7, 0, 1048599, 7, 0, 1048603, 7, 0, 1048607, 7, 0, 1048611, 7, 0, 1048615, 7, 0, 1048618, 7, 0, 1179625, 7, 0, 1114112, 5, 0, 1114113, 6, 0, 1114114, 5, 0, 1114116, 5, 0, 1114117, 6, 0, 1114118, 5, 0, 1114120, 6, 0, 1114128, 7, 0, 1114132, 7, 0, 1114136, 7, 0, 1114140, 7, 0, 1114144, 7, 0, 1114148, 7, 0, 1114152, 7, 0, 1114154, 7, 0, 1245173, 7, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179656, 4, 0, 1179664, 7, 0, 1179668, 7, 0, 1310688, 7, 0, 1310692, 7, 0, 1310696, 7, 0, 1310700, 7, 0, 1310704, 7, 0, 1310707, 7, 0, 1310709, 7, 0, 1310715, 5, 0, 1310716, 6, 0, 1310717, 6, 0, 1310718, 5, 0, 1245184, 4, 0, 1245185, 4, 0, 1245186, 4, 0, 1245187, 4, 0, 1245190, 4, 0, 1245191, 4, 0, 1245192, 4, 0, 1245200, 7, 0, 1245203, 7, 0, 1245207, 7, 0, 1245211, 7, 0, 1245215, 7, 0, 1245219, 7, 0, 1245223, 7, 0, 1245226, 7, 0, 1376251, 5, 0, 1376252, 5, 0, 1376253, 5, 0, 1376254, 5, 0, 1376255, 5, 0, 1310721, 4, 0, 1310722, 4, 0, 1310723, 4, 0, 1310724, 4, 0, 1310725, 4, 0, 1310726, 4, 0, 1310728, 4, 0, 1441785, 17, 0, 1441787, 3, 0, 1441788, 4, 0, 1441789, 4, 0, 1441790, 3, 0, 1441791, 3, 0, 1376256, 4, 0, 1376257, 4, 0, 1376258, 4, 0, 1376259, 4, 0, 1376260, 4, 0, 1376261, 4, 0, 1376262, 4, 0, 1376264, 4, 0, 1507295, 17, 0, 1507296, 15, 0, 1507321, 17, 0, 1507323, 3, 0, 1507324, 4, 0, 1507325, 4, 0, 1441792, 3, 0, 1441800, 4, 0, 1572859, 3, 0, 1572860, 4, 0, 1572863, 4, 0, 1507328, 4, 0, 1507329, 22, 0, 1507336, 4, 0, 1638361, 19, 0, 1638364, 19, 0, 1638368, 7, 0, 1638372, 7, 0, 1638376, 18, 0, 1638378, 7, 0, 1638380, 9, 0, 1638388, 7, 0, 1638389, 7, 0, 1638395, 3, 0, 1638397, 23, 0, 1638399, 3, 0, 1572872, 4, 0, 1572880, 7, 0, 1572883, 7, 0, 1572887, 7, 0, 1572891, 7, 0, 1572895, 7, 0, 1572899, 7, 0, 1572903, 7, 0, 1572906, 7, 0, 1703914, 7, 0, 1703931, 3, 0, 1703935, 3, 0, 1769440, 8, 0, 1769444, 8, 0, 1769450, 8, 0, 1769460, 8, 0, 1769461, 8, 0, 1769467, 3, 0, 1769471, 3, 0, 1703944, 4, 0, 1703952, 8, 0, 1703956, 8, 0, 1703960, 8, 0, 1703964, 8, 0, 1703968, 8, 0, 1703972, 8, 0, 1703976, 8, 0, 1703978, 8, 0, 1900542, 4, 0 )
+tile_data = PoolIntArray( 655327, 14, 0, 655328, 14, 0, 655329, 14, 0, 655330, 14, 0, 655331, 14, 0, 655332, 14, 0, 655333, 14, 0, 655334, 14, 0, 655335, 14, 0, 655336, 14, 0, 655337, 14, 0, 655338, 14, 0, 655339, 14, 0, 655340, 14, 0, 655341, 14, 0, 655342, 14, 0, 655343, 14, 0, 655344, 14, 0, 655345, 14, 0, 655346, 14, 0, 655347, 14, 0, 655348, 14, 0, 655349, 14, 0, 655350, 14, 0, 655351, 14, 0, 655352, 14, 0, 720912, 26, 0, 720915, 26, 0, 720918, 26, 0, 720921, 26, 0, 720924, 26, 0, 720927, 26, 0, 720930, 26, 0, 720933, 26, 0, 720936, 26, 0, 720939, 26, 0, 851935, 17, 0, 851961, 17, 0, 851984, 17, 0, 852013, 17, 0, 983030, 7, 0, 983033, 17, 0, 1048546, 24, 0, 1048558, 24, 0, 983040, 5, 0, 983042, 5, 0, 983044, 5, 0, 983046, 5, 0, 983048, 5, 0, 983056, 17, 0, 983057, 7, 0, 983085, 17, 0, 1114079, 17, 0, 1114080, 9, 0, 1114089, 7, 0, 1114092, 9, 0, 1114101, 7, 0, 1114105, 17, 0, 1048576, 31, 0, 1048577, 3, 0, 1048578, 4, 0, 1048579, 3, 0, 1048580, 4, 0, 1048582, 3, 0, 1048584, 4, 0, 1048585, 31, 0, 1048592, 7, 0, 1048595, 36, 0, 1048601, 33, 0, 1048606, 34, 0, 1048607, 34, 0, 1048608, 34, 0, 1048609, 36, 0, 1048620, 34, 0, 1048621, 17, 0, 1179625, 7, 0, 1114128, 17, 0, 1114142, 34, 0, 1114143, 34, 0, 1114144, 34, 0, 1114156, 34, 0, 1114157, 17, 0, 1245173, 7, 0, 1179648, 4, 0, 1179650, 29, 0, 1179654, 4, 0, 1179655, 31, 0, 1179656, 4, 0, 1179657, 31, 0, 1179664, 17, 0, 1179665, 35, 0, 1179666, 35, 0, 1179678, 34, 0, 1179679, 34, 0, 1179680, 34, 0, 1179692, 34, 0, 1310688, 7, 0, 1310692, 7, 0, 1310696, 7, 0, 1310700, 7, 0, 1310704, 7, 0, 1310707, 7, 0, 1310709, 7, 0, 1245184, 31, 0, 1245190, 3, 0, 1245192, 4, 0, 1245193, 31, 0, 1245200, 17, 0, 1245201, 7, 0, 1245203, 7, 0, 1245207, 7, 0, 1245211, 7, 0, 1245215, 7, 0, 1245217, 7, 0, 1245221, 7, 0, 1245225, 7, 0, 1245228, 34, 0, 1376251, 5, 0, 1376252, 5, 0, 1376253, 5, 0, 1376254, 5, 0, 1376255, 5, 0, 1310720, 4, 0, 1310726, 3, 0, 1310728, 4, 0, 1310729, 31, 0, 1441785, 17, 0, 1441787, 31, 0, 1441788, 4, 0, 1441789, 4, 0, 1441790, 3, 0, 1441791, 3, 0, 1376256, 3, 0, 1376258, 4, 0, 1376260, 4, 0, 1376262, 4, 0, 1376264, 4, 0, 1376272, 17, 0, 1376301, 17, 0, 1507295, 17, 0, 1507296, 15, 0, 1507321, 17, 0, 1507323, 3, 0, 1507324, 4, 0, 1507325, 4, 0, 1441800, 4, 0, 1441801, 31, 0, 1441808, 17, 0, 1441827, 37, 0, 1441837, 17, 0, 1572859, 31, 0, 1572860, 4, 0, 1572863, 4, 0, 1507328, 4, 0, 1507329, 22, 0, 1507336, 4, 0, 1507337, 31, 0, 1507349, 28, 0, 1507352, 32, 0, 1638361, 19, 0, 1638364, 19, 0, 1638368, 7, 0, 1638372, 7, 0, 1638376, 18, 0, 1638378, 7, 0, 1638380, 9, 0, 1638388, 7, 0, 1638389, 7, 0, 1638395, 31, 0, 1638397, 23, 0, 1638399, 3, 0, 1572872, 4, 0, 1572880, 7, 0, 1572881, 7, 0, 1572887, 34, 0, 1572894, 7, 0, 1572898, 34, 0, 1572905, 34, 0, 1572906, 7, 0, 1703914, 7, 0, 1703931, 3, 0, 1703935, 3, 0, 1638409, 30, 0, 1638421, 34, 0, 1638422, 34, 0, 1638430, 7, 0, 1638434, 34, 0, 1638441, 34, 0, 1769440, 8, 0, 1769444, 8, 0, 1769450, 8, 0, 1769460, 8, 0, 1769461, 8, 0, 1769467, 3, 0, 1769471, 3, 0, 1703944, 3, 0, 1703946, 26, 0, 1703948, 26, 0, 1703952, 8, 0, 1703956, 8, 0, 1703966, 8, 0, 1703970, 8, 0, 1703972, 8, 0, 1703973, 8, 0, 1703974, 8, 0, 1703978, 8, 0, 1900542, 4, 0 )
 
 [node name="Buildings1layer" type="TileMap" parent="Buildings"]
 show_behind_parent = true
@@ -665,22 +918,29 @@ position = Vector2( 536, 66 )
 tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 786413, 1, 0, 786427, 1, 0, 720902, 1, 0, 720917, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983020, 19, 0, 917508, 10, 0, 917533, 22, 0, 1048556, 19, 0, 1114092, 19, 0, 1179628, 19, 0 )
+tile_data = PoolIntArray( 786413, 1, 0, 786427, 1, 0, 720902, 1, 0, 720917, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983020, 19, 0, 917508, 10, 0, 917521, 24, 0, 917522, 24, 0, 917523, 24, 0, 917533, 22, 0, 1048556, 19, 0, 1114092, 19, 0, 1179628, 19, 0 )
 
 [node name="Add" type="AnimatedSprite" parent="."]
-position = Vector2( 591, 287 )
+position = Vector2( 591, 271 )
 scale = Vector2( 0.880952, 0.880952 )
 frames = SubResource( 27 )
 animation = "Neon"
-frame = 1
 speed_scale = 2.0
 playing = true
 
+[node name="Ramen" type="AnimatedSprite" parent="."]
+position = Vector2( 1204, 461 )
+frames = SubResource( 38 )
+animation = "Idle"
+frame = 1
+playing = true
+
 [node name="Sushi" type="AnimatedSprite" parent="."]
-position = Vector2( 820, 378 )
+position = Vector2( 1025, 394 )
 scale = Vector2( 1.72222, 1.69399 )
 frames = SubResource( 5 )
 animation = "Idle"
+frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -689,17 +949,18 @@ position = Vector2( 173.15, 365.316 )
 scale = Vector2( -1.03035, -0.903819 )
 frames = SubResource( 10 )
 animation = "Idle"
+frame = 1
 speed_scale = 0.4
 playing = true
 flip_h = true
 flip_v = true
 
 [node name="Dog" type="AnimatedSprite" parent="."]
-position = Vector2( 472, 358 )
+position = Vector2( 471, 373 )
 scale = Vector2( 1.08333, 1.08333 )
 frames = SubResource( 24 )
 animation = "Bark"
-frame = 2
+frame = 6
 playing = true
 flip_h = true
 
