@@ -149,6 +149,7 @@ func get_input():
 		$AnimationTreeFighter.active = true
 
 	if Input.is_action_pressed("shoot"):
+		$Gun.play()
 		self.state = States.SHOOT
 
 # Physics processing.
@@ -184,6 +185,7 @@ func set_state(new_state):
 		States.KICK:
 			animation_state_nogun.travel("Kick")
 		States.PUNCH:
+			$Punch.play()
 			animation_state_nogun.travel("Punch")
 		States.WALK:
 			animation_state_nogun.travel("Walk")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/ExplodingBarrel/exploding_barrel.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/ExplodingBarrel.gd" type="Script" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/ExplodingBarrel/barrel.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/ExplodingBarrel/Explosion 19 (1).wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 1.5 )
@@ -87,6 +88,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Exploding" ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaExplodingBarrel:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AreaExplodingBarrel:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=43]
 resource_name = "Idle"
@@ -107,8 +132,8 @@ tracks/0/keys = {
 extents = Vector2( 24, 34.25 )
 
 [node name="ExplodingBarrel" type="Area2D"]
-collision_layer = 16
-collision_mask = 9
+collision_layer = 32
+collision_mask = 25
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -129,10 +154,13 @@ anims/Idle = SubResource( 43 )
 [node name="AreaExplodingBarrel" type="Area2D" parent="."]
 position = Vector2( 0, 42 )
 collision_layer = 32
-collision_mask = 8
+collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExplodingBarrel"]
 position = Vector2( 21, -49 )
 shape = SubResource( 15 )
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="area_entered" from="AreaExplodingBarrel" to="." method="_on_AreaExplodingBarrel_area_entered"]

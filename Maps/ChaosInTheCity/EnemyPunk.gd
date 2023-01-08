@@ -25,9 +25,10 @@ func _physics_process(delta: float) -> void:
 			var collision = move_and_collide(direction)
 			if collision != null:
 				if collision.collider.name == "FighterPlayer" :
-						collision.collider.is_hit(10)
+						$AnimationPlayer.play("Attack")
+#						collision.collider.is_hit(10)
 				else:
-						direction = target
+						direction = Vector2(-1,-1)
 						scale.x = 1
 			if target:
 					var target_direction = (target.transform.origin - self.transform.origin).normalized();
@@ -119,6 +120,7 @@ func _on_HitBox_body_entered(body):
 func _on_HitBox_area_entered(area):
 	if area.get_name() == "PunchZone":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
 		self.hit()
 	if area.get_name() == "KickZone":
 		$AnimationPlayer.play("Hurt")

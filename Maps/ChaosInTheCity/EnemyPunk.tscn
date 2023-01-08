@@ -1,10 +1,11 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/attack.png" type="Texture" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/hurt.png" type="Texture" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/walk.png" type="Texture" id=4]
 [ext_resource path="res://Maps/ChaosInTheCity/EnemyPunk.gd" type="Script" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/body_hit_small_11.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 24.5, 3 )
@@ -152,7 +153,7 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=30]
 states/Attack/node = SubResource( 23 )
-states/Attack/position = Vector2( 369, 215 )
+states/Attack/position = Vector2( 260, 221 )
 states/Dead/node = SubResource( 47 )
 states/Dead/position = Vector2( 918, 475.56 )
 states/Hurt/node = SubResource( 32 )
@@ -163,7 +164,7 @@ states/Walk/node = SubResource( 25 )
 states/Walk/position = Vector2( 660, 215 )
 transitions = [ "Idle", "Attack", SubResource( 26 ), "Attack", "Idle", SubResource( 27 ), "Idle", "Walk", SubResource( 28 ), "Walk", "Idle", SubResource( 29 ), "Idle", "Hurt", SubResource( 33 ), "Hurt", "Idle", SubResource( 34 ), "Walk", "Attack", SubResource( 35 ), "Attack", "Walk", SubResource( 36 ), "Hurt", "Dead", SubResource( 48 ), "Walk", "Hurt", SubResource( 50 ), "Hurt", "Walk", SubResource( 51 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -209.337, 156.149 )
+graph_offset = Vector2( -209.337, 164.333 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
@@ -285,7 +286,7 @@ tracks/0/keys = {
 extents = Vector2( 20.5, 22.5 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 279.5, 29.5 )
+extents = Vector2( 279.5, 41 )
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 17, 25 )
@@ -295,7 +296,7 @@ extents = Vector2( 20.5, 10 )
 
 [node name="EnemyPunk" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 9
+collision_mask = 33
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -306,7 +307,6 @@ shape = SubResource( 17 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -333,10 +333,10 @@ shape = SubResource( 18 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 9
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2( -3, 9 )
+position = Vector2( -3, 11 )
 shape = SubResource( 40 )
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -359,6 +359,9 @@ shape = SubResource( 42 )
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
