@@ -18,3 +18,5 @@ func _on_AreaBullet_area_entered(area):
 		queue_free()
 	if area.get_name() == "AreaExplodingBarrel":
 		queue_free()
+	if area.get_name() == "Barrel":
+		queue_free()

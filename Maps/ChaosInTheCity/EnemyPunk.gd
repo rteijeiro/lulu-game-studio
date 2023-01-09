@@ -19,7 +19,7 @@ var target = null
 
 func _physics_process(delta: float) -> void:
 
-	if state != States.DEAD:
+	if state != States.HURT:
 		if state != States.ATTACK:
 			$AnimatedSprite.play("Walk")
 			var collision = move_and_collide(direction)
@@ -83,16 +83,19 @@ func attacking():
 	$Timer.start(3)
 	self.state = States.ATTACK
 	
+	
 func _on_Timer_timeout():
 	is_attacking = false 
 
 func hit():
 	self.state = States.HURT
+	$AnimationPlayer.play("Hurt")
 	life -= 1
 	print(life)
 	if life <= 0:
 		$AnimationPlayer.play("Dead")
-		self.state = States.DEAD
+		$Dead.play() 
+
 
 
 func is_not_hit():
@@ -102,6 +105,7 @@ func is_not_hit():
 func _on_AttackArea_body_entered(body):
 	if body.name == "FighterPlayer":
 		self.state = States.ATTACK
+		$Punch.play()
 
 func _on_DetectionArea_body_entered(body):
 	if body.name == "FighterPlayer":
@@ -112,11 +116,6 @@ func _on_DetectionArea_body_exited(body):
 		target = null
 		self.state = States.WALK
 
-func _on_HitBox_body_entered(body):
-	if body.name == "Bullet":
-		self.state = States.HURT
-		self.hit()
-
 func _on_HitBox_area_entered(area):
 	if area.get_name() == "PunchZone":
 		$AnimationPlayer.play("Hurt")
@@ -124,10 +123,18 @@ func _on_HitBox_area_entered(area):
 		self.hit()
 	if area.get_name() == "KickZone":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
+		self.hit()
+	if area.get_name() == "AreaBullet":
+		$Hurt.play()
 		self.hit()
 
 
-#func death():
-#	if life == 0:
-#		$AnimationPlayer.play("Dead")
-#		queue_free()
+func death():
+	self.state = States.DEAD
+	queue_free()
+		
+
+	
+
+

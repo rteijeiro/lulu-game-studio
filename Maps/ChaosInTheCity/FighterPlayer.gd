@@ -142,14 +142,14 @@ func get_input():
 	
 #Change AnimationTrees:
 	if Input.is_action_just_pressed("gun"):
+		$Reload.play()
 		$AnimationTreeGun.active = true
 		$AnimationTreeFighter.active = false
 	if Input.is_action_pressed("fight"):
 		$AnimationTreeGun.active = false
 		$AnimationTreeFighter.active = true
-
 	if Input.is_action_pressed("shoot"):
-		$Gun.play()
+		$Shoot.play()
 		self.state = States.SHOOT
 
 # Physics processing.
@@ -183,6 +183,7 @@ func set_state(new_state):
 		States.JUMPKICK:
 			animation_state_nogun.travel("JumpKick")
 		States.KICK:
+			$Kick.play()
 			animation_state_nogun.travel("Kick")
 		States.PUNCH:
 			$Punch.play()
@@ -247,14 +248,12 @@ func is_hit(hurt):
 func is_not_hit():
 		state = States.IDLE
 
-
 func get_life(value):
 	life += value
 	if life > 5:
 		life = 5
 		
 #	hud.update_life(life)
-
 
 func _on_HitZone_area_entered(area):
 	if area.get_name() == "PunchArea":
