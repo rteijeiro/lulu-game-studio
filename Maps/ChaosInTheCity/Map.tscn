@@ -546,7 +546,7 @@ points = PoolVector2Array( 0, 0, 160, 0, 160, 64, 0, 64 )
 0/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=51]
-points = PoolVector2Array( 0, 130, 96, 131, 96, 132, 0, 131 )
+points = PoolVector2Array( 0, 150.821, 96, 150.71, 96, 144.092, 0, 144.54 )
 
 [sub_resource type="TileSet" id=1]
 4/name = "tileset.png 4"
@@ -1078,7 +1078,7 @@ playing = true
 position = Vector2( 1204, 461 )
 frames = SubResource( 38 )
 animation = "Idle"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Sushi" type="AnimatedSprite" parent="."]
@@ -1086,7 +1086,6 @@ position = Vector2( 1025, 394 )
 scale = Vector2( 1.72222, 1.69399 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -1106,7 +1105,7 @@ position = Vector2( 471, 373 )
 scale = Vector2( 1.08333, 1.08333 )
 frames = SubResource( 24 )
 animation = "Bark"
-frame = 10
+frame = 7
 playing = true
 flip_h = true
 

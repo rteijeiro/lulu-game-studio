@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemySoldier/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemySoldier/walk.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/man_grunt_6.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17, 1.63636 )
+extents = Vector2( 18.1818, 3.63636 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
@@ -28,14 +28,6 @@ region = Rect2( 192, 0, 96, 63 )
 atlas = ExtResource( 3 )
 region = Rect2( 288, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 96, 63 )
-
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 0, 96, 63 )
-
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 5 )
 region = Rect2( 192, 0, 96, 63 )
@@ -44,11 +36,11 @@ region = Rect2( 192, 0, 96, 63 )
 atlas = ExtResource( 5 )
 region = Rect2( 288, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=56]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 5 )
 region = Rect2( 288, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 5 )
 region = Rect2( 288, 0, 96, 63 )
 
@@ -99,10 +91,10 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 60 ), SubResource( 61 ) ],
 "loop": false,
 "name": "Dead",
-"speed": 8.0
+"speed": 2.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 33 ) ],
 "loop": false,
@@ -314,8 +306,8 @@ graph_offset = Vector2( 0, 10.3876 )
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 18, 24.5 )
 
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 269, 32.5 )
+[sub_resource type="CircleShape2D" id=59]
+radius = 158.192
 
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 17.5, 22 )
@@ -330,7 +322,7 @@ collision_mask = 97
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 24.3636 )
+position = Vector2( -1.81818, 23.6364 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -370,7 +362,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2( 0, -5.5 )
-shape = SubResource( 46 )
+shape = SubResource( 59 )
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 16
@@ -383,6 +375,8 @@ shape = SubResource( 45 )
 [node name="PunchArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
 position = Vector2( -44.5, -16 )

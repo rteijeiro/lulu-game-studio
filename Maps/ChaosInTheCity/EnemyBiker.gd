@@ -79,7 +79,6 @@ func check_direction():
 		$PunchArea/CollisionShape2D.position.x = -44.5
 	
 func attacking():
-	$Punch.play()
 	is_attacking = true
 	$Timer.start(3)
 	self.state = States.ATTACK
@@ -95,7 +94,8 @@ func hit():
 	print(life)
 	if life <= 0:
 		$AnimationPlayer.play("Dead")
-		$Dead.play()
+		$Dead.play() 
+
 
 
 func is_not_hit():
@@ -105,7 +105,7 @@ func is_not_hit():
 func _on_AttackArea_body_entered(body):
 	if body.name == "FighterPlayer":
 		self.state = States.ATTACK
-		
+		$Punch.play()
 
 func _on_DetectionArea_body_entered(body):
 	if body.name == "FighterPlayer":
@@ -132,7 +132,10 @@ func _on_HitBox_area_entered(area):
 		$Hurt.play()
 		self.hit()
 
+
 func death():
 	self.state = States.DEAD
 	queue_free()
+		
 
+	

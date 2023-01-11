@@ -4,19 +4,20 @@ class_name FighterPlayer
 # Movement.
 export (int) var speed = 80
 export (int) var speed_y = 50
-export (int) var jump_speed = -500
+export (int) var speed_jump = 500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
 var life:int = 5
 var direction:Vector2 = Vector2.ZERO
 
-# HUD.
-#var hud = null
+#Hud.
+var hud = null
 
+#Movement through Y axis
 var motion= Vector2()
 var z = 0
-var GRAVITY = 5
+
 
 # States.
 enum States {
@@ -45,9 +46,9 @@ onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
 ## Actions.
 var fighter_is_jumping:bool = false
 
-#func _ready() -> void:  
-#	randomize()
-#	hud = get_parent().get_node("HUD")	    
+func _ready() -> void:  
+	randomize()
+	hud = get_parent().get_node("Hud")  
 
 
 #Get input from controller.
@@ -56,12 +57,14 @@ func get_input():
 	velocity.y = 0
 	motion.y = 0
 	z = 0
+
 	
 	# Moving Right.
 	if Input.is_action_pressed("right") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 			$AnimatedSprite.flip_h = false
 			$KickZone/CollisionShape2D.position.x = 33
 			$PunchZone/CollisionShape2D.position.x = 36
+			$JumpkickZone/CollisionShape2D.position.x = 2.5
 			velocity.x += speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
@@ -72,16 +75,17 @@ func get_input():
 
 	# Moving Left.
 	if Input.is_action_pressed("left") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
-		$AnimatedSprite.flip_h = true
-		$KickZone/CollisionShape2D.position.x = -66
-		$PunchZone/CollisionShape2D.position.x = -72
-		velocity.x -= speed
-		if !fighter_is_jumping:
-			self.state = States.WALK
-			if animation_state_gun:
-					$AnimationPlayer.play("WalkGun")
-			if animation_state_nogun:
-					$AnimationPlayer.play("Walk")
+			$AnimatedSprite.flip_h = true
+			$KickZone/CollisionShape2D.position.x = -66
+			$PunchZone/CollisionShape2D.position.x = -72
+			$JumpkickZone/CollisionShape2D.position.x = -40
+			velocity.x -= speed
+			if !fighter_is_jumping:
+				self.state = States.WALK
+				if animation_state_gun:
+						$AnimationPlayer.play("WalkGun")
+				if animation_state_nogun:
+						$AnimationPlayer.play("Walk")
 
 	#Moving Up.
 	if Input.is_action_pressed("up") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
@@ -108,14 +112,13 @@ func get_input():
 		if is_on_floor():
 			self.state = States.IDLE
 			fighter_is_jumping = false
-			z = 0
-			motion.y = 0
+
 		if fighter_is_jumping == true:
-			z += GRAVITY
-			motion.y = z
-		else:
 			self.state = States.JUMP
 
+		else:
+			self.state = States.JUMP
+#
 	# Stop Jumping.
 	if Input.is_action_just_released("jump"):
 		self.state = States.IDLE
@@ -167,6 +170,7 @@ func _physics_process(delta):
 		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT:
 		self.state = States.IDLE
 
+	
 
 # States setter.
 func set_state(new_state):
@@ -235,11 +239,9 @@ func shoot():
 
 
 #Is Hit.
-func is_hit(hurt):
+func hit(hurt):
 	if state != States.DEAD and life > 0:
 		self.state = States.HURT
-		life -= hurt
-#		hud.update_life(life)
 	if life <= 0:
 		self.state = States.DEAD
 
@@ -248,13 +250,32 @@ func is_hit(hurt):
 func is_not_hit():
 		state = States.IDLE
 
-func get_life(value):
-	life += value
-	if life > 5:
-		life = 5
-		
+#func get_life(value):
+#	life += value
+#	if life > 5:
+#		life = 5
+#
 #	hud.update_life(life)
+
 
 func _on_HitZone_area_entered(area):
 	if area.get_name() == "PunchArea":
-		self.state = States.HURT
+		$AnimationPlayer.play("Hurt")
+		life -= 1
+		hud.update_life(life)
+		print(life)
+	if life <= 0:
+		self.state = States.DEAD
+
+
+#Jump and Kick at the same time
+var is_jumpkick setget set_jumpkick, get_jumpkick
+
+func set_jumpkick(value):
+	animation_state_nogun.set("parameters/conditions/is_jumpkick/advance_condition", value)
+func get_jumpkick():
+	animation_state_nogun.get("parameters/conditios/is_jumpkick/advance_condition")
+
+
+
+
