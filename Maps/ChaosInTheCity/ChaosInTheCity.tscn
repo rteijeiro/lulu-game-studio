@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Maps/ChaosInTheCity/EnemyPunk.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Maps/ChaosInTheCity/EnemySoldier.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Maps/ChaosInTheCity/EnemyBiker.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Maps/ChaosInTheCity/Barrel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Maps/ChaosInTheCity/ExplodingBarrel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Maps/ChaosInTheCity/AcidBarrel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyPunk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemySoldier.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyBiker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/Barrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/ExplodingBarrel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/AcidBarrel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Maps/ChaosInTheCity/Hud.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Maps/ChaosInTheCity/FinalBoss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/FinalBoss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/FirstAidKit.tscn" type="PackedScene" id=11]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -18,6 +19,9 @@ position = Vector2( -2, -8 )
 
 [node name="Characters" type="YSort" parent="."]
 unique_name_in_owner = true
+
+[node name="FirstAidKit" parent="Characters" instance=ExtResource( 11 )]
+position = Vector2( 376, 542 )
 
 [node name="AcidBarrel" parent="Characters" instance=ExtResource( 8 )]
 position = Vector2( 1471, 588 )
@@ -37,7 +41,7 @@ position = Vector2( 763, 538 )
 position = Vector2( 1133, 538 )
 
 [node name="EnemyPunk3" parent="Characters" instance=ExtResource( 3 )]
-position = Vector2( 201, 504 )
+position = Vector2( 223, 502 )
 
 [node name="EnemyBiker" parent="Characters" instance=ExtResource( 5 )]
 position = Vector2( 578, 525 )
@@ -60,4 +64,4 @@ position = Vector2( 1787, 562 )
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 
 [node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 44, 559 )
+position = Vector2( 34, 568 )

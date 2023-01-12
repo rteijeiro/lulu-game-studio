@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Gun/Shoot.wav" type="AudioStream" id=15]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/kick_short_whoosh_23.wav" type="AudioStream" id=16]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Gun/Reload.wav" type="AudioStream" id=17]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/damage_3_karen.wav" type="AudioStream" id=18]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/damage_4_karen.wav" type="AudioStream" id=19]
 
 [sub_resource type="AtlasTexture" id=182]
 atlas = ExtResource( 2 )
@@ -853,7 +855,7 @@ extents = Vector2( 22.5, 8 )
 extents = Vector2( 8, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=115]
-extents = Vector2( 16, 21.5 )
+extents = Vector2( 16, 24.25 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 11, 2.5 )
@@ -920,7 +922,7 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
-position = Vector2( -23, 3 )
+position = Vector2( -23, 5.75 )
 shape = SubResource( 115 )
 
 [node name="KickZone" type="Area2D" parent="."]
@@ -958,6 +960,9 @@ position = Vector2( 60, -6 )
 stream = ExtResource( 14 )
 volume_db = -14.328
 
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+
 [node name="Shoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
 pitch_scale = 0.74
@@ -968,6 +973,9 @@ stream = ExtResource( 16 )
 [node name="Reload" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
 volume_db = -3.817
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
 
 [connection signal="area_entered" from="HitZone" to="." method="_on_HitZone_area_entered"]
 [connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]

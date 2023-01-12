@@ -3,7 +3,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/attack.png" type="Texture" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/hurt.png" type="Texture" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemyPunk/walk.png" type="Texture" id=4]
-[ext_resource path="res://Maps/ChaosInTheCity/EnemyPunk.gd" type="Script" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyPunk.gd" type="Script" id=5]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/body_hit_small_11.wav" type="AudioStream" id=6]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/Punch.wav" type="AudioStream" id=7]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/man_grunt_6.wav" type="AudioStream" id=8]
@@ -208,6 +208,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AttackArea:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackArea:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=49]
 resource_name = "Dead"
@@ -300,16 +324,16 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 19, 25 )
+extents = Vector2( 14.0909, 23.5455 )
 
 [sub_resource type="CircleShape2D" id=56]
 radius = 169.074
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 17, 25 )
+extents = Vector2( 17, 10 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 20.5, 10 )
+extents = Vector2( 10.3182, 6.81818 )
 
 [node name="EnemyPunk" type="KinematicBody2D"]
 scale = Vector2( 1.1, 1.1 )
@@ -325,7 +349,7 @@ shape = SubResource( 17 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 speed_scale = 0.9
 playing = true
 
@@ -348,7 +372,7 @@ collision_layer = 16
 collision_mask = 73
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( -6, 3 )
+position = Vector2( -5, 4.45455 )
 shape = SubResource( 18 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -362,17 +386,21 @@ shape = SubResource( 56 )
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( -47, 7 )
+position = Vector2( -47.2727, 0.909091 )
 shape = SubResource( 41 )
 
 [node name="PunchArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
-position = Vector2( -46.5, 0 )
+position = Vector2( -56.6818, -0.454546 )
 shape = SubResource( 42 )
 
 [node name="Timer" type="Timer" parent="."]

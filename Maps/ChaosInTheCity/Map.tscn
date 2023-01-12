@@ -1085,6 +1085,7 @@ position = Vector2( 591, 271 )
 scale = Vector2( 0.880952, 0.880952 )
 frames = SubResource( 27 )
 animation = "Neon"
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -1092,7 +1093,7 @@ playing = true
 position = Vector2( 1204, 461 )
 frames = SubResource( 38 )
 animation = "Idle"
-frame = 3
+frame = 6
 playing = true
 
 [node name="Sushi" type="AnimatedSprite" parent="."]
@@ -1100,6 +1101,7 @@ position = Vector2( 1025, 394 )
 scale = Vector2( 1.72222, 1.69399 )
 frames = SubResource( 5 )
 animation = "Idle"
+frame = 1
 speed_scale = 0.2
 playing = true
 

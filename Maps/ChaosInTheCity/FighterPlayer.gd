@@ -245,34 +245,36 @@ func hit(hurt):
 	if life <= 0:
 		self.state = States.DEAD
 
-
 #Not hit.
 func is_not_hit():
 		state = States.IDLE
 
-#func get_life(value):
-#	life += value
-#	if life > 5:
-#		life = 5
-#
-#	hud.update_life(life)
-
 
 func _on_HitZone_area_entered(area):
 	if area.get_name() == "PunchArea":
-		$AnimationPlayer.play("Hurt")
-		life -= 1
-		hud.update_life(life)
-		print(life)
-	if life <= 0:
-		self.state = States.DEAD
+		if life > 0:
+			$AnimationPlayer.play("Hurt")
+			life -= 1
+			$Hurt.play()
+			hud.update_life(life)
+			print(life)
+		if life <= 0:
+			$Dead.play()
+			self.state = States.DEAD
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
 	if area.get_name() == "WeaponArea":
-		$AnimationPlayer.play("Hurt")
-		life -= 1
-		hud.update_life(life)
-	if life <=0:
-		self.state = States.DEAD
-
+		if life > 0:
+			$AnimationPlayer.play("Hurt")
+			life -= 1
+			$Hurt.play()
+			hud.update_life(life)
+		if life <=0:
+			$Dead.play()
+			self.state = States.DEAD
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
+	if area.get_name() == "FirstAidKit":
+			life += 5
+			hud.update_life(life)
 
 #Jump and Kick at the same time
 var is_jumpkick setget set_jumpkick, get_jumpkick
