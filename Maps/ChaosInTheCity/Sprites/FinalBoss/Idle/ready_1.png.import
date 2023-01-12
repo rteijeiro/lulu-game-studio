@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pizza.png-e362078811fbef9c7742d2e25ad5f683.stex"
+path="res://.import/ready_1.png-16e3828fa8377f7c655da1e6d7913181.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/Life/Pizza.png"
-dest_files=[ "res://.import/Pizza.png-e362078811fbef9c7742d2e25ad5f683.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_1.png"
+dest_files=[ "res://.import/ready_1.png-16e3828fa8377f7c655da1e6d7913181.stex" ]
 
 [params]
 

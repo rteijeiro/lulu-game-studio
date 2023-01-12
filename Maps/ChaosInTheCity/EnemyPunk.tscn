@@ -166,7 +166,7 @@ states/Walk/node = SubResource( 25 )
 states/Walk/position = Vector2( 660, 215 )
 transitions = [ "Idle", "Attack", SubResource( 26 ), "Attack", "Idle", SubResource( 27 ), "Idle", "Walk", SubResource( 28 ), "Walk", "Idle", SubResource( 29 ), "Idle", "Hurt", SubResource( 33 ), "Hurt", "Idle", SubResource( 34 ), "Walk", "Attack", SubResource( 35 ), "Attack", "Walk", SubResource( 36 ), "Walk", "Hurt", SubResource( 50 ), "Hurt", "Walk", SubResource( 51 ), "Hurt", "Dead", SubResource( 55 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -209.337, 258.497 )
+graph_offset = Vector2( -209.337, 121.477 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
@@ -325,6 +325,7 @@ shape = SubResource( 17 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 2
 speed_scale = 0.9
 playing = true
 
@@ -369,8 +370,6 @@ shape = SubResource( 41 )
 [node name="PunchArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
 position = Vector2( -46.5, 0 )

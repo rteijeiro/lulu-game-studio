@@ -266,6 +266,12 @@ func _on_HitZone_area_entered(area):
 		print(life)
 	if life <= 0:
 		self.state = States.DEAD
+	if area.get_name() == "WeaponArea":
+		$AnimationPlayer.play("Hurt")
+		life -= 1
+		hud.update_life(life)
+	if life <=0:
+		self.state = States.DEAD
 
 
 #Jump and Kick at the same time

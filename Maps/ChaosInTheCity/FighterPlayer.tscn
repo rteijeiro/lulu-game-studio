@@ -753,10 +753,6 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=186]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=187]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=192]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=193]
@@ -770,13 +766,19 @@ resource_name = "is_jumpkick"
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=205]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=206]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=73]
 states/Dead/node = SubResource( 185 )
-states/Dead/position = Vector2( 1166.6, 6.423 )
+states/Dead/position = Vector2( 1437.6, 105.423 )
 states/DiveKick/node = SubResource( 76 )
 states/DiveKick/position = Vector2( 624, 33 )
 states/Hurt/node = SubResource( 191 )
-states/Hurt/position = Vector2( 1254.6, 123.791 )
+states/Hurt/position = Vector2( 1151.6, 110.791 )
 states/Idle/node = SubResource( 77 )
 states/Idle/position = Vector2( 790, 238 )
 states/Jab/node = SubResource( 78 )
@@ -790,10 +792,10 @@ states/Kick/position = Vector2( 980, 401 )
 states/Punch/node = SubResource( 57 )
 states/Punch/position = Vector2( 790, 401 )
 states/Walk/node = SubResource( 93 )
-states/Walk/position = Vector2( 1046, 238 )
-transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Dead", SubResource( 186 ), "Walk", "Dead", SubResource( 187 ), "Idle", "Hurt", SubResource( 192 ), "Hurt", "Idle", SubResource( 193 ), "Hurt", "Dead", SubResource( 196 ), "Jump", "JumpKick", SubResource( 203 ) ]
+states/Walk/position = Vector2( 1151.6, 233 )
+transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Hurt", SubResource( 192 ), "Hurt", "Idle", SubResource( 193 ), "Hurt", "Dead", SubResource( 196 ), "Jump", "JumpKick", SubResource( 203 ), "Walk", "Hurt", SubResource( 205 ), "Hurt", "Walk", SubResource( 206 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 181.277, 69.4306 )
+graph_offset = Vector2( 396.393, -154.09 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
