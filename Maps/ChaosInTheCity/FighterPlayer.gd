@@ -250,6 +250,7 @@ func is_not_hit():
 		state = States.IDLE
 
 
+
 func _on_HitZone_area_entered(area):
 	if area.get_name() == "PunchArea":
 		if life > 0:

@@ -150,30 +150,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("AttackArea:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AttackArea:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
 
 [sub_resource type="Animation" id=35]
 resource_name = "Dead"
@@ -327,10 +303,10 @@ extents = Vector2( 13.75, 20.4167 )
 radius = 185.12
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 14.1667, 8.75 )
+extents = Vector2( 26.6667, 25.4167 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 6.24998, 7.08333 )
+extents = Vector2( 21.6667, 11.25 )
 
 [node name="EnemyBiker" type="KinematicBody2D"]
 scale = Vector2( 1.2, 1.2 )
@@ -366,8 +342,8 @@ active = true
 parameters/playback = SubResource( 18 )
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 73
+collision_layer = 16384
+collision_mask = 32833
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( -3.75, -10.4167 )
@@ -383,21 +359,19 @@ shape = SubResource( 28 )
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( -34.1667, -13.75 )
+position = Vector2( -46.6667, -2.91667 )
 shape = SubResource( 29 )
 
 [node name="PunchArea" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 9
+collision_layer = 4096
+collision_mask = 8192
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
-position = Vector2( -42.0833, -13.75 )
+position = Vector2( -43.3333, -12.9167 )
 shape = SubResource( 30 )
 
 [node name="Timer" type="Timer" parent="."]

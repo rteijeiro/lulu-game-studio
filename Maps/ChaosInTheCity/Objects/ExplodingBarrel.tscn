@@ -5,7 +5,6 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/ExplodingBarrel/barrel.png" type="Texture" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/ExplodingBarrel/Explosion 19 (1).wav" type="AudioStream" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.5, 5.5 )
 
@@ -134,7 +133,7 @@ extents = Vector2( 22.5, 28.5 )
 
 [node name="ExplodingBarrel" type="Area2D"]
 collision_layer = 32
-collision_mask = 89
+collision_mask = 32857
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -155,7 +154,7 @@ anims/Idle = SubResource( 43 )
 [node name="AreaExplodingBarrel" type="Area2D" parent="."]
 position = Vector2( 0, 42 )
 collision_layer = 32
-collision_mask = 88
+collision_mask = 32856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExplodingBarrel"]
 position = Vector2( 19, -48.5 )

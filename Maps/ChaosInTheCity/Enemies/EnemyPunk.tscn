@@ -191,7 +191,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -203,31 +203,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AttackArea:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AttackArea:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -330,10 +306,10 @@ extents = Vector2( 14.0909, 23.5455 )
 radius = 169.074
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 17, 10 )
+extents = Vector2( 24.5455, 23.1818 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 10.3182, 6.81818 )
+extents = Vector2( 18.5, 8.63636 )
 
 [node name="EnemyPunk" type="KinematicBody2D"]
 scale = Vector2( 1.1, 1.1 )
@@ -349,7 +325,6 @@ shape = SubResource( 17 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.9
 playing = true
 
@@ -368,8 +343,8 @@ anims/Idle = SubResource( 21 )
 anims/Walk = SubResource( 22 )
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 73
+collision_layer = 16384
+collision_mask = 32833
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( -5, 4.45455 )
@@ -386,21 +361,19 @@ shape = SubResource( 56 )
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 9
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( -47.2727, 0.909091 )
+position = Vector2( -47.2727, 8.63636 )
 shape = SubResource( 41 )
 
 [node name="PunchArea" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 9
+collision_layer = 4096
+collision_mask = 8192
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
-position = Vector2( -56.6818, -0.454546 )
+position = Vector2( -48.5, 1.36364 )
 shape = SubResource( 42 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -41,6 +41,5 @@ cast_to = Vector2( 0, 18 )
 position = Vector2( 9, 8 )
 frames = SubResource( 3 )
 animation = "Run"
-frame = 1
 speed_scale = 1.5
 playing = true

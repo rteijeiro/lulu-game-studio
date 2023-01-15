@@ -32,7 +32,7 @@ extents = Vector2( 9.5, 3.75 )
 [node name="Bullet" type="KinematicBody2D"]
 position = Vector2( 14, 0 )
 collision_layer = 64
-collision_mask = 48
+collision_mask = 16432
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,7 +43,6 @@ shape = SubResource( 1 )
 position = Vector2( 0, -5 )
 frames = SubResource( 5 )
 animation = "Bullet"
-frame = 1
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

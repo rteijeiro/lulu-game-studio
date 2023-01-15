@@ -7,10 +7,10 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyBiker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/Barrel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/ExplodingBarrel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Maps/ChaosInTheCity/Objects/AcidBarrel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Maps/ChaosInTheCity/Hud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/FinalBoss.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/FirstAidKit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Maps/ChaosInTheCity/Rat.tscn" type="PackedScene" id=12]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -23,9 +23,6 @@ unique_name_in_owner = true
 [node name="FirstAidKit" parent="Characters" instance=ExtResource( 11 )]
 position = Vector2( 376, 542 )
 
-[node name="AcidBarrel" parent="Characters" instance=ExtResource( 8 )]
-position = Vector2( 1471, 588 )
-
 [node name="ExplodingBarrel" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 101, 595 )
 
@@ -33,6 +30,14 @@ position = Vector2( 101, 595 )
 position = Vector2( 259, 575 )
 collision_layer = 32
 collision_mask = 25
+
+[node name="Barrel2" parent="Characters" instance=ExtResource( 6 )]
+position = Vector2( 1539, 592 )
+collision_layer = 32
+collision_mask = 25
+
+[node name="Rat" parent="Characters" instance=ExtResource( 12 )]
+position = Vector2( 74, 254 )
 
 [node name="EnemyPunk" parent="Characters" instance=ExtResource( 3 )]
 position = Vector2( 763, 538 )
@@ -44,7 +49,7 @@ position = Vector2( 1133, 538 )
 position = Vector2( 223, 502 )
 
 [node name="EnemyBiker" parent="Characters" instance=ExtResource( 5 )]
-position = Vector2( 578, 525 )
+position = Vector2( 667, 516 )
 
 [node name="EnemyBiker2" parent="Characters" instance=ExtResource( 5 )]
 position = Vector2( 630, 572 )

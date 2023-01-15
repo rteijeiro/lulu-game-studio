@@ -855,7 +855,7 @@ extents = Vector2( 22.5, 8 )
 extents = Vector2( 8, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=115]
-extents = Vector2( 16, 24.25 )
+extents = Vector2( 21, 28 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 11, 2.5 )
@@ -873,7 +873,7 @@ position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -908,8 +908,8 @@ position = Vector2( -21.5, 42 )
 shape = SubResource( 41 )
 
 [node name="PunchZone" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 16
+collision_layer = 32768
+collision_mask = 16400
 monitoring = false
 monitorable = false
 
@@ -918,16 +918,16 @@ position = Vector2( 36, -3.5 )
 shape = SubResource( 116 )
 
 [node name="HitZone" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 16
+collision_layer = 8192
+collision_mask = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
-position = Vector2( -23, 5.75 )
+position = Vector2( -22, 2 )
 shape = SubResource( 115 )
 
 [node name="KickZone" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 16
+collision_layer = 32768
+collision_mask = 16400
 monitoring = false
 monitorable = false
 
@@ -936,6 +936,8 @@ position = Vector2( 33, -13.5 )
 shape = SubResource( 117 )
 
 [node name="JumpkickZone" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 16384
 monitoring = false
 monitorable = false
 

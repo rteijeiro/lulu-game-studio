@@ -1,5 +1,6 @@
 extends Area2D
 
-func _on_FirstAidKit_body_entered(body):
-	if body.name == "FighterPlayer":
+
+func _on_FirstAidKit_area_entered(area):
+	if area.get_name() == "HitZone":
 		queue_free()
