@@ -3,9 +3,11 @@ class_name FighterPlayer
 
 # Movement.
 export (int) var speed = 80
-export (int) var speed_gun = 30
+export (int) var speed_gun = 25
+export (int) var speed_stick = 25
 export (int) var speed_y = 50
-export (int) var speed_y_gun = 15
+export (int) var speed_y_gun = 10
+export (int) var speed_y_stick = 10
 export (int) var speed_jump = 500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
@@ -35,18 +37,23 @@ enum States {
 	IDLEGUN,
 	WALKGUN,
 	SHOOT,
+	IDLESTICK,
+	STICKATTACK,
+	WALKSTICK,
 	DEAD
 }
 var state = States.IDLE setget set_state
-var state2 = States.IDLEGUN setget set_state2
+var stateGun = States.IDLEGUN setget set_stateGun
+var stateStick = States.IDLESTICK setget set_stateStick
 onready var animation_state_nogun = $AnimationTreeFighter.get("parameters/playback")
-onready var animation_state_gun = $AnimationTreeGun.get("arameters/playback")
+onready var animation_state_gun = $AnimationTreeGun.get("parameters/playback")
+onready var animation_state_stick = $AnimationTreeStick.get("parameters/playback")
 var animation_state = null
 
 #Bullet
 onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
 
-## Actions.
+#Actions.
 var fighter_is_jumping:bool = false
 
 func _ready() -> void:  
@@ -61,13 +68,15 @@ func get_input():
 	motion.y = 0
 	z = 0
 
-	
-	# Moving Right.
+
+# Moving Right.
 	if Input.is_action_pressed("right") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 			$AnimatedSprite.flip_h = false
 			$KickZone/CollisionShape2D.position.x = 33
 			$PunchZone/CollisionShape2D.position.x = 36
 			$JumpkickZone/CollisionShape2D.position.x = 2.5
+			$StickZone/CollisionShape2D.position.x = 60
+			$Mullet.position.x = 60
 			velocity.x += speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
@@ -76,12 +85,14 @@ func get_input():
 				if animation_state_nogun:
 					$AnimationPlayer.play("Walk")
 
-	# Moving Left.
+# Moving Left.
 	if Input.is_action_pressed("left") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 			$AnimatedSprite.flip_h = true
 			$KickZone/CollisionShape2D.position.x = -66
 			$PunchZone/CollisionShape2D.position.x = -72
 			$JumpkickZone/CollisionShape2D.position.x = -40
+			$StickZone/CollisionShape2D.position.x = -60
+			$Mullet.position.x = -60
 			velocity.x -= speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
@@ -90,7 +101,7 @@ func get_input():
 				if animation_state_nogun:
 						$AnimationPlayer.play("Walk")
 
-	#Moving Up.
+#Moving Up.
 	if Input.is_action_pressed("up") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 		velocity.y -= speed_y
 		if !fighter_is_jumping:
@@ -100,7 +111,7 @@ func get_input():
 			if animation_state_nogun:
 					$AnimationPlayer.play("Walk")
 
-	# Moving Down.
+# Moving Down.
 	if Input.is_action_pressed("down") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
 		velocity.y += speed_y
 		if !fighter_is_jumping:
@@ -110,7 +121,7 @@ func get_input():
 			if animation_state_nogun:
 					$AnimationPlayer.play("Walk")
 
-	# Start Jumping.
+# Start Jumping.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			self.state = States.IDLE
@@ -121,28 +132,28 @@ func get_input():
 
 		else:
 			self.state = States.JUMP
-#
-	# Stop Jumping.
+
+# Stop Jumping.
 	if Input.is_action_just_released("jump"):
 		self.state = States.IDLE
 
-	# DiveKicking
+# DiveKicking
 	if Input.is_action_pressed("divekick"):
 		self.state = States.DIVEKICK
 
-	# Jabbing.
+# Jabbing.
 	if Input.is_action_pressed("jab"):
 		self.state = States.JAB
 
-	# JumpKick.
+# JumpKick.
 	if Input.is_action_pressed("jumpkick"):
 		self.state = States.JUMPKICK
 
-	# Kicking.
+# Kicking.
 	if Input.is_action_pressed("kick"):
 		self.state = States.KICK
 
-	# Punching.
+# Punching.
 	if Input.is_action_pressed("punch"):
 		self.state = States.PUNCH
 	
@@ -152,37 +163,67 @@ func get_input():
 		$AnimationTreeGun.active = true
 		$AnimationTreeFighter.active = false
 		
-	#Move Right with the Gun:
+#Move Right with the Gun:
 	if Input.is_action_pressed("rightgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
 		velocity.x += speed_gun
 		self.state = States.WALKGUN
 		$AnimationPlayer.play("WalkGun")
-	#Move Left with the Gun:
+#Move Left with the Gun:
 	if Input.is_action_pressed("leftgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
 		velocity.x -= speed_gun
 		self.state = States.WALKGUN
 		$AnimationPlayer.play("WalkGun")
-	#Move Up with the Gun.
+#Move Up with the Gun.
 	if Input.is_action_pressed("upgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
 		velocity.y -= speed_y_gun
 		self.state = States.WALKGUN
 		$AnimationPlayer.play("WalkGun")
-	#Move Down with the Gun.
+#Move Down with the Gun.
 	if Input.is_action_pressed("downgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
 		velocity.y += speed_y_gun
 		self.state = States.WALKGUN
 		$AnimationPlayer.play("WalkGun")
-			
-			
-	#Back to Fight state:
+
+
+
+#Move Right with the Stick:
+	if Input.is_action_pressed("rightstick") and self.state != States.STICKATTACK and $AnimationTreeStick.active:
+		velocity.x += speed_stick
+		self.state = States.WALKSTICK
+		$AnimationPlayer.play("WalkStick")
+#Move Left with the Stick:
+	if Input.is_action_pressed("leftstick") and self.state != States.STICKATTACK and $AnimationTreeStick.active:
+		velocity.x -= speed_stick
+		self.state = States.WALKSTICK
+		$AnimationPlayer.play("WalkStick")
+#Move Up with the Stick.
+	if Input.is_action_pressed("upstick") and self.state != States.STICKATTACK and $AnimationTreeStick.active:
+		velocity.y -= speed_y_stick
+		self.state = States.WALKSTICK
+		$AnimationPlayer.play("WalkStick")
+#Move Down with the Stick.
+	if Input.is_action_pressed("downstick") and self.state != States.STICKATTACK and $AnimationTreeStick.active:
+		velocity.y += speed_y_stick
+		self.state = States.WALKSTICK
+		$AnimationPlayer.play("WalkStick")
+
+		
+#Back to Fight state:
 	if Input.is_action_pressed("fight"):
 		$AnimationTreeGun.active = false
+		$AnimationTreeStick.active = false
 		$AnimationTreeFighter.active = true
-	#Shoot:
+		
+#Shoot:
 	if Input.is_action_pressed("shoot"):
 		$Shoot.play()
 		self.state = States.SHOOT
-
+	
+#Attack with the Stick:
+	if Input.is_action_just_pressed("stickattack") and $AnimationTreeStick.active:
+		self.state = States.STICKATTACK
+		$AnimationPlayer.play("StickAttack")
+		
 # Physics processing.
 func _physics_process(delta):
 
@@ -193,14 +234,16 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
-	# Detect if player is idle or walking.
+# Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
 		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT:
 		self.state = States.IDLE
-	#With the Gun:
+#With the Gun:
 	if velocity == Vector2.ZERO and state != States.SHOOT:
 		self.state = States.IDLEGUN
-	
+#With the Stick:
+	if velocity == Vector2.ZERO and state != States.STICKATTACK:
+		self.state = States.IDLESTICK
 
 # States setter.
 func set_state(new_state):
@@ -230,16 +273,27 @@ func set_state(new_state):
 
 	state = new_state
 	
-func set_state2(new_state2):
-	match new_state2:
+func set_stateGun(new_stateGun):
+	match new_stateGun:
 	
 		States.SHOOT:
 			animation_state_gun.travel("Shoot")
 		States.WALKGUN:
 			animation_state_gun.travel("WalkGun")
 
-	state2 = new_state2
-
+	stateGun = new_stateGun
+	
+#You get the Stick
+func set_stateStick(new_stateStick):
+	match new_stateStick:
+		States.IDLESTICK:
+			animation_state_stick.travel("IdleStick")
+		States.STICKATTACK:
+			animation_state_stick.travel("StickAttack")
+		States.WALKSTICK:
+			animation_state_stick.travel("WalkStick")
+			
+	stateStick = new_stateStick
 
 #Finished actions:
 func divekicking_finished():
@@ -268,12 +322,18 @@ func punching_finished():
 	is_punching = false
 	self.state = States.IDLE
 
+func stick_attacking_finished():
+	self.state = States.IDLESTICK
+
+
+
 #Shooting
 var b
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
 		b = Bullet.instance()
 		add_child(b)
+
 
 
 #Is Hit.
@@ -312,8 +372,18 @@ func _on_HitZone_area_entered(area):
 			self.state = States.DEAD
 			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
 	if area.get_name() == "FirstAidKit":
+			$GetLife.play()
 			life += 5
 			hud.update_life(life)
+	if area.get_name() == "FirstAidKit2":
+			$GetLife.play()
+			life += 5
+			hud.update_life(life)
+	if area.get_name() == "Stick":
+		$AnimationTreeStick.active = true
+		$AnimationTreeFighter.active = false
+		$AnimationTreeGun.active = false
+
 
 #Jump and Kick at the same time
 var is_jumpkick setget set_jumpkick, get_jumpkick

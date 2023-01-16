@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump_kick.png-5a9ad324abbab88ddb527857810604f5.stex"
+path="res://.import/idle.png-0f3e4ed00c4d7e08f75bf1a61312d9b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jump_kick.png"
-dest_files=[ "res://.import/jump_kick.png-5a9ad324abbab88ddb527857810604f5.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/idle.png"
+dest_files=[ "res://.import/idle.png-0f3e4ed00c4d7e08f75bf1a61312d9b2.stex" ]
 
 [params]
 

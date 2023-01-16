@@ -131,6 +131,9 @@ func _on_HitBox_area_entered(area):
 	if area.get_name() == "JumpkickZone":
 		$Hurt.play()
 		self.hit()
+	if area.get_name() == "StickZone":
+		$Hurt.play()
+		self.hit()
 
 
 func death():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk.png-250ea2c1ef3c818feaeaef956a4d235f.stex"
+path="res://.import/jab.png-73fa2ac421ff773c69b0b60d1f7e0c1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walk.png"
-dest_files=[ "res://.import/walk.png-250ea2c1ef3c818feaeaef956a4d235f.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/jab.png"
+dest_files=[ "res://.import/jab.png-73fa2ac421ff773c69b0b60d1f7e0c1a.stex" ]
 
 [params]
 

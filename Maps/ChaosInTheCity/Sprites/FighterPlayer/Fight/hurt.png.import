@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walkGun.png-9553340e5003a351545471b6f55ff4d7.stex"
+path="res://.import/hurt.png-8a822818cf81f60dd3e4858951585c7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walkGun.png"
-dest_files=[ "res://.import/walkGun.png-9553340e5003a351545471b6f55ff4d7.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/hurt.png"
+dest_files=[ "res://.import/hurt.png-8a822818cf81f60dd3e4858951585c7a.stex" ]
 
 [params]
 

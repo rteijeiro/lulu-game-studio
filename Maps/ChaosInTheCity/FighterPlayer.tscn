@@ -1,24 +1,28 @@
-[gd_scene load_steps=135 format=2]
+[gd_scene load_steps=169 format=2]
 
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idle.png" type="Texture" id=1]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/hurt.png" type="Texture" id=2]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/dive_kick.png" type="Texture" id=3]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jab.png" type="Texture" id=4]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jump_kick.png" type="Texture" id=5]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/kick.png" type="Texture" id=6]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/jump.png" type="Texture" id=7]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walk.png" type="Texture" id=8]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/punch.png" type="Texture" id=9]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/idle.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/hurt.png" type="Texture" id=2]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/dive_kick.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/jab.png" type="Texture" id=4]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/jump_kick.png" type="Texture" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/kick.png" type="Texture" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/jump.png" type="Texture" id=7]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/walk.png" type="Texture" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/punch.png" type="Texture" id=9]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.gd" type="Script" id=10]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/idlegun.png" type="Texture" id=11]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/shoot.png" type="Texture" id=12]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/walkGun.png" type="Texture" id=13]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Gun/idlegun.png" type="Texture" id=11]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Gun/shoot.png" type="Texture" id=12]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Gun/walkGun.png" type="Texture" id=13]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/punch_short_whoosh_16.wav" type="AudioStream" id=14]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Gun/Shoot.wav" type="AudioStream" id=15]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/kick_short_whoosh_23.wav" type="AudioStream" id=16]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Gun/Reload.wav" type="AudioStream" id=17]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/damage_3_karen.wav" type="AudioStream" id=18]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/damage_4_karen.wav" type="AudioStream" id=19]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/idle_stick.png" type="Texture" id=20]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/stick_attack.png" type="Texture" id=21]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/walk_stick.png" type="Texture" id=22]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Life/Powerup 36 (1).wav" type="AudioStream" id=23]
 
 [sub_resource type="AtlasTexture" id=182]
 atlas = ExtResource( 2 )
@@ -86,6 +90,22 @@ region = Rect2( 192, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=153]
 atlas = ExtResource( 11 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=207]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=208]
+atlas = ExtResource( 20 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=209]
+atlas = ExtResource( 20 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=210]
+atlas = ExtResource( 20 )
 region = Rect2( 288, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=13]
@@ -163,6 +183,18 @@ region = Rect2( 0, 0, 96, 63 )
 [sub_resource type="AtlasTexture" id=155]
 atlas = ExtResource( 12 )
 region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=215]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 100, 63 )
+
+[sub_resource type="AtlasTexture" id=216]
+atlas = ExtResource( 21 )
+region = Rect2( 100, 0, 100, 63 )
+
+[sub_resource type="AtlasTexture" id=217]
+atlas = ExtResource( 21 )
+region = Rect2( 200, 0, 100, 63 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 8 )
@@ -244,6 +276,46 @@ region = Rect2( 768, 0, 96, 63 )
 atlas = ExtResource( 13 )
 region = Rect2( 864, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=223]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=224]
+atlas = ExtResource( 22 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=225]
+atlas = ExtResource( 22 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=226]
+atlas = ExtResource( 22 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=227]
+atlas = ExtResource( 22 )
+region = Rect2( 384, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=228]
+atlas = ExtResource( 22 )
+region = Rect2( 480, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=229]
+atlas = ExtResource( 22 )
+region = Rect2( 576, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=230]
+atlas = ExtResource( 22 )
+region = Rect2( 672, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=231]
+atlas = ExtResource( 22 )
+region = Rect2( 768, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=232]
+atlas = ExtResource( 22 )
+region = Rect2( 864, 0, 96, 63 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 182 ), SubResource( 183 ) ],
@@ -270,6 +342,11 @@ animations = [ {
 "loop": true,
 "name": "IdleGun",
 "speed": 4.0
+}, {
+"frames": [ SubResource( 207 ), SubResource( 208 ), SubResource( 209 ), SubResource( 210 ) ],
+"loop": true,
+"name": "IdleStick",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
@@ -301,6 +378,11 @@ animations = [ {
 "name": "Shoot",
 "speed": 2.0
 }, {
+"frames": [ SubResource( 215 ), SubResource( 216 ), SubResource( 217 ) ],
+"loop": false,
+"name": "StickAttack",
+"speed": 9.0
+}, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Walk",
@@ -309,6 +391,11 @@ animations = [ {
 "frames": [ SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 165 ) ],
 "loop": true,
 "name": "WalkGun",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ), SubResource( 227 ), SubResource( 228 ), SubResource( 229 ), SubResource( 230 ), SubResource( 231 ), SubResource( 232 ) ],
+"loop": true,
+"name": "WalkStick",
 "speed": 9.0
 } ]
 
@@ -446,6 +533,58 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=211]
+resource_name = "IdleStick"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "IdleStick" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTreeFighter:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationTreeGun:active")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationTreeStick:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -705,6 +844,60 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=218]
+resource_name = "StickAttack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "StickAttack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StickZone:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StickZone:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stick_attacking_finished"
+} ]
+}
+
 [sub_resource type="Animation" id=50]
 resource_name = "Walk"
 tracks/0/type = "value"
@@ -733,6 +926,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "WalkGun" ]
+}
+
+[sub_resource type="Animation" id=233]
+resource_name = "WalkStick"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "WalkStick" ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=185]
@@ -881,6 +1089,38 @@ graph_offset = Vector2( 0, 26.7083 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=179]
 
+[sub_resource type="AnimationNodeAnimation" id=212]
+animation = "IdleStick"
+
+[sub_resource type="AnimationNodeAnimation" id=220]
+animation = "StickAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=234]
+animation = "WalkStick"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=221]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=222]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=235]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=236]
+
+[sub_resource type="AnimationNodeStateMachine" id=213]
+states/IdleStick/node = SubResource( 212 )
+states/IdleStick/position = Vector2( 430, 180 )
+states/StickAttack/node = SubResource( 220 )
+states/StickAttack/position = Vector2( 430, 45 )
+states/WalkStick/node = SubResource( 234 )
+states/WalkStick/position = Vector2( 752, 180 )
+transitions = [ "IdleStick", "StickAttack", SubResource( 221 ), "StickAttack", "IdleStick", SubResource( 222 ), "IdleStick", "WalkStick", SubResource( 235 ), "WalkStick", "IdleStick", SubResource( 236 ) ]
+start_node = "IdleStick"
+graph_offset = Vector2( 0, 51.0157 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=214]
+
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 22.5, 8 )
 
@@ -896,6 +1136,8 @@ extents = Vector2( 11, 2.5 )
 [sub_resource type="RectangleShape2D" id=204]
 extents = Vector2( 19.5, 16 )
 
+[sub_resource type="RectangleShape2D" id=219]
+
 [node name="FighterPlayer" type="KinematicBody2D"]
 collision_layer = 8
 collision_mask = 17
@@ -905,8 +1147,8 @@ script = ExtResource( 10 )
 position = Vector2( -15, 1.19209e-07 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 5 )
-animation = "WalkGun"
-frame = 6
+animation = "Idle"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -916,24 +1158,33 @@ anims/DiveKick = SubResource( 42 )
 anims/Hurt = SubResource( 43 )
 anims/Idle = SubResource( 44 )
 anims/IdleGun = SubResource( 166 )
+anims/IdleStick = SubResource( 211 )
 anims/Jab = SubResource( 45 )
 anims/Jump = SubResource( 46 )
 anims/JumpKick = SubResource( 47 )
 anims/Kick = SubResource( 48 )
 anims/Punch = SubResource( 49 )
 anims/Shoot = SubResource( 168 )
+anims/StickAttack = SubResource( 218 )
 anims/Walk = SubResource( 50 )
 anims/WalkGun = SubResource( 167 )
+anims/WalkStick = SubResource( 233 )
 
 [node name="AnimationTreeFighter" type="AnimationTree" parent="."]
 tree_root = SubResource( 73 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 74 )
 
 [node name="AnimationTreeGun" type="AnimationTree" parent="."]
 tree_root = SubResource( 178 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 179 )
+
+[node name="AnimationTreeStick" type="AnimationTree" parent="."]
+tree_root = SubResource( 213 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 214 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -21.5, 42 )
@@ -960,6 +1211,8 @@ shape = SubResource( 115 )
 [node name="KickZone" type="Area2D" parent="."]
 collision_layer = 32768
 collision_mask = 16400
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickZone"]
 position = Vector2( 33, -13.5 )
@@ -973,6 +1226,19 @@ collision_mask = 16384
 position = Vector2( 2.5, -45 )
 shape = SubResource( 204 )
 
+[node name="StickZone" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 16400
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
+position = Vector2( 60, -6 )
+shape = SubResource( 219 )
+
+[node name="Mullet" type="Position2D" parent="."]
+position = Vector2( 60, -6 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 182, -174 )
 offset = Vector2( 30, 10 )
@@ -980,9 +1246,6 @@ rotating = true
 current = true
 zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
-
-[node name="Mullet" type="Position2D" parent="."]
-position = Vector2( 60, -6 )
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -999,6 +1262,9 @@ pitch_scale = 0.74
 
 [node name="Kick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
+
+[node name="GetLife" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 23 )
 
 [node name="Reload" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )

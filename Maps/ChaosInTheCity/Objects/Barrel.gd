@@ -16,6 +16,10 @@ func _on_AreaBarrel_area_entered(area):
 			$Broken.show()
 			$Metal.play()
 			
+	 if area.get_name() == "StickZone":
+			$Idle.hide()
+			$Broken.show()
+			$Metal.play()
 
 
 
