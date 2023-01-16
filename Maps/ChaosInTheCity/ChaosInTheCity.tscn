@@ -46,7 +46,7 @@ position = Vector2( 763, 538 )
 position = Vector2( 1133, 538 )
 
 [node name="EnemyPunk3" parent="Characters" instance=ExtResource( 3 )]
-position = Vector2( 223, 502 )
+position = Vector2( 454, 518 )
 
 [node name="EnemyBiker" parent="Characters" instance=ExtResource( 5 )]
 position = Vector2( 667, 516 )
@@ -58,7 +58,7 @@ position = Vector2( 630, 572 )
 position = Vector2( 1220, 610 )
 
 [node name="EnemySoldier2" parent="Characters" instance=ExtResource( 4 )]
-position = Vector2( 263, 614 )
+position = Vector2( 497, 613 )
 
 [node name="EnemySoldier3" parent="Characters" instance=ExtResource( 4 )]
 position = Vector2( 1390, 520 )

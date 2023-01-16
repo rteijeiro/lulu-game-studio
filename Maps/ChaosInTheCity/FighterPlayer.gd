@@ -3,7 +3,9 @@ class_name FighterPlayer
 
 # Movement.
 export (int) var speed = 80
+export (int) var speed_gun = 30
 export (int) var speed_y = 50
+export (int) var speed_y_gun = 15
 export (int) var speed_jump = 500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
@@ -36,6 +38,7 @@ enum States {
 	DEAD
 }
 var state = States.IDLE setget set_state
+var state2 = States.IDLEGUN setget set_state2
 onready var animation_state_nogun = $AnimationTreeFighter.get("parameters/playback")
 onready var animation_state_gun = $AnimationTreeGun.get("arameters/playback")
 var animation_state = null
@@ -148,9 +151,34 @@ func get_input():
 		$Reload.play()
 		$AnimationTreeGun.active = true
 		$AnimationTreeFighter.active = false
+		
+	#Move Right with the Gun:
+	if Input.is_action_pressed("rightgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
+		velocity.x += speed_gun
+		self.state = States.WALKGUN
+		$AnimationPlayer.play("WalkGun")
+	#Move Left with the Gun:
+	if Input.is_action_pressed("leftgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
+		velocity.x -= speed_gun
+		self.state = States.WALKGUN
+		$AnimationPlayer.play("WalkGun")
+	#Move Up with the Gun.
+	if Input.is_action_pressed("upgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
+		velocity.y -= speed_y_gun
+		self.state = States.WALKGUN
+		$AnimationPlayer.play("WalkGun")
+	#Move Down with the Gun.
+	if Input.is_action_pressed("downgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
+		velocity.y += speed_y_gun
+		self.state = States.WALKGUN
+		$AnimationPlayer.play("WalkGun")
+			
+			
+	#Back to Fight state:
 	if Input.is_action_pressed("fight"):
 		$AnimationTreeGun.active = false
 		$AnimationTreeFighter.active = true
+	#Shoot:
 	if Input.is_action_pressed("shoot"):
 		$Shoot.play()
 		self.state = States.SHOOT
@@ -169,7 +197,9 @@ func _physics_process(delta):
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
 		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT:
 		self.state = States.IDLE
-
+	#With the Gun:
+	if velocity == Vector2.ZERO and state != States.SHOOT:
+		self.state = States.IDLEGUN
 	
 
 # States setter.
@@ -196,12 +226,20 @@ func set_state(new_state):
 			animation_state_nogun.travel("Walk")
 		States.HURT:
 			animation_state_nogun.travel("Hurt")
-#		States.SHOOT:
-#			animation_state_gun.travel("Shoot")
-#		States.WALKGUN:
-#			animation_state_gun.travel("WalkGun")
+
 
 	state = new_state
+	
+func set_state2(new_state2):
+	match new_state2:
+	
+		States.SHOOT:
+			animation_state_gun.travel("Shoot")
+		States.WALKGUN:
+			animation_state_gun.travel("WalkGun")
+
+	state2 = new_state2
+
 
 #Finished actions:
 func divekicking_finished():
