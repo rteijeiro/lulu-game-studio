@@ -1,154 +1,361 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=161 format=2]
 
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/attack1_2.png" type="Texture" id=1]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/attack1_3.png" type="Texture" id=2]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/attack1_1.png" type="Texture" id=3]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/attack1_4.png" type="Texture" id=4]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/attack1_5.png" type="Texture" id=5]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_1.png" type="Texture" id=6]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_2.png" type="Texture" id=7]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_6.png" type="Texture" id=8]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_3.png" type="Texture" id=9]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_4.png" type="Texture" id=10]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/ready_5.png" type="Texture" id=11]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_2.png" type="Texture" id=12]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_5.png" type="Texture" id=13]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_3.png" type="Texture" id=14]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_1.png" type="Texture" id=15]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_6.png" type="Texture" id=16]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/run_4.png" type="Texture" id=17]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/hit_2.png" type="Texture" id=18]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/hit_3.png" type="Texture" id=19]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/hit_1.png" type="Texture" id=20]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/dead_2.png" type="Texture" id=21]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/dead_1.png" type="Texture" id=22]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/dead_3.png" type="Texture" id=23]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/dead_4.png" type="Texture" id=24]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_02.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_08.png" type="Texture" id=2]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_14.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_11.png" type="Texture" id=4]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_09.png" type="Texture" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_10.png" type="Texture" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_04.png" type="Texture" id=7]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_12.png" type="Texture" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_15.png" type="Texture" id=9]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_03.png" type="Texture" id=10]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_05.png" type="Texture" id=11]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_13.png" type="Texture" id=12]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_07.png" type="Texture" id=13]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_01.png" type="Texture" id=14]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Idle/RCG_Idle_06.png" type="Texture" id=15]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_05.png" type="Texture" id=16]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_15.png" type="Texture" id=17]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_02.png" type="Texture" id=18]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_06.png" type="Texture" id=19]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_09.png" type="Texture" id=20]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_12.png" type="Texture" id=21]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_07.png" type="Texture" id=22]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_04.png" type="Texture" id=23]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_14.png" type="Texture" id=24]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/FinalBoss.gd" type="Script" id=25]
-
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_03.png" type="Texture" id=26]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_11.png" type="Texture" id=27]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_01.png" type="Texture" id=28]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_10.png" type="Texture" id=29]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_08.png" type="Texture" id=30]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Attack/RCG_Attack_GrenadeLob_13.png" type="Texture" id=31]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_12.png" type="Texture" id=32]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_15.png" type="Texture" id=33]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_18.png" type="Texture" id=34]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_19.png" type="Texture" id=35]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_10.png" type="Texture" id=36]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_13.png" type="Texture" id=37]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_20.png" type="Texture" id=38]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_01.png" type="Texture" id=39]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_22.png" type="Texture" id=40]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_23.png" type="Texture" id=41]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_02.png" type="Texture" id=42]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_03.png" type="Texture" id=43]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_16.png" type="Texture" id=44]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_07.png" type="Texture" id=45]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_21.png" type="Texture" id=46]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_08.png" type="Texture" id=47]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_24.png" type="Texture" id=48]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_09.png" type="Texture" id=49]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_11.png" type="Texture" id=50]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_17.png" type="Texture" id=51]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_05.png" type="Texture" id=52]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_14.png" type="Texture" id=53]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_04.png" type="Texture" id=54]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Dead/RCG_Knockdown_06.png" type="Texture" id=55]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/RCG_GetHit1_02.png" type="Texture" id=56]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/RCG_GetHit1_03.png" type="Texture" id=57]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Hurt/RCG_GetHit1_01.png" type="Texture" id=58]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_01.png" type="Texture" id=59]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_02.png" type="Texture" id=60]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_03.png" type="Texture" id=61]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_05.png" type="Texture" id=62]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_07.png" type="Texture" id=63]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_06.png" type="Texture" id=64]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_08.png" type="Texture" id=65]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Run/RCG_Run_04.png" type="Texture" id=66]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32.5, 50 )
+extents = Vector2( 30, 3.5 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 100, 80 )
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 22 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 24 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 100, 80 )
+region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 19 )
-region = Rect2( 0, 0, 100, 80 )
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 100, 80 )
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 100, 80 )
-
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 100, 80 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 31 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 42 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 43 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 54 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 45 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 50 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 53 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 33 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 46 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 4
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 41 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 58 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 57 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 59 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 60 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 61 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 66 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 62 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 0, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": false,
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"frames": [ SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ) ],
 "loop": false,
 "name": "Dead",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 109 ), SubResource( 110 ), SubResource( 111 ) ],
 "loop": false,
 "name": "Hurt",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
 "loop": true,
 "name": "Run",
 "speed": 5.0
@@ -156,6 +363,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=21]
 resource_name = "Attack"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -175,7 +383,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -187,7 +395,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -195,6 +403,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=50]
 resource_name = "Dead"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -214,7 +423,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -340,20 +549,21 @@ states/Run/node = SubResource( 26 )
 states/Run/position = Vector2( 845, 41 )
 transitions = [ "Idle", "Attack", SubResource( 27 ), "Attack", "Idle", SubResource( 28 ), "Attack", "Run", SubResource( 29 ), "Run", "Attack", SubResource( 30 ), "Idle", "Run", SubResource( 31 ), "Run", "Idle", SubResource( 32 ), "Idle", "Hurt", SubResource( 40 ), "Hurt", "Idle", SubResource( 41 ), "Run", "Hurt", SubResource( 42 ), "Hurt", "Run", SubResource( 43 ), "Hurt", "Dead", SubResource( 52 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 0, 9.98401 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=34]
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 52, 31 )
+extents = Vector2( 45, 42 )
 
 [sub_resource type="CircleShape2D" id=45]
-radius = 241.35
+radius = 202.485
 
 [sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 50, 48 )
+extents = Vector2( 33.5, 28.5 )
 
 [sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 30, 41 )
+extents = Vector2( 24, 33 )
 
 [node name="FinalBoss" type="KinematicBody2D"]
 collision_layer = 16
@@ -361,15 +571,14 @@ collision_mask = 97
 script = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 7 )
+position = Vector2( 2, 60.5 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -3.99999, -37 )
-scale = Vector2( 2.925, 2.925 )
+scale = Vector2( 1.04062, 1.04062 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 2
+frame = 12
 playing = true
 flip_h = true
 
@@ -388,11 +597,13 @@ active = true
 parameters/playback = SubResource( 34 )
 
 [node name="WeaponZone" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 9
+collision_layer = 4096
+collision_mask = 8192
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponZone"]
-position = Vector2( -91, 7 )
+position = Vector2( -79, 14 )
 shape = SubResource( 44 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -400,6 +611,7 @@ collision_layer = 16
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2( -1, 0 )
 shape = SubResource( 45 )
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -407,15 +619,15 @@ collision_layer = 16
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( -76, 6 )
+position = Vector2( -64.5, 15.5 )
 shape = SubResource( 53 )
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 73
+collision_layer = 16384
+collision_mask = 32832
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( -6, 2 )
+position = Vector2( -1, 0 )
 shape = SubResource( 54 )
 
 [node name="Timer" type="Timer" parent="."]

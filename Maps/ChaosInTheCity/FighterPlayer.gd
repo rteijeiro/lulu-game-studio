@@ -60,7 +60,6 @@ func _ready() -> void:
 	randomize()
 	hud = get_parent().get_node("Hud")  
 
-
 #Get input from controller.
 func get_input():
 	velocity.x = 0
@@ -71,12 +70,15 @@ func get_input():
 
 # Moving Right.
 	if Input.is_action_pressed("right") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
-			$AnimatedSprite.flip_h = false
-			$KickZone/CollisionShape2D.position.x = 33
+			$AnimatedSpritePlayer.flip_h = false
+			$CollisionShape2D.position.x = -21.5
 			$PunchZone/CollisionShape2D.position.x = 36
+			$HitZone/CollisionShape2D.position.x = -22
+			$KickZone/CollisionShape2D.position.x = 33
 			$JumpkickZone/CollisionShape2D.position.x = 2.5
-			$StickZone/CollisionShape2D.position.x = 60
-			$Mullet.position.x = 60
+			$StickZone/CollisionShape2D.position.x = 60  
+			direction_bullet = 1
+
 			velocity.x += speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
@@ -84,15 +86,19 @@ func get_input():
 					$AnimationPlayer.play("WalkGun")
 				if animation_state_nogun:
 					$AnimationPlayer.play("Walk")
+					
 
 # Moving Left.
 	if Input.is_action_pressed("left") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
-			$AnimatedSprite.flip_h = true
-			$KickZone/CollisionShape2D.position.x = -66
+			$AnimatedSpritePlayer.flip_h = true
+			$CollisionShape2D.position.x = -8
 			$PunchZone/CollisionShape2D.position.x = -72
+			$HitZone/CollisionShape2D.position.x = -11
+			$KickZone/CollisionShape2D.position.x = -69
 			$JumpkickZone/CollisionShape2D.position.x = -40
-			$StickZone/CollisionShape2D.position.x = -60
-			$Mullet.position.x = -60
+			$StickZone/CollisionShape2D.position.x = -95 
+			direction_bullet = -1
+
 			velocity.x -= speed
 			if !fighter_is_jumping:
 				self.state = States.WALK
@@ -215,7 +221,7 @@ func get_input():
 		$AnimationTreeFighter.active = true
 		
 #Shoot:
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and $AnimationTreeGun.active:
 		$Shoot.play()
 		self.state = States.SHOOT
 	
@@ -329,11 +335,13 @@ func stick_attacking_finished():
 
 #Shooting
 var b
+var direction_bullet = 1
 func shoot():
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and $AnimationTreeGun.active:
 		b = Bullet.instance()
 		add_child(b)
-
+		b.direction = direction_bullet
+		b.global_position = $Bullet.global_position
 
 
 #Is Hit.
@@ -392,7 +400,3 @@ func set_jumpkick(value):
 	animation_state_nogun.set("parameters/conditions/is_jumpkick/advance_condition", value)
 func get_jumpkick():
 	animation_state_nogun.get("parameters/conditios/is_jumpkick/advance_condition")
-
-
-
-

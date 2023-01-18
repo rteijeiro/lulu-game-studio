@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=177 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/hurt.png" type="Texture" id=2]
@@ -23,6 +23,34 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/stick_attack.png" type="Texture" id=21]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/walk_stick.png" type="Texture" id=22]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Life/Powerup 36 (1).wav" type="AudioStream" id=23]
+[ext_resource path="res://Maps/ChaosInTheCity/Bullet.gd" type="Script" id=24]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/bullet.png" type="Texture" id=25]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.5, 3.5 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 26, 10 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 25 )
+region = Rect2( 26, 0, 26, 10 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 25 )
+region = Rect2( 52, 0, 26, 10 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Bullet",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9.5, 3.75 )
 
 [sub_resource type="AtlasTexture" id=182]
 atlas = ExtResource( 2 )
@@ -32,7 +60,7 @@ region = Rect2( 0, 0, 96, 63 )
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=237]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 96, 63 )
 
@@ -60,19 +88,19 @@ region = Rect2( 0, 0, 96, 63 )
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=238]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=239]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=240]
 atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 96, 63 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=241]
 atlas = ExtResource( 1 )
 region = Rect2( 288, 0, 96, 63 )
 
@@ -316,14 +344,14 @@ region = Rect2( 768, 0, 96, 63 )
 atlas = ExtResource( 22 )
 region = Rect2( 864, 0, 96, 63 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=242]
 animations = [ {
 "frames": [ SubResource( 182 ), SubResource( 183 ) ],
 "loop": false,
 "name": "Dead",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 237 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": false,
 "name": "DiveKick",
 "speed": 4.0
@@ -333,7 +361,7 @@ animations = [ {
 "name": "Hurt",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 238 ), SubResource( 239 ), SubResource( 240 ), SubResource( 241 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 4.0
@@ -402,7 +430,7 @@ animations = [ {
 [sub_resource type="Animation" id=184]
 resource_name = "Dead"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -417,7 +445,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=42]
 resource_name = "DiveKick"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -447,7 +475,7 @@ tracks/1/keys = {
 resource_name = "Hurt"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -463,7 +491,7 @@ tracks/0/keys = {
 resource_name = "Idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -503,7 +531,7 @@ tracks/2/keys = {
 resource_name = "IdleGun"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -543,7 +571,7 @@ tracks/2/keys = {
 resource_name = "IdleStick"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -594,7 +622,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=45]
 resource_name = "Jab"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -624,7 +652,7 @@ tracks/1/keys = {
 resource_name = "Jump"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -654,7 +682,7 @@ tracks/1/keys = {
 resource_name = "JumpKick"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -708,7 +736,7 @@ tracks/3/keys = {
 resource_name = "Kick"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -762,7 +790,7 @@ tracks/3/keys = {
 resource_name = "Punch"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -818,7 +846,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=168]
 resource_name = "Shoot"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -848,7 +876,7 @@ tracks/1/keys = {
 resource_name = "StickAttack"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -901,7 +929,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=50]
 resource_name = "Walk"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -916,7 +944,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=167]
 resource_name = "WalkGun"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -931,7 +959,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=233]
 resource_name = "WalkStick"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1143,12 +1171,46 @@ collision_layer = 8
 collision_mask = 17
 script = ExtResource( 10 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -15, 1.19209e-07 )
-scale = Vector2( 1.64286, 1.64286 )
+[node name="Mullet" type="Position2D" parent="."]
+position = Vector2( 15, -1 )
+
+[node name="Bullet" type="KinematicBody2D" parent="."]
+position = Vector2( 17, -3 )
+collision_layer = 64
+collision_mask = 16432
+collision/safe_margin = 0.073
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+position = Vector2( -3, 1 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Bullet"]
+visible = false
+position = Vector2( -2, 0 )
 frames = SubResource( 5 )
+animation = "Bullet"
+frame = 2
+playing = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bullet"]
+position = Vector2( -2, 1 )
+scale = Vector2( 0.9, 0.275 )
+
+[node name="AreaBullet" type="Area2D" parent="Bullet"]
+position = Vector2( -2, 1 )
+collision_layer = 64
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet/AreaBullet"]
+shape = SubResource( 6 )
+
+[node name="AnimatedSpritePlayer" type="AnimatedSprite" parent="."]
+position = Vector2( -15, 7.10543e-15 )
+scale = Vector2( 1.64286, 1.64286 )
+frames = SubResource( 242 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1236,9 +1298,6 @@ monitorable = false
 position = Vector2( 60, -6 )
 shape = SubResource( 219 )
 
-[node name="Mullet" type="Position2D" parent="."]
-position = Vector2( 60, -6 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 182, -174 )
 offset = Vector2( 30, 10 )
@@ -1273,5 +1332,8 @@ volume_db = -3.817
 [node name="Dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 18 )
 
+[connection signal="child_entered_tree" from="Bullet" to="." method="_on_Bullet_child_entered_tree"]
+[connection signal="screen_exited" from="Bullet/VisibilityNotifier2D" to="Bullet" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="Bullet/AreaBullet" to="Bullet" method="_on_AreaBullet_area_entered"]
 [connection signal="area_entered" from="HitZone" to="." method="_on_HitZone_area_entered"]
 [connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]

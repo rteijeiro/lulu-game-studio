@@ -65,18 +65,14 @@ func set_state(new_state):
 func check_direction():
 	if direction.x > 0: # Move right.
 		$AnimatedSprite.flip_h = false
-		$CollisionShape2D.position.x = -3.2
-		$DetectionArea/CollisionShape2D.position.x = 9.5
-		$AttackArea/CollisionShape2D.position.x = 45
-		$HitBox/CollisionShape2D.position.x = -5.5
-		$WeaponZone/CollisionShape2D.position.x = 40
+		$AttackArea/CollisionShape2D.position.x = -64.5
+		$HitBox/CollisionShape2D.position.x = -1
+		$WeaponZone/CollisionShape2D.position.x = -79
 	else: # Move left.
 		$AnimatedSprite.flip_h = true
-		$CollisionShape2D.position.x = -3.2
-		$DetectionArea/CollisionShape2D.position.x = -18
-		$AttackArea/CollisionShape2D.position.x = -50
-		$HitBox/CollisionShape2D.position.x = -5.5
-		$WeaponZone/CollisionShape2D.position.x = -44.5
+		$AttackArea/CollisionShape2D.position.x = 64.5
+		$HitBox/CollisionShape2D.position.x = 1
+		$WeaponZone/CollisionShape2D.position.x = 79
 	
 func attacking():
 	is_attacking = true
@@ -121,8 +117,10 @@ func _on_HitBox_area_entered(area):
 		$AnimationPlayer.play("Hurt")
 		self.hit()
 	if area.get_name() == "AreaBullet":
+		$AnimationPlayer.play("Hurt")
 		self.hit()
 	if area.get_name() == "JumpkickZone":
+		$AnimationPlayer.play("Hurt")
 		self.hit()
 
 
