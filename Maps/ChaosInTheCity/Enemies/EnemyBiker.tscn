@@ -226,6 +226,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=48]
 resource_name = "HurtElectricity"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -245,7 +246,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -422,7 +423,7 @@ shape = SubResource( 28 )
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 9
+collision_mask = 4104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2( -46.6667, -2.91667 )
@@ -431,8 +432,6 @@ shape = SubResource( 29 )
 [node name="PunchArea" type="Area2D" parent="."]
 collision_layer = 4096
 collision_mask = 8192
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchArea"]
 position = Vector2( -43.3333, -12.9167 )

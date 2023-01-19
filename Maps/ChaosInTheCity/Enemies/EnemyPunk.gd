@@ -83,7 +83,7 @@ func check_direction():
 	
 func attacking():
 	is_attacking = true
-	$Timer.start(3)
+	$Timer.start(2)
 	self.state = States.ATTACK
 	
 	
