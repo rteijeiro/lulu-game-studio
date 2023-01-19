@@ -5,9 +5,11 @@ class_name FighterPlayer
 export (int) var speed = 80
 export (int) var speed_gun = 25
 export (int) var speed_stick = 25
+export (int) var speed_taser = 25
 export (int) var speed_y = 50
 export (int) var speed_y_gun = 10
 export (int) var speed_y_stick = 10
+export (int) var speed_y_taser = 10
 export (int) var speed_jump = 500
 export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
@@ -40,14 +42,19 @@ enum States {
 	IDLESTICK,
 	STICKATTACK,
 	WALKSTICK,
+	IDLETASER,
+	TASERATTACK,
+	WALKTASER,
 	DEAD
 }
 var state = States.IDLE setget set_state
 var stateGun = States.IDLEGUN setget set_stateGun
 var stateStick = States.IDLESTICK setget set_stateStick
+var stateTaser = States.IDLETASER setget set_stateTaser
 onready var animation_state_nogun = $AnimationTreeFighter.get("parameters/playback")
 onready var animation_state_gun = $AnimationTreeGun.get("parameters/playback")
 onready var animation_state_stick = $AnimationTreeStick.get("parameters/playback")
+onready var animation_state_taser = $AnimationTreeTaser.get("paremeters/playback")
 var animation_state = null
 
 #Bullet
@@ -77,6 +84,7 @@ func get_input():
 			$KickZone/CollisionShape2D.position.x = 33
 			$JumpkickZone/CollisionShape2D.position.x = 2.5
 			$StickZone/CollisionShape2D.position.x = 60  
+			$TaserZone/CollisionShape2D.position.x = -9
 			direction_bullet = 1
 
 			velocity.x += speed
@@ -86,7 +94,7 @@ func get_input():
 					$AnimationPlayer.play("WalkGun")
 				if animation_state_nogun:
 					$AnimationPlayer.play("Walk")
-					
+		
 
 # Moving Left.
 	if Input.is_action_pressed("left") and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH:
@@ -97,6 +105,7 @@ func get_input():
 			$KickZone/CollisionShape2D.position.x = -69
 			$JumpkickZone/CollisionShape2D.position.x = -40
 			$StickZone/CollisionShape2D.position.x = -95 
+			$TaserZone/CollisionShape2D.position.x = -120
 			direction_bullet = -1
 
 			velocity.x -= speed
@@ -168,6 +177,7 @@ func get_input():
 		$Reload.play()
 		$AnimationTreeGun.active = true
 		$AnimationTreeFighter.active = false
+		$AnimationTreeTaser.active = false
 		
 #Move Right with the Gun:
 	if Input.is_action_pressed("rightgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
@@ -213,11 +223,35 @@ func get_input():
 		self.state = States.WALKSTICK
 		$AnimationPlayer.play("WalkStick")
 
-		
+
+#Move Right with the Taser:
+	if Input.is_action_pressed("righttaser") and self.state != States.TASERATTACK and $AnimationTreeTaser.active:
+		velocity.x += speed_taser
+		self.state = States.WALKTASER
+		$AnimationPlayer.play("WalkTaser")
+#Move Left with the Taser:
+	if Input.is_action_pressed("lefttaser") and self.state != States.TASERATTACK and $AnimationTreeTaser.active:
+		velocity.x -= speed_taser
+		self.state = States.WALKTASER
+		$AnimationPlayer.play("WalkTaser")
+#Move Up with the Taser:
+	if Input.is_action_pressed("uptaser") and self.state != States.TASERATTACK and $AnimationTreeTaser.active:
+		velocity.y -= speed_y_taser
+		self.state = States.WALKTASER
+		$AnimationPlayer.play("WalkTaser")
+#Move Down with the Taser:
+	if Input.is_action_pressed("downtaser") and self.state != States.TASERATTACK and $AnimationTreeTaser.active:
+		velocity.y += speed_y_taser
+		self.state = States.WALKTASER
+		$AnimationPlayer.play("WalkTaser")
+
+
+
 #Back to Fight state:
 	if Input.is_action_pressed("fight"):
 		$AnimationTreeGun.active = false
 		$AnimationTreeStick.active = false
+		$AnimationTreeTaser.active = false
 		$AnimationTreeFighter.active = true
 		
 #Shoot:
@@ -229,6 +263,11 @@ func get_input():
 	if Input.is_action_just_pressed("stickattack") and $AnimationTreeStick.active:
 		self.state = States.STICKATTACK
 		$AnimationPlayer.play("StickAttack")
+#Attack with the Taser:
+	if Input.is_action_just_pressed("taserattack") and $AnimationTreeTaser.active:
+		self.state = States.TASERATTACK
+		$AnimationPlayer.play("TaserAttack")
+		$Electricity.play()
 		
 # Physics processing.
 func _physics_process(delta):
@@ -250,6 +289,9 @@ func _physics_process(delta):
 #With the Stick:
 	if velocity == Vector2.ZERO and state != States.STICKATTACK:
 		self.state = States.IDLESTICK
+#With the Taser:
+	if velocity == Vector2.ZERO and state != States.TASERATTACK:
+		self.state = States.IDLETASER
 
 # States setter.
 func set_state(new_state):
@@ -300,6 +342,14 @@ func set_stateStick(new_stateStick):
 			animation_state_stick.travel("WalkStick")
 			
 	stateStick = new_stateStick
+	
+#You get the Taser
+func set_stateTaser(new_stateTaser):
+	match new_stateTaser:
+		States.IDLETASER:
+			animation_state_taser.travel("IdleTaser")
+		States.TASERATTACK:
+			animation_state_taser.travel("TaserAttack")
 
 #Finished actions:
 func divekicking_finished():
@@ -328,8 +378,12 @@ func punching_finished():
 	is_punching = false
 	self.state = States.IDLE
 
+#With the Stick
 func stick_attacking_finished():
 	self.state = States.IDLESTICK
+#With the Taser
+func taser_attacking_finished():
+	self.state = States.IDLETASER
 
 
 
@@ -391,6 +445,12 @@ func _on_HitZone_area_entered(area):
 		$AnimationTreeStick.active = true
 		$AnimationTreeFighter.active = false
 		$AnimationTreeGun.active = false
+		$AnimationTreeTaser.active = false
+	if area.get_name() == "Taser":
+		$AnimationTreeTaser.active = true
+		$AnimationTreeFighter.active = false
+		$AnimationTreeGun.active = false
+		$AnimationTreeStick.active = false
 
 
 #Jump and Kick at the same time

@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=2]
+[gd_scene load_steps=211 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/hurt.png" type="Texture" id=2]
@@ -25,6 +25,10 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Life/Powerup 36 (1).wav" type="AudioStream" id=23]
 [ext_resource path="res://Maps/ChaosInTheCity/Bullet.gd" type="Script" id=24]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/bullet.png" type="Texture" id=25]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/idletaser.png" type="Texture" id=26]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/taserattack.png" type="Texture" id=27]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/taseerwalk.png" type="Texture" id=28]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/Electricity.wav" type="AudioStream" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.5, 3.5 )
@@ -136,6 +140,22 @@ region = Rect2( 192, 0, 96, 63 )
 atlas = ExtResource( 20 )
 region = Rect2( 288, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=245]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=246]
+atlas = ExtResource( 26 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=247]
+atlas = ExtResource( 26 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=248]
+atlas = ExtResource( 26 )
+region = Rect2( 288, 0, 96, 63 )
+
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 96, 63 )
@@ -223,6 +243,18 @@ region = Rect2( 100, 0, 100, 63 )
 [sub_resource type="AtlasTexture" id=217]
 atlas = ExtResource( 21 )
 region = Rect2( 200, 0, 100, 63 )
+
+[sub_resource type="AtlasTexture" id=251]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=252]
+atlas = ExtResource( 27 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=253]
+atlas = ExtResource( 27 )
+region = Rect2( 192, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 8 )
@@ -344,6 +376,46 @@ region = Rect2( 768, 0, 96, 63 )
 atlas = ExtResource( 22 )
 region = Rect2( 864, 0, 96, 63 )
 
+[sub_resource type="AtlasTexture" id=259]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=260]
+atlas = ExtResource( 28 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=261]
+atlas = ExtResource( 28 )
+region = Rect2( 192, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=262]
+atlas = ExtResource( 28 )
+region = Rect2( 288, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=263]
+atlas = ExtResource( 28 )
+region = Rect2( 384, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=264]
+atlas = ExtResource( 28 )
+region = Rect2( 480, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=265]
+atlas = ExtResource( 28 )
+region = Rect2( 576, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=266]
+atlas = ExtResource( 28 )
+region = Rect2( 672, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=267]
+atlas = ExtResource( 28 )
+region = Rect2( 768, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=268]
+atlas = ExtResource( 28 )
+region = Rect2( 864, 0, 96, 63 )
+
 [sub_resource type="SpriteFrames" id=242]
 animations = [ {
 "frames": [ SubResource( 182 ), SubResource( 183 ) ],
@@ -374,6 +446,11 @@ animations = [ {
 "frames": [ SubResource( 207 ), SubResource( 208 ), SubResource( 209 ), SubResource( 210 ) ],
 "loop": true,
 "name": "IdleStick",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 245 ), SubResource( 246 ), SubResource( 247 ), SubResource( 248 ) ],
+"loop": true,
+"name": "IdleTaser",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
@@ -411,6 +488,11 @@ animations = [ {
 "name": "StickAttack",
 "speed": 9.0
 }, {
+"frames": [ SubResource( 251 ), SubResource( 252 ), SubResource( 253 ) ],
+"loop": true,
+"name": "TaserAttack",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "Walk",
@@ -425,6 +507,11 @@ animations = [ {
 "loop": true,
 "name": "WalkStick",
 "speed": 9.0
+}, {
+"frames": [ SubResource( 259 ), SubResource( 260 ), SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ), SubResource( 265 ), SubResource( 266 ), SubResource( 267 ), SubResource( 268 ) ],
+"loop": true,
+"name": "WalkTaser",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=184]
@@ -617,6 +704,22 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=249]
+resource_name = "IdleTaser"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "IdleTaser" ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -926,6 +1029,60 @@ tracks/3/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=254]
+resource_name = "TaserAttack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "TaserAttack" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "taser_attacking_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TaserZone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TaserZone:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=50]
 resource_name = "Walk"
 tracks/0/type = "value"
@@ -969,6 +1126,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "WalkStick" ]
+}
+
+[sub_resource type="Animation" id=269]
+resource_name = "WalkTaser"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "WalkTaser" ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=185]
@@ -1081,7 +1253,7 @@ states/Walk/node = SubResource( 93 )
 states/Walk/position = Vector2( 1151.6, 233 )
 transitions = [ "Idle", "DiveKick", SubResource( 81 ), "DiveKick", "Idle", SubResource( 82 ), "Idle", "Kick", SubResource( 83 ), "Kick", "Idle", SubResource( 84 ), "Idle", "Jump", SubResource( 85 ), "Jump", "Idle", SubResource( 86 ), "Idle", "Punch", SubResource( 87 ), "Punch", "Idle", SubResource( 88 ), "Idle", "Jab", SubResource( 89 ), "Jab", "Idle", SubResource( 90 ), "JumpKick", "Idle", SubResource( 92 ), "Idle", "Walk", SubResource( 94 ), "Walk", "Idle", SubResource( 95 ), "Idle", "Hurt", SubResource( 192 ), "Hurt", "Idle", SubResource( 193 ), "Hurt", "Dead", SubResource( 196 ), "Jump", "JumpKick", SubResource( 203 ), "Walk", "Hurt", SubResource( 205 ), "Hurt", "Walk", SubResource( 206 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 396.393, -154.09 )
+graph_offset = Vector2( 396.393, -21.37 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=74]
 
@@ -1149,14 +1321,46 @@ graph_offset = Vector2( 0, 51.0157 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=214]
 
+[sub_resource type="AnimationNodeAnimation" id=250]
+animation = "IdleTaser"
+
+[sub_resource type="AnimationNodeAnimation" id=255]
+animation = "TaserAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=270]
+animation = "WalkTaser"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=256]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=257]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=271]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=272]
+
+[sub_resource type="AnimationNodeStateMachine" id=243]
+states/IdleTaser/node = SubResource( 250 )
+states/IdleTaser/position = Vector2( 423, 380 )
+states/TaserAttack/node = SubResource( 255 )
+states/TaserAttack/position = Vector2( 423, 241.365 )
+states/WalkTaser/node = SubResource( 270 )
+states/WalkTaser/position = Vector2( 721.736, 380 )
+transitions = [ "IdleTaser", "TaserAttack", SubResource( 256 ), "TaserAttack", "IdleTaser", SubResource( 257 ), "IdleTaser", "WalkTaser", SubResource( 271 ), "WalkTaser", "IdleTaser", SubResource( 272 ) ]
+start_node = "IdleTaser"
+graph_offset = Vector2( 41.7363, 235.077 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=244]
+
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 22.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=116]
-extents = Vector2( 8, 6.5 )
-
 [sub_resource type="RectangleShape2D" id=115]
 extents = Vector2( 21, 28 )
+
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 8, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 11, 2.5 )
@@ -1165,6 +1369,9 @@ extents = Vector2( 11, 2.5 )
 extents = Vector2( 19.5, 16 )
 
 [sub_resource type="RectangleShape2D" id=219]
+
+[sub_resource type="RectangleShape2D" id=258]
+extents = Vector2( 18.5, 8.25 )
 
 [node name="FighterPlayer" type="KinematicBody2D"]
 collision_layer = 8
@@ -1190,7 +1397,7 @@ visible = false
 position = Vector2( -2, 0 )
 frames = SubResource( 5 )
 animation = "Bullet"
-frame = 2
+frame = 1
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bullet"]
@@ -1210,7 +1417,7 @@ position = Vector2( -15, 7.10543e-15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1221,6 +1428,7 @@ anims/Hurt = SubResource( 43 )
 anims/Idle = SubResource( 44 )
 anims/IdleGun = SubResource( 166 )
 anims/IdleStick = SubResource( 211 )
+anims/IdleTaser = SubResource( 249 )
 anims/Jab = SubResource( 45 )
 anims/Jump = SubResource( 46 )
 anims/JumpKick = SubResource( 47 )
@@ -1228,9 +1436,11 @@ anims/Kick = SubResource( 48 )
 anims/Punch = SubResource( 49 )
 anims/Shoot = SubResource( 168 )
 anims/StickAttack = SubResource( 218 )
+anims/TaserAttack = SubResource( 254 )
 anims/Walk = SubResource( 50 )
 anims/WalkGun = SubResource( 167 )
 anims/WalkStick = SubResource( 233 )
+anims/WalkTaser = SubResource( 269 )
 
 [node name="AnimationTreeFighter" type="AnimationTree" parent="."]
 tree_root = SubResource( 73 )
@@ -1248,9 +1458,22 @@ tree_root = SubResource( 213 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 214 )
 
+[node name="AnimationTreeTaser" type="AnimationTree" parent="."]
+tree_root = SubResource( 243 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 244 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -21.5, 42 )
 shape = SubResource( 41 )
+
+[node name="HitZone" type="Area2D" parent="."]
+collision_layer = 8192
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
+position = Vector2( -22, 2 )
+shape = SubResource( 115 )
 
 [node name="PunchZone" type="Area2D" parent="."]
 collision_layer = 32768
@@ -1261,14 +1484,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchZone"]
 position = Vector2( 36, -3.5 )
 shape = SubResource( 116 )
-
-[node name="HitZone" type="Area2D" parent="."]
-collision_layer = 8192
-collision_mask = 4096
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
-position = Vector2( -22, 2 )
-shape = SubResource( 115 )
 
 [node name="KickZone" type="Area2D" parent="."]
 collision_layer = 32768
@@ -1283,6 +1498,8 @@ shape = SubResource( 117 )
 [node name="JumpkickZone" type="Area2D" parent="."]
 collision_layer = 32768
 collision_mask = 16384
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpkickZone"]
 position = Vector2( 2.5, -45 )
@@ -1297,6 +1514,17 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
 position = Vector2( 60, -6 )
 shape = SubResource( 219 )
+
+[node name="TaserZone" type="Area2D" parent="."]
+position = Vector2( 44, 0 )
+collision_layer = 32768
+collision_mask = 16400
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TaserZone"]
+position = Vector2( -9, -6 )
+shape = SubResource( 258 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 182, -174 )
@@ -1331,6 +1559,9 @@ volume_db = -3.817
 
 [node name="Dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 18 )
+
+[node name="Electricity" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 29 )
 
 [connection signal="child_entered_tree" from="Bullet" to="." method="_on_Bullet_child_entered_tree"]
 [connection signal="screen_exited" from="Bullet/VisibilityNotifier2D" to="Bullet" method="_on_VisibilityNotifier2D_screen_exited"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stick.png-2e088c85eb80063e7875078a89487f64.stex"
+path="res://.import/bikerelectricity.png-bf6377657b4593e63abef7a6e69f8bae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/stick.png"
-dest_files=[ "res://.import/stick.png-2e088c85eb80063e7875078a89487f64.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/EnemyBiker/bikerelectricity.png"
+dest_files=[ "res://.import/bikerelectricity.png-bf6377657b4593e63abef7a6e69f8bae.stex" ]
 
 [params]
 

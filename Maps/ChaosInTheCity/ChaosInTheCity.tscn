@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/FinalBoss.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/FirstAidKit.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Maps/ChaosInTheCity/Rat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Maps/ChaosInTheCity/Taser.tscn" type="PackedScene" id=13]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -31,7 +32,7 @@ position = Vector2( 964, 544 )
 position = Vector2( 101, 595 )
 
 [node name="Barrel" parent="Characters" instance=ExtResource( 6 )]
-position = Vector2( 259, 575 )
+position = Vector2( 285, 624 )
 collision_layer = 32
 collision_mask = 25
 
@@ -41,25 +42,30 @@ collision_layer = 32
 collision_mask = 25
 
 [node name="Stick" parent="Characters" instance=ExtResource( 8 )]
-position = Vector2( 106, 536 )
+position = Vector2( 872, 606 )
+
+[node name="Taser" parent="Characters" instance=ExtResource( 13 )]
+position = Vector2( 28, 611 )
+collision_layer = 4096
+collision_mask = 8192
 
 [node name="Rat" parent="Characters" instance=ExtResource( 12 )]
 position = Vector2( 74, 254 )
 
 [node name="EnemyPunk" parent="Characters" instance=ExtResource( 3 )]
-position = Vector2( 763, 538 )
+position = Vector2( 223, 509 )
 
 [node name="EnemyPunk2" parent="Characters" instance=ExtResource( 3 )]
 position = Vector2( 1133, 538 )
 
 [node name="EnemyPunk3" parent="Characters" instance=ExtResource( 3 )]
-position = Vector2( 454, 518 )
+position = Vector2( 495, 497 )
 
 [node name="EnemyBiker" parent="Characters" instance=ExtResource( 5 )]
 position = Vector2( 667, 516 )
 
 [node name="EnemyBiker2" parent="Characters" instance=ExtResource( 5 )]
-position = Vector2( 630, 572 )
+position = Vector2( 815, 600 )
 
 [node name="EnemySoldier" parent="Characters" instance=ExtResource( 4 )]
 position = Vector2( 1220, 610 )
@@ -76,4 +82,4 @@ position = Vector2( 1845, 566 )
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 
 [node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 28, 521 )
+position = Vector2( 20, 550 )

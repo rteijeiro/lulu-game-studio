@@ -5,6 +5,7 @@ enum States {
 	IDLE,
 	WALK,
 	HURT,
+	HURTELECTRICITY,
 	ATTACK, 
 	DEAD
 }
@@ -19,7 +20,7 @@ var target = null
 
 func _physics_process(delta: float) -> void:
 
-	if state != States.HURT:
+	if state != States.HURT and state != States.HURTELECTRICITY:
 		if state != States.ATTACK:
 			$AnimatedSprite.play("Walk")
 			var collision = move_and_collide(direction)
@@ -56,6 +57,8 @@ func set_state(new_state):
 			animation_state.travel("Attack")
 		States.HURT:
 			animation_state.travel("Hurt")
+		States.HURTELECTRICITY:
+			animation_state.travel("HurtElectricity")
 		States.DEAD:
 			animation_state.travel("Dead")
 	
@@ -96,9 +99,18 @@ func hit():
 		$AnimationPlayer.play("Dead")
 		$Dead.play() 
 
-
+func hit_electricity():
+	self.state = States.HURTELECTRICITY
+	$AnimationPlayer.play("HurtElectricity")
+	life -= 1
+	if life <= 0:
+		$AnimationPlayer.play("Dead")
+		$Dead.play()
 
 func is_not_hit():
+	self.state = States.IDLE
+
+func is_not_hit_electricity():
 	self.state = States.IDLE
 
 
@@ -134,6 +146,8 @@ func _on_HitBox_area_entered(area):
 	if area.get_name() == "StickZone":
 		$Hurt.play()
 		self.hit()
+	if area.get_name() == "TaserZone":
+		self.hit_electricity()
 
 
 func death():

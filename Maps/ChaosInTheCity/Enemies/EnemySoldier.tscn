@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemySoldier/idle.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemySoldier/walk.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/body_hit_small_11.wav" type="AudioStream" id=6]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/Punch.wav" type="AudioStream" id=7]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/man_grunt_6.wav" type="AudioStream" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/EnemySoldier/soldierelectricity.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.1818, 3.63636 )
@@ -50,6 +51,14 @@ region = Rect2( 0, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 96, 63 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 9 )
 region = Rect2( 96, 0, 96, 63 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -99,6 +108,11 @@ animations = [ {
 "frames": [ SubResource( 32 ), SubResource( 33 ) ],
 "loop": false,
 "name": "Hurt",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 62 ), SubResource( 63 ) ],
+"loop": false,
+"name": "HurtElectricity",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
@@ -210,6 +224,35 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=64]
+resource_name = "HurtElectricity"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "HurtElectricity" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "is_not_hit_electricity"
+} ]
+}
+
 [sub_resource type="Animation" id=11]
 resource_name = "Idle"
 loop = true
@@ -250,6 +293,9 @@ animation = "Dead"
 [sub_resource type="AnimationNodeAnimation" id=37]
 animation = "Hurt"
 
+[sub_resource type="AnimationNodeAnimation" id=65]
+animation = "HurtElectricity"
+
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Idle"
 
@@ -286,6 +332,20 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=66]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=67]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=70]
+
 [sub_resource type="AnimationNodeStateMachine" id=17]
 states/Attack/node = SubResource( 24 )
 states/Attack/position = Vector2( 274, -45 )
@@ -293,13 +353,15 @@ states/Dead/node = SubResource( 50 )
 states/Dead/position = Vector2( 974, 201.117 )
 states/Hurt/node = SubResource( 37 )
 states/Hurt/position = Vector2( 644, 114.092 )
+states/HurtElectricity/node = SubResource( 65 )
+states/HurtElectricity/position = Vector2( 644, 229.388 )
 states/Idle/node = SubResource( 13 )
 states/Idle/position = Vector2( 274, 114.092 )
 states/Walk/node = SubResource( 14 )
-states/Walk/position = Vector2( 644, -45 )
-transitions = [ "Idle", "Walk", SubResource( 15 ), "Walk", "Idle", SubResource( 16 ), "Idle", "Attack", SubResource( 25 ), "Attack", "Idle", SubResource( 26 ), "Walk", "Attack", SubResource( 38 ), "Attack", "Walk", SubResource( 39 ), "Walk", "Hurt", SubResource( 40 ), "Hurt", "Walk", SubResource( 41 ), "Idle", "Hurt", SubResource( 42 ), "Hurt", "Idle", SubResource( 43 ), "Hurt", "Dead", SubResource( 58 ) ]
+states/Walk/position = Vector2( 934, 6 )
+transitions = [ "Idle", "Walk", SubResource( 15 ), "Walk", "Idle", SubResource( 16 ), "Idle", "Attack", SubResource( 25 ), "Attack", "Idle", SubResource( 26 ), "Walk", "Attack", SubResource( 38 ), "Attack", "Walk", SubResource( 39 ), "Walk", "Hurt", SubResource( 40 ), "Hurt", "Walk", SubResource( 41 ), "Idle", "Hurt", SubResource( 42 ), "Hurt", "Idle", SubResource( 43 ), "Hurt", "Dead", SubResource( 58 ), "Idle", "HurtElectricity", SubResource( 66 ), "HurtElectricity", "Idle", SubResource( 67 ), "Walk", "HurtElectricity", SubResource( 68 ), "HurtElectricity", "Walk", SubResource( 69 ), "HurtElectricity", "Dead", SubResource( 70 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 0, 10.3876 )
+graph_offset = Vector2( 0, 47.5676 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
@@ -339,6 +401,7 @@ autoplay = "Idle"
 anims/Attack = SubResource( 23 )
 anims/Dead = SubResource( 35 )
 anims/Hurt = SubResource( 34 )
+anims/HurtElectricity = SubResource( 64 )
 anims/Idle = SubResource( 11 )
 anims/Walk = SubResource( 12 )
 
@@ -350,7 +413,7 @@ parameters/playback = SubResource( 18 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 8
+collision_mask = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2( 0, -5.5 )
