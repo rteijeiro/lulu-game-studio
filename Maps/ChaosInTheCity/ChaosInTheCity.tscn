@@ -18,7 +18,7 @@
 [node name="ChaosInTheCity" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2, -8 )
+position = Vector2( -3, -18 )
 
 [node name="Characters" type="YSort" parent="."]
 unique_name_in_owner = true
@@ -33,7 +33,7 @@ position = Vector2( 964, 544 )
 position = Vector2( 115, 616 )
 
 [node name="Barrel" parent="Characters" instance=ExtResource( 6 )]
-position = Vector2( 306, 545 )
+position = Vector2( 306, 526 )
 collision_layer = 32
 collision_mask = 25
 
@@ -86,4 +86,4 @@ position = Vector2( 73, 593 )
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 
 [node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 20, 550 )
+position = Vector2( 28, 537 )

@@ -1590,13 +1590,13 @@ tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 537
 format = 1
-tile_data = PoolIntArray( 37, 35, 0, 131105, 28, 0, 262180, 27, 0, 393249, 27, 0, 458788, 30, 0, 589849, 28, 0, 589853, 27, 0, 589857, 28, 0, 786414, 1, 0, 720902, 1, 0, 720917, 1, 0, 720933, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 786447, 31, 0, 786453, 26, 0, 786458, 32, 0, 786468, 31, 0, 917474, 25, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983021, 19, 0, 917507, 10, 0, 917508, 37, 0, 917509, 39, 0, 917512, 38, 0, 917521, 24, 0, 917522, 24, 0, 917523, 24, 0, 917524, 41, 0, 917525, 39, 0, 917529, 43, 0, 1048557, 19, 0, 1114093, 19, 0, 1179629, 19, 0, 1245165, 19, 0, 1310701, 19, 0 )
+tile_data = PoolIntArray( 37, 35, 0, 131105, 28, 0, 262180, 27, 0, 393249, 27, 0, 458788, 30, 0, 589849, 28, 0, 589853, 27, 0, 589857, 28, 0, 786414, 1, 0, 720902, 1, 0, 720917, 1, 0, 720933, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 786447, 31, 0, 786453, 26, 0, 786458, 32, 0, 786468, 31, 0, 917474, 25, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983021, 19, 0, 917507, 10, 0, 917508, 37, 0, 917509, 39, 0, 917512, 38, 0, 917521, 24, 0, 917522, 24, 0, 917523, 24, 0, 917524, 41, 0, 917525, 39, 0, 917529, 43, 0, 1048557, 19, 0, 1114093, 19, 0, 1245165, 19, 0, 1310701, 19, 0 )
 
 [node name="Lamps" type="AnimatedSprite" parent="."]
 position = Vector2( 401, 474 )
 frames = SubResource( 82 )
 animation = "Winking"
-frame = 2
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -1605,7 +1605,6 @@ position = Vector2( 1722, 215 )
 scale = Vector2( 1.87138, 1.89182 )
 frames = SubResource( 56 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -1614,7 +1613,6 @@ position = Vector2( 1486, 376 )
 scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 61 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -1623,7 +1621,6 @@ position = Vector2( 591, 271 )
 scale = Vector2( 0.880952, 0.880952 )
 frames = SubResource( 27 )
 animation = "Neon"
-frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -1645,7 +1642,6 @@ position = Vector2( 1025, 394 )
 scale = Vector2( 1.72222, 1.69399 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.2
 playing = true
 
@@ -1665,6 +1661,7 @@ position = Vector2( 471, 373 )
 scale = Vector2( 1.08333, 1.08333 )
 frames = SubResource( 24 )
 animation = "Bark"
+frame = 1
 playing = true
 flip_h = true
 

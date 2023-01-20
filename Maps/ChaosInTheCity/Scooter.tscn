@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Scooter/scooter2.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Scooter.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.5, 19 )
+extents = Vector2( 49, 18 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
@@ -41,13 +41,16 @@ tracks/0/keys = {
 "values": [ "Moving" ]
 }
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 49, 17.5 )
+
 [node name="Scooter" type="KinematicBody2D"]
 collision_layer = 2048
 collision_mask = 8192
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.5, 7 )
+position = Vector2( 23, 6 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -62,5 +65,18 @@ playing = true
 anims/Moving = SubResource( 13 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 21, 2 )
+scale = Vector2( 6.7, 1 )
+
+[node name="RunoverArea" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunoverArea"]
+position = Vector2( 23, 6.5 )
+shape = SubResource( 14 )
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

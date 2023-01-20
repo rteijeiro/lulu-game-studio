@@ -1417,6 +1417,7 @@ position = Vector2( -15, 7.10543e-15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1468,7 +1469,7 @@ shape = SubResource( 41 )
 
 [node name="HitZone" type="Area2D" parent="."]
 collision_layer = 8192
-collision_mask = 4096
+collision_mask = 6144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
 position = Vector2( -22, 2 )

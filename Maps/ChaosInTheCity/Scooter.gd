@@ -10,10 +10,24 @@ enum States {
 
 var state = States.MOVING
 
+
 func _physics_process(_delta: float) -> void:
 	self.state = States.MOVING
 	velocity = Vector2(speed * direction, 0)
 	velocity = move_and_slide(velocity)
+	
+#func is_moving():
+#	state = States.MOVING
+
+
+func _on_Timer_timeout():
+	$AnimatedSprite.flip_h = true
+	direction = -1
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	$Timer.start(5)
+	direction = 0
+
+
+
+

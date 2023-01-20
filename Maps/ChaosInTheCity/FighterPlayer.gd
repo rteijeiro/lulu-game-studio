@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name FighterPlayer
 
 # Movement.
-export (int) var speed = 80
+export (int) var speed = 100
 export (int) var speed_gun = 25
 export (int) var speed_stick = 25
 export (int) var speed_taser = 25
@@ -224,6 +224,7 @@ func get_input():
 		$AnimationPlayer.play("WalkStick")
 
 
+
 #Move Right with the Taser:
 	if Input.is_action_pressed("righttaser") and self.state != States.TASERATTACK and $AnimationTreeTaser.active:
 		velocity.x += speed_taser
@@ -423,13 +424,23 @@ func _on_HitZone_area_entered(area):
 			$Dead.play()
 			self.state = States.DEAD
 			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
-	if area.get_name() == "WeaponArea":
+	if area.get_name() == "GranadeArea":
 		if life > 0:
 			$AnimationPlayer.play("Hurt")
 			life -= 1
 			$Hurt.play()
 			hud.update_life(life)
 		if life <=0:
+			$Dead.play()
+			self.state = States.DEAD
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
+	if area.get_name() == "RunoverArea":
+		if life > 0:
+			$AnimatedSpritePlayer.play("Hurt")
+			life -= 1
+			$Hurt.play()
+			hud.update_life(life)
+		if life <= 0:
 			$Dead.play()
 			self.state = States.DEAD
 			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
