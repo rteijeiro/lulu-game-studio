@@ -650,7 +650,7 @@ position = Vector2( 674, 426 )
 scale = Vector2( 0.862903, 0.862903 )
 frames = SubResource( 4 )
 animation = "UpDown"
-frame = 2
+frame = 1
 speed_scale = 0.25
 playing = true
 
@@ -658,6 +658,7 @@ playing = true
 position = Vector2( 310, 415 )
 frames = SubResource( 5 )
 animation = "OnOff"
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -666,7 +667,7 @@ position = Vector2( 1179, 427 )
 scale = Vector2( 0.01125, 0.01125 )
 frames = SubResource( 6 )
 animation = "Idle"
-frame = 1
+frame = 2
 speed_scale = 0.2
 playing = true
 
