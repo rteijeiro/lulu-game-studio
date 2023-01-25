@@ -59,7 +59,7 @@ onready var animation_state_taser = $AnimationTreeTaser.get("paremeters/playback
 var animation_state = null
 
 #Bullet
-onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
+onready var Bullet = preload("res://Maps/ChaosInTheCity/Weapons/Bullet.tscn")
 
 #Actions.
 var fighter_is_jumping:bool = false

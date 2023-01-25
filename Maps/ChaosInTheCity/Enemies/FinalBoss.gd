@@ -77,7 +77,7 @@ func check_direction():
 
 
 #Granade
-onready var Granade = preload("res://Maps/ChaosInTheCity/Granade.tscn")
+onready var Granade = preload("res://Maps/ChaosInTheCity/Enemies/Granade.tscn")
 
 func throw():
 	var granade = Granade.instance()

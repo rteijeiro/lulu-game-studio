@@ -9,7 +9,7 @@ enum States {
 	ATTACK, 
 	DEAD
 }
-#
+
 var direction:Vector2 = Vector2.ZERO
 onready var animation_state = $AnimationTree.get('parameters/playback')
 var state = States.IDLE
@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 			if collision != null:
 				if collision.collider.name == "FighterPlayer" :
 						$AnimationPlayer.play("Attack")
-#						collision.collider.is_hit(10)
 				else:
 						direction = Vector2(-1,-1)
 						scale.x = 1
@@ -151,10 +150,8 @@ func _on_HitBox_area_entered(area):
 
 
 func death():
-	self.state = States.DEAD
+	$AnimationPlayer.play("Dead")
+	self.state = States.DEAD 
+
+func animation_over():
 	queue_free()
-		
-
-	
-
-

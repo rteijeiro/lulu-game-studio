@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Shooter Synthwave 7.wav-62cea801886f93abd5056133ca41dd56.sample"
+path="res://.import/Start.wav-108a8c7856641899de66e95edec8118c.sample"
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Shooter Synthwave 7.wav"
-dest_files=[ "res://.import/Shooter Synthwave 7.wav-62cea801886f93abd5056133ca41dd56.sample" ]
+source_file="res://Maps/ChaosInTheCity/SoundEffects/Start.wav"
+dest_files=[ "res://.import/Start.wav-108a8c7856641899de66e95edec8118c.sample" ]
 
 [params]
 

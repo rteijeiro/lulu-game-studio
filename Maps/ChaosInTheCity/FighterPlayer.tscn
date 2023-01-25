@@ -23,7 +23,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/stick_attack.png" type="Texture" id=21]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Stick/walk_stick.png" type="Texture" id=22]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Life/Powerup 36 (1).wav" type="AudioStream" id=23]
-[ext_resource path="res://Maps/ChaosInTheCity/Bullet.gd" type="Script" id=24]
+[ext_resource path="res://Maps/ChaosInTheCity/Weapons/Bullet.gd" type="Script" id=24]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/bullet.png" type="Texture" id=25]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/idletaser.png" type="Texture" id=26]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/taserattack.png" type="Texture" id=27]

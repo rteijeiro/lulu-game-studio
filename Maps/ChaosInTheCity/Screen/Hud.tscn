@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Life/LifeFrame.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Life/LifeBar.png" type="Texture" id=2]
-[ext_resource path="res://Maps/ChaosInTheCity/Hud.gd" type="Script" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/Screen/Hud.gd" type="Script" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Life/health-red 32px.png" type="Texture" id=4]
+
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 3 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Granade/RCG_Grenade_Exploding_03.png" type="Texture" id=1]
-[ext_resource path="res://Maps/ChaosInTheCity/Granade.gd" type="Script" id=2]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/Granade.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=10]
 radius = 7.0

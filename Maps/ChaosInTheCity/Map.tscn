@@ -24,7 +24,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/Sushi.png" type="Texture" id=22]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/chair.png" type="Texture" id=23]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Ramen/Environment_Pub_02.png" type="Texture" id=24]
-[ext_resource path="res://Maps/ChaosInTheCity/Shooter Synthwave 7.wav" type="AudioStream" id=25]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Shooter Synthwave 7.wav" type="AudioStream" id=25]
 [ext_resource path="res://Maps/ChaosInTheCity/Map.gd" type="Script" id=26]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/More.png" type="Texture" id=27]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/Buildings2.png" type="Texture" id=28]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GameOver.mp3-6c23f46334e3ace970a36851fb2fb62f.mp3str"
+
+[deps]
+
+source_file="res://Maps/ChaosInTheCity/SoundEffects/Game Over/GameOver.mp3"
+dest_files=[ "res://.import/GameOver.mp3-6c23f46334e3ace970a36851fb2fb62f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -152,5 +152,6 @@ func _on_HitBox_area_entered(area):
 
 func death():
 	self.state = States.DEAD
-	queue_free()
 
+func animation_over():
+	queue_free()
