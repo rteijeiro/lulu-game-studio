@@ -431,7 +431,7 @@ func _on_HitZone_area_entered(area):
 		if life <= 0:
 			$Dead.play()
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "GranadeArea":
 		if life > 0:
 			$AnimationPlayer.play("Hurt")
@@ -441,7 +441,7 @@ func _on_HitZone_area_entered(area):
 		if life <=0:
 			$Dead.play()
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "RunoverArea":
 		if life > 0:
 			$AnimatedSpritePlayer.play("Hurt")
@@ -451,7 +451,7 @@ func _on_HitZone_area_entered(area):
 		if life <= 0:
 			$Dead.play()
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver.tscn")
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "FirstAidKit":
 			$GetLife.play()
 			life += 5

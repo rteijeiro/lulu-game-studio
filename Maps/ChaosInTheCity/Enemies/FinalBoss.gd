@@ -123,23 +123,30 @@ func _on_DetectionArea_body_exited(body):
 func _on_HitBox_area_entered(area):
 	if area.get_name() == "PunchZone":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
 		self.hit()
 	if area.get_name() == "KickZone":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
 		self.hit()
 	if area.get_name() == "AreaBullet":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
 		self.hit()
 	if area.get_name() == "JumpkickZone":
 		$AnimationPlayer.play("Hurt")
+		$Hurt.play()
 		self.hit()
 
 
 func death():
+	$AnimationPlayer.play("Dead")
 	self.state = States.DEAD
+	
+func animation_over():
 	queue_free()
 	get_tree().change_scene("res://World.tscn")
-		
+	
 
 
 

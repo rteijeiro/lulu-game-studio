@@ -1465,7 +1465,6 @@ visible = false
 position = Vector2( -2, 0 )
 frames = SubResource( 5 )
 animation = "Bullet"
-frame = 1
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bullet"]
@@ -1485,6 +1484,7 @@ position = Vector2( -15, 7.10543e-15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1565,6 +1565,8 @@ shape = SubResource( 117 )
 [node name="JumpkickZone" type="Area2D" parent="."]
 collision_layer = 32768
 collision_mask = 16384
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpkickZone"]
 position = Vector2( 2.5, -45 )

@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Scooter/scooter2.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/Scooter.gd" type="Script" id=2]
-
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/Car_Acceleration.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49, 18 )
@@ -59,7 +59,7 @@ position = Vector2( 21.6667, -20 )
 scale = Vector2( 1.66667, 1.66667 )
 frames = SubResource( 9 )
 animation = "Moving"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -78,6 +78,11 @@ position = Vector2( 23, 6.5 )
 shape = SubResource( 14 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Scooter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -6.667
+autoplay = true
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=122 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/TileMap/Sushi/sushi-1.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Props/NES_Telephone_SkipBin.png" type="Texture" id=42]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Props/Lamps.png" type="Texture" id=43]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Props/pixil-frame-0.png" type="Texture" id=44]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Props/Van.png" type="Texture" id=45]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 47.0945, 31, 46.6123, 31, 77, 0, 77 )
@@ -1329,6 +1330,20 @@ points = PoolVector2Array( 0, 0, 84, 0, 84, 94, 0, 94 )
 46/shape_one_way_margin = 0.0
 46/shapes = [  ]
 46/z_index = 0
+47/name = "Van.png 47"
+47/texture = ExtResource( 45 )
+47/tex_offset = Vector2( 0, 0 )
+47/modulate = Color( 1, 1, 1, 1 )
+47/region = Rect2( 131, 126, 265, 128 )
+47/tile_mode = 0
+47/occluder_offset = Vector2( 0, 0 )
+47/navigation_offset = Vector2( 0, 0 )
+47/shape_offset = Vector2( 0, 0 )
+47/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+47/shape_one_way = false
+47/shape_one_way_margin = 0.0
+47/shapes = [  ]
+47/z_index = 0
 
 [sub_resource type="AtlasTexture" id=76]
 flags = 4
@@ -1605,13 +1620,13 @@ tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 537
 format = 1
-tile_data = PoolIntArray( 37, 35, 0, 131105, 28, 0, 262180, 27, 0, 393249, 27, 0, 458788, 30, 0, 589849, 28, 0, 589853, 27, 0, 589857, 28, 0, 786414, 1, 0, 720902, 1, 0, 720917, 1, 0, 720933, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 786447, 31, 0, 786453, 26, 0, 786458, 32, 0, 786468, 31, 0, 786474, 46, 0, 917474, 25, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983021, 19, 0, 917507, 10, 0, 917508, 37, 0, 917509, 39, 0, 917512, 38, 0, 917521, 24, 0, 917522, 24, 0, 917523, 24, 0, 917524, 41, 0, 917525, 39, 0, 917529, 43, 0, 1048557, 19, 0, 1114093, 19, 0, 1245165, 19, 0, 1310701, 19, 0 )
+tile_data = PoolIntArray( 37, 35, 0, 131105, 28, 0, 262180, 27, 0, 393249, 27, 0, 458788, 30, 0, 589849, 28, 0, 589853, 27, 0, 589857, 28, 0, 786414, 1, 0, 720902, 1, 0, 720917, 1, 0, 720933, 1, 0, 851952, 13, 0, 851962, 20, 0, 786437, 14, 0, 786447, 31, 0, 786453, 26, 0, 786458, 32, 0, 786468, 31, 0, 786474, 46, 0, 917476, 47, 0, 917489, 5, 0, 851974, 21, 0, 851976, 16, 0, 983021, 19, 0, 917507, 10, 0, 917508, 37, 0, 917509, 39, 0, 917512, 38, 0, 917521, 24, 0, 917522, 24, 0, 917523, 24, 0, 917524, 41, 0, 917525, 39, 0, 917529, 43, 0, 1048557, 19, 0, 1114093, 19, 0, 1245165, 19, 0, 1310701, 19, 0 )
 
 [node name="Lamps" type="AnimatedSprite" parent="."]
 position = Vector2( 401, 474 )
 frames = SubResource( 82 )
 animation = "Winking"
-frame = 5
+frame = 2
 speed_scale = 2.0
 playing = true
 
@@ -1628,7 +1643,6 @@ position = Vector2( 1486, 376 )
 scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 61 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -1637,6 +1651,7 @@ position = Vector2( 591, 271 )
 scale = Vector2( 0.880952, 0.880952 )
 frames = SubResource( 27 )
 animation = "Neon"
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -1644,14 +1659,14 @@ playing = true
 position = Vector2( 1204, 461 )
 frames = SubResource( 38 )
 animation = "Idle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Can" type="AnimatedSprite" parent="."]
 position = Vector2( 1667, 460 )
 frames = SubResource( 70 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Sushi" type="AnimatedSprite" parent="."]
@@ -1667,7 +1682,6 @@ position = Vector2( 173.15, 365.316 )
 scale = Vector2( -1.03035, -0.903819 )
 frames = SubResource( 10 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.4
 playing = true
 flip_h = true
@@ -1678,7 +1692,7 @@ position = Vector2( 471, 373 )
 scale = Vector2( 1.08333, 1.08333 )
 frames = SubResource( 24 )
 animation = "Bark"
-frame = 8
+frame = 6
 playing = true
 flip_h = true
 
