@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Options1.png-360215e2ba48fb7f2f5437d0ef936d31.stex"
+path="res://.import/Options2.png-ed64b63c7c34827f8c3c83d65b0bb563.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/Start/Options1.png"
-dest_files=[ "res://.import/Options1.png-360215e2ba48fb7f2f5437d0ef936d31.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/StartMenu/Options2.png"
+dest_files=[ "res://.import/Options2.png-ed64b63c7c34827f8c3c83d65b0bb563.stex" ]
 
 [params]
 

@@ -138,6 +138,7 @@ func _on_HitBox_area_entered(area):
 func death():
 	self.state = States.DEAD
 	queue_free()
+	get_tree().change_scene("res://World.tscn")
 		
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playbutton.png-46444d982e3272db6d4ea5d20be08c3d.stex"
+path="res://.import/pixil-frame-0.png-d4bed8eabf45d19bc2dfe4d3371614cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/ChaosInTheCity/Sprites/Start/playbutton.png"
-dest_files=[ "res://.import/playbutton.png-46444d982e3272db6d4ea5d20be08c3d.stex" ]
+source_file="res://Maps/ChaosInTheCity/Sprites/Props/pixil-frame-0.png"
+dest_files=[ "res://.import/pixil-frame-0.png-d4bed8eabf45d19bc2dfe4d3371614cf.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

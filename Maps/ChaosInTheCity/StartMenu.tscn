@@ -4,17 +4,17 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/kick.png" type="Texture" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/jab.png" type="Texture" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Fight/punch.png" type="Texture" id=4]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Tittle1.png" type="Texture" id=5]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Start1.png" type="Texture" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Tittle1.png" type="Texture" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Start1.png" type="Texture" id=6]
 [ext_resource path="res://Maps/ChaosInTheCity/Start.wav" type="AudioStream" id=7]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Options1.png" type="Texture" id=8]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Options1.png" type="Texture" id=8]
 [ext_resource path="res://Maps/ChaosInTheCity/StartMenu.gd" type="Script" id=9]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Tittle3.png" type="Texture" id=10]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Tittle2.png" type="Texture" id=11]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Start - copia.png" type="Texture" id=12]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Start2.png" type="Texture" id=13]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Tittle3.png" type="Texture" id=10]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Tittle2.png" type="Texture" id=11]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Start - copia.png" type="Texture" id=12]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Start2.png" type="Texture" id=13]
 [ext_resource path="res://Maps/ChaosInTheCity/TextureButton.gd" type="Script" id=14]
-[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Start/Options2.png" type="Texture" id=15]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/StartMenu/Options2.png" type="Texture" id=15]
 [ext_resource path="res://Maps/ChaosInTheCity/Options.gd" type="Script" id=16]
 
 [sub_resource type="AtlasTexture" id=17]
@@ -135,7 +135,7 @@ texture = ExtResource( 12 )
 position = Vector2( 584, 219 )
 scale = Vector2( 4.08974, 4.08974 )
 frames = SubResource( 20 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -144,7 +144,7 @@ position = Vector2( 575, 581 )
 scale = Vector2( 5.59846, 5.59846 )
 frames = SubResource( 16 )
 animation = "Start"
-frame = 13
+frame = 17
 playing = true
 
 [node name="Start" type="TextureButton" parent="CanvasLayer"]

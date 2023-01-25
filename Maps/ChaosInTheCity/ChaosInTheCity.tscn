@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Rat.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Maps/ChaosInTheCity/Taser.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Maps/ChaosInTheCity/Scooter.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Maps/ChaosInTheCity/FightLetters.tscn" type="PackedScene" id=15]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -24,7 +25,7 @@ position = Vector2( -3, -18 )
 unique_name_in_owner = true
 
 [node name="FirstAidKit" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 376, 542 )
+position = Vector2( 376, 540 )
 
 [node name="FirstAidKit2" parent="Characters" instance=ExtResource( 11 )]
 position = Vector2( 964, 544 )
@@ -83,7 +84,12 @@ position = Vector2( 1845, 566 )
 [node name="Scooter" parent="Characters" instance=ExtResource( 14 )]
 position = Vector2( 73, 593 )
 
+[node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
+position = Vector2( 18, 546 )
+
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 
-[node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 28, 537 )
+[node name="YSort" type="YSort" parent="."]
+
+[node name="FightLetters" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 217, 280 )

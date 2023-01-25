@@ -27,6 +27,7 @@ var z = 0
 
 # States.
 enum States {
+	FALL,
 	IDLE,
 	DIVEKICK,
 	HURT,
@@ -63,6 +64,7 @@ onready var Bullet = preload("res://Maps/ChaosInTheCity/Bullet.tscn")
 #Actions.
 var fighter_is_jumping:bool = false
 
+#Ready
 func _ready() -> void:  
 	randomize()
 	hud = get_parent().get_node("Hud")  
@@ -253,7 +255,8 @@ func get_input():
 		$AnimationTreeGun.active = false
 		$AnimationTreeStick.active = false
 		$AnimationTreeTaser.active = false
-		$AnimationTreeFighter.active = true
+		$AnimationTreeFighter.active = true 
+		
 		
 #Shoot:
 	if Input.is_action_pressed("shoot") and $AnimationTreeGun.active:
@@ -282,7 +285,7 @@ func _physics_process(delta):
 
 # Detect if player is idle or walking.
 	if velocity == Vector2.ZERO and state != States.DIVEKICK \
-		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT:
+		and state != States.JAB and state != States.JUMPKICK and state != States.KICK and state != States.PUNCH and state != States.JUMP and state!= States.SHOOT and state != States.HURT and state != States.FALL:
 		self.state = States.IDLE
 #With the Gun:
 	if velocity == Vector2.ZERO and state != States.SHOOT:
@@ -298,6 +301,8 @@ func _physics_process(delta):
 func set_state(new_state):
 
 	match new_state:
+		States.FALL:
+			animation_state_nogun.travel("Fall")
 		States.IDLE:
 			animation_state_nogun.travel("Idle")
 		States.DIVEKICK:
@@ -353,6 +358,9 @@ func set_stateTaser(new_stateTaser):
 			animation_state_taser.travel("TaserAttack")
 
 #Finished actions:
+func falling_finished():
+	self.state = States.IDLE
+	
 func divekicking_finished():
 	self.state = States.IDLE
 
@@ -462,6 +470,7 @@ func _on_HitZone_area_entered(area):
 		$AnimationTreeFighter.active = false
 		$AnimationTreeGun.active = false
 		$AnimationTreeStick.active = false
+		
 
 
 #Jump and Kick at the same time
