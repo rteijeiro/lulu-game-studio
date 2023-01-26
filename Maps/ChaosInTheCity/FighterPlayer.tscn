@@ -1353,7 +1353,7 @@ states/WalkGun/node = SubResource( 171 )
 states/WalkGun/position = Vector2( 713, 154 )
 transitions = [ "IdleGun", "WalkGun", SubResource( 172 ), "WalkGun", "IdleGun", SubResource( 173 ), "IdleGun", "Shoot", SubResource( 174 ), "Shoot", "IdleGun", SubResource( 175 ) ]
 start_node = "IdleGun"
-graph_offset = Vector2( 0, 26.7083 )
+graph_offset = Vector2( 0, -68.5403 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=179]
 
@@ -1465,6 +1465,7 @@ visible = false
 position = Vector2( -2, 0 )
 frames = SubResource( 5 )
 animation = "Bullet"
+frame = 1
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bullet"]
@@ -1484,7 +1485,6 @@ position = Vector2( -15, 7.10543e-15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
-frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

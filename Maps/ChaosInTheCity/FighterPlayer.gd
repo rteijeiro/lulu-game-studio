@@ -180,7 +180,6 @@ func get_input():
 		$AnimationTreeGun.active = true
 		$AnimationTreeFighter.active = false
 		$AnimationTreeTaser.active = false
-		
 #Move Right with the Gun:
 	if Input.is_action_pressed("rightgun") and self.state != States.SHOOT and $AnimationTreeGun.active:
 		velocity.x += speed_gun
@@ -201,8 +200,6 @@ func get_input():
 		velocity.y += speed_y_gun
 		self.state = States.WALKGUN
 		$AnimationPlayer.play("WalkGun")
-
-
 
 #Move Right with the Stick:
 	if Input.is_action_pressed("rightstick") and self.state != States.STICKATTACK and $AnimationTreeStick.active:
@@ -401,10 +398,12 @@ var b
 var direction_bullet = 1
 func shoot():
 	if Input.is_action_just_pressed("shoot") and $AnimationTreeGun.active:
-		b = Bullet.instance()
-		add_child(b)
-		b.direction = direction_bullet
-		b.global_position = $Bullet.global_position
+		if States.IDLEGUN:
+			$Shoot.play()
+			b = Bullet.instance()
+			add_child(b)
+			b.direction = direction_bullet
+			b.global_position = $Bullet.global_position
 
 
 #Is Hit.

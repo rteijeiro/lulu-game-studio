@@ -423,7 +423,7 @@ shape = SubResource( 17 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
-animation = "Dead"
+animation = "Idle"
 frame = 1
 speed_scale = 0.9
 playing = true

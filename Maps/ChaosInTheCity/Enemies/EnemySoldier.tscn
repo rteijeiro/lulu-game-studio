@@ -417,8 +417,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, -19 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 6 )
-animation = "Dead"
-frame = 11
+animation = "Idle"
 speed_scale = 0.9
 playing = true
 

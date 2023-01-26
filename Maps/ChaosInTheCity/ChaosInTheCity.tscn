@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
@@ -15,11 +15,15 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Weapons/Taser.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/Scooter.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Maps/ChaosInTheCity/Screen/FightLetters.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Maps/ChaosInTheCity/PauseMenu/PauseMenu.tscn" type="PackedScene" id=16]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3, -18 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 16 )]
+visible = false
 
 [node name="Characters" type="YSort" parent="."]
 unique_name_in_owner = true
@@ -85,7 +89,7 @@ position = Vector2( 1845, 566 )
 position = Vector2( 73, 593 )
 
 [node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 16, 531 )
+position = Vector2( 23, 528 )
 
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 
