@@ -102,7 +102,7 @@ func hit():
 func hit_electricity():
 	self.state = States.HURTELECTRICITY
 	$AnimationPlayer.play("HurtElectricity")
-	life -=1
+	life -= 3
 	if life <= 0:
 		$AnimationPlayer.play("Dead")
 		$Dead.play()

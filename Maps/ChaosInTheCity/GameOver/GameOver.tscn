@@ -56,7 +56,7 @@ position = Vector2( 804, 623 )
 scale = Vector2( 3.21825, 3.21825 )
 frames = SubResource( 6 )
 animation = "GameOver"
-frame = 2
+frame = 3
 playing = true
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]

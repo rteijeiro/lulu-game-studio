@@ -479,12 +479,12 @@ animations = [ {
 "frames": [ SubResource( 207 ), SubResource( 208 ), SubResource( 209 ), SubResource( 210 ) ],
 "loop": true,
 "name": "IdleStick",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [ SubResource( 245 ), SubResource( 246 ), SubResource( 247 ), SubResource( 248 ) ],
 "loop": true,
 "name": "IdleTaser",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
@@ -522,9 +522,9 @@ animations = [ {
 "speed": 9.0
 }, {
 "frames": [ SubResource( 251 ), SubResource( 252 ), SubResource( 253 ) ],
-"loop": true,
+"loop": false,
 "name": "TaserAttack",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
@@ -544,7 +544,7 @@ animations = [ {
 "frames": [ SubResource( 259 ), SubResource( 260 ), SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ), SubResource( 265 ), SubResource( 266 ), SubResource( 267 ), SubResource( 268 ) ],
 "loop": true,
 "name": "WalkTaser",
-"speed": 5.0
+"speed": 9.0
 } ]
 
 [sub_resource type="Animation" id=184]
@@ -676,6 +676,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false, false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationTreeStick:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationTreeTaser:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
 
 [sub_resource type="Animation" id=166]
 resource_name = "IdleGun"
@@ -715,6 +739,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationTreeStick:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationTreeTaser:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
 }
 
 [sub_resource type="Animation" id=211]
@@ -768,6 +816,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true, true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationTreeTaser:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
 
 [sub_resource type="Animation" id=249]
 resource_name = "IdleTaser"
@@ -783,6 +843,54 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "IdleTaser" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationTreeFighter:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationTreeGun:active")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationTreeStick:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationTreeTaser:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -1084,7 +1192,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1163,6 +1271,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=167]
 resource_name = "WalkGun"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSpritePlayer:animation")
 tracks/0/interp = 1
@@ -1334,15 +1443,15 @@ animation = "Shoot"
 [sub_resource type="AnimationNodeAnimation" id=171]
 animation = "WalkGun"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=172]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=173]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=174]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=175]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=292]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=293]
 
 [sub_resource type="AnimationNodeStateMachine" id=178]
 states/IdleGun/node = SubResource( 169 )
@@ -1350,10 +1459,10 @@ states/IdleGun/position = Vector2( 457, 154 )
 states/Shoot/node = SubResource( 170 )
 states/Shoot/position = Vector2( 457, 29 )
 states/WalkGun/node = SubResource( 171 )
-states/WalkGun/position = Vector2( 713, 154 )
-transitions = [ "IdleGun", "WalkGun", SubResource( 172 ), "WalkGun", "IdleGun", SubResource( 173 ), "IdleGun", "Shoot", SubResource( 174 ), "Shoot", "IdleGun", SubResource( 175 ) ]
+states/WalkGun/position = Vector2( 712, 154 )
+transitions = [ "IdleGun", "Shoot", SubResource( 174 ), "Shoot", "IdleGun", SubResource( 175 ), "IdleGun", "WalkGun", SubResource( 292 ), "WalkGun", "IdleGun", SubResource( 293 ) ]
 start_node = "IdleGun"
-graph_offset = Vector2( 0, -68.5403 )
+graph_offset = Vector2( 0, 50.5016 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=179]
 
@@ -1380,12 +1489,12 @@ auto_advance = true
 states/IdleStick/node = SubResource( 212 )
 states/IdleStick/position = Vector2( 430, 180 )
 states/StickAttack/node = SubResource( 220 )
-states/StickAttack/position = Vector2( 430, 45 )
+states/StickAttack/position = Vector2( 430, 44 )
 states/WalkStick/node = SubResource( 234 )
 states/WalkStick/position = Vector2( 752, 180 )
 transitions = [ "IdleStick", "StickAttack", SubResource( 221 ), "StickAttack", "IdleStick", SubResource( 222 ), "IdleStick", "WalkStick", SubResource( 235 ), "WalkStick", "IdleStick", SubResource( 236 ) ]
 start_node = "IdleStick"
-graph_offset = Vector2( 0, 51.0157 )
+graph_offset = Vector2( 0, -13.0405 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=214]
 
@@ -1417,7 +1526,7 @@ states/WalkTaser/node = SubResource( 270 )
 states/WalkTaser/position = Vector2( 721.736, 380 )
 transitions = [ "IdleTaser", "TaserAttack", SubResource( 256 ), "TaserAttack", "IdleTaser", SubResource( 257 ), "IdleTaser", "WalkTaser", SubResource( 271 ), "WalkTaser", "IdleTaser", SubResource( 272 ) ]
 start_node = "IdleTaser"
-graph_offset = Vector2( 41.7363, 235.077 )
+graph_offset = Vector2( -111.988, 235.077 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=244]
 
@@ -1485,6 +1594,7 @@ position = Vector2( -15, 7.10543e-15 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1575,8 +1685,6 @@ shape = SubResource( 204 )
 [node name="StickZone" type="Area2D" parent="."]
 collision_layer = 32768
 collision_mask = 16400
-monitoring = false
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
 position = Vector2( 60, -6 )
