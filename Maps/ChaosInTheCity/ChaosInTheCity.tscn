@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemySoldier3.gd" type="Script" id=25]
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyBiker2.gd" type="Script" id=26]
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowFinalBoss.gd" type="Script" id=27]
+[ext_resource path="res://Maps/ChaosInTheCity/Bullets.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Maps/ChaosInTheCity/HudBullets.tscn" type="PackedScene" id=29]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -105,7 +107,13 @@ script = ExtResource( 27 )
 position = Vector2( 376, 540 )
 
 [node name="FirstAidKit2" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 964, 544 )
+position = Vector2( 965, 520 )
+
+[node name="Bullets" parent="Characters" instance=ExtResource( 28 )]
+position = Vector2( 287, 595 )
+
+[node name="Bullets2" parent="Characters" instance=ExtResource( 28 )]
+position = Vector2( 651, 602 )
 
 [node name="ExplodingBarrel" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 115, 616 )
@@ -165,6 +173,8 @@ position = Vector2( 73, 593 )
 position = Vector2( 23, 528 )
 
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
+
+[node name="HudBullets" parent="Characters" instance=ExtResource( 29 )]
 
 [node name="YSort" type="YSort" parent="."]
 

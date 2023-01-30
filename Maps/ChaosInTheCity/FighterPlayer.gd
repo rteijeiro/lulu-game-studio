@@ -9,10 +9,12 @@ export (int) var gravity = 2000
 export (int) var terminal_velocity = 300
 var velocity:Vector2 = Vector2.ZERO
 var life:int = 5
+var bullets:int = 0
 var direction:Vector2 = Vector2.ZERO
 
 #Hud.
 var hud = null
+var hudbullets = null
 
 #Movement through Y axis
 var motion= Vector2()
@@ -63,6 +65,8 @@ var fighter_is_jumping:bool = false
 func _ready() -> void:  
 	randomize()
 	hud = get_parent().get_node("Hud")  
+
+	hudbullets = get_parent().get_node("HudBullets")
 
 
 #Get input from controller.
@@ -418,11 +422,17 @@ var direction_bullet = 1
 func shoot():
 	if Input.is_action_just_pressed("shoot") and $AnimationTreeGun.active:
 		self.stateGun = States.SHOOT
+		bullets -= 1
+		hudbullets.update_bullets(bullets)
 		$Shoot.play()
 		b = Bullet.instance()
 		add_child(b)
 		b.direction = direction_bullet
 		b.global_position = $Bullet.global_position
+		if bullets <= 0:
+			$AnimationTreeFighter.active = true
+			
+			
 
 
 #Is Hit.
@@ -478,6 +488,16 @@ func _on_HitZone_area_entered(area):
 			$GetLife.play()
 			life += 5
 			hud.update_life(life)
+	if area.get_name() == "Bullets":
+			$Reload.play()
+			bullets += 4
+			hudbullets.update_bullets(bullets)
+			$AnimationTreeGun.active =true
+	if area.get_name() == "Bullets2":
+			$Reload.play()
+			bullets += 4
+			hudbullets.update_bullets(bullets)
+			$AnimationTreeGun.active = true
 	if area.get_name() == "Stick":
 		$AnimationTreeStick.active = true
 		$AnimationTreeFighter.active = false

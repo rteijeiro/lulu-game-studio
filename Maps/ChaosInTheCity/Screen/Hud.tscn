@@ -5,7 +5,6 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Screen/Hud.gd" type="Script" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Life/health-red 32px.png" type="Texture" id=4]
 
-
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 3 )
 
