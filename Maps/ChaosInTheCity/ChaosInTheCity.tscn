@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
@@ -16,6 +16,17 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/Scooter.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Maps/ChaosInTheCity/Screen/FightLetters.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Maps/ChaosInTheCity/PauseMenu/PauseMenu.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/Shadow.gd" type="Script" id=17]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Shadow/shadow.png" type="Texture" id=18]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyPunk.gd" type="Script" id=19]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyPunk2.gd" type="Script" id=20]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyPunk3.gd" type="Script" id=21]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyBiker.gd" type="Script" id=22]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyBiker3.gd" type="Script" id=23]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemySoldier2.gd" type="Script" id=24]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemySoldier3.gd" type="Script" id=25]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyBiker2.gd" type="Script" id=26]
+[ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowFinalBoss.gd" type="Script" id=27]
 
 [node name="ChaosInTheCity" type="Node2D"]
 
@@ -27,6 +38,68 @@ visible = false
 
 [node name="Characters" type="YSort" parent="."]
 unique_name_in_owner = true
+
+[node name="Shadows" type="Node2D" parent="Characters"]
+
+[node name="ShadowPlayer" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 4, 576 )
+scale = Vector2( 2.29687, 1.57423 )
+texture = ExtResource( 18 )
+script = ExtResource( 17 )
+
+[node name="ShadowEnemyPunk" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 216, 558 )
+scale = Vector2( 3.1, 1.75 )
+texture = ExtResource( 18 )
+script = ExtResource( 19 )
+
+[node name="ShadowEnemyPunk2" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 1131, 588 )
+scale = Vector2( 2.99999, 1.6875 )
+texture = ExtResource( 18 )
+script = ExtResource( 20 )
+
+[node name="ShadowEnemyPunk3" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 493, 546 )
+scale = Vector2( 2.75, 1.625 )
+texture = ExtResource( 18 )
+script = ExtResource( 21 )
+
+[node name="ShadowEnemyBiker" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 661, 551 )
+scale = Vector2( 2.65, 1.50001 )
+texture = ExtResource( 18 )
+script = ExtResource( 22 )
+
+[node name="ShadowEnemyBiker2" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 811.5, 634 )
+scale = Vector2( 2.65, 1.25 )
+texture = ExtResource( 18 )
+script = ExtResource( 26 )
+
+[node name="ShadowEnemySoldier" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 1228, 640 )
+scale = Vector2( 2.3, 1.375 )
+texture = ExtResource( 18 )
+script = ExtResource( 23 )
+
+[node name="ShadowEnemySoldier2" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 538.25, 623 )
+scale = Vector2( 2.375, 1.25 )
+texture = ExtResource( 18 )
+script = ExtResource( 24 )
+
+[node name="ShadowEnemySoldier3" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 1388, 548 )
+scale = Vector2( 2.85, 1.5 )
+texture = ExtResource( 18 )
+script = ExtResource( 25 )
+
+[node name="ShadowFinalBoss" type="Sprite" parent="Characters/Shadows"]
+position = Vector2( 1842.5, 626 )
+scale = Vector2( 3.55, 2 )
+texture = ExtResource( 18 )
+script = ExtResource( 27 )
 
 [node name="FirstAidKit" parent="Characters" instance=ExtResource( 11 )]
 position = Vector2( 376, 540 )
@@ -59,7 +132,7 @@ collision_mask = 8192
 position = Vector2( 74, 254 )
 
 [node name="EnemyPunk" parent="Characters" instance=ExtResource( 3 )]
-position = Vector2( 223, 509 )
+position = Vector2( 218, 508 )
 
 [node name="EnemyPunk2" parent="Characters" instance=ExtResource( 3 )]
 position = Vector2( 1133, 538 )
@@ -74,7 +147,7 @@ position = Vector2( 667, 516 )
 position = Vector2( 815, 600 )
 
 [node name="EnemySoldier" parent="Characters" instance=ExtResource( 4 )]
-position = Vector2( 1220, 610 )
+position = Vector2( 1231, 612 )
 
 [node name="EnemySoldier2" parent="Characters" instance=ExtResource( 4 )]
 position = Vector2( 542, 595 )
