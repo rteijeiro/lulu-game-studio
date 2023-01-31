@@ -431,8 +431,7 @@ func shoot():
 		b.global_position = $Bullet.global_position
 		if bullets <= 0:
 			$AnimationTreeFighter.active = true
-			
-			
+
 
 
 #Is Hit.

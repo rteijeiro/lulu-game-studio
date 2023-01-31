@@ -1,0 +1,214 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Idle.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/BarrelLife.gd" type="Script" id=2]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Broken.png" type="Texture" id=3]
+[ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Barrel/metal_punch_06.wav" type="AudioStream" id=4]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/FirstAidKit.gd" type="Script" id=5]
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/Life/health-red 32px.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Floating"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -6 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 15.0333
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 29, 38 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 29, 38 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 29, 38 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 29, 38 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 29, 38 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), null, SubResource( 9 ), null ],
+"loop": false,
+"name": "Disappear",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=14]
+resource_name = "Disappear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Disappear", "Disappear" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FirstAidKit:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FirstAidKit:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AreaBarrel:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AreaBarrel:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 24, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 22.5, 28.5 )
+
+[node name="BarrelLife" type="Area2D"]
+collision_layer = 16
+collision_mask = 89
+script = ExtResource( 2 )
+
+[node name="FirstAidKit" type="Area2D" parent="."]
+position = Vector2( 7, -3 )
+collision_layer = 4096
+collision_mask = 8192
+monitoring = false
+monitorable = false
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="FirstAidKit"]
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstAidKit"]
+autoplay = "Floating"
+playback_speed = 0.5
+anims/Floating = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstAidKit"]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 10.75, -12.5 )
+scale = Vector2( 1.74138, 1.65789 )
+frames = SubResource( 12 )
+animation = "Disappear"
+frame = 4
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Disappear = SubResource( 14 )
+anims/Idle = SubResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9, 8.5 )
+shape = SubResource( 6 )
+
+[node name="AreaBarrel" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 88
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBarrel"]
+position = Vector2( 7.5, -14.5 )
+shape = SubResource( 5 )
+
+[node name="Metal" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -3, 1 )
+stream = ExtResource( 4 )
+
+[connection signal="area_entered" from="FirstAidKit" to="FirstAidKit" method="_on_FirstAidKit_area_entered"]
+[connection signal="area_entered" from="AreaBarrel" to="." method="_on_AreaBarrel_area_entered"]

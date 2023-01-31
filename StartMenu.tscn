@@ -87,7 +87,7 @@ texture = ExtResource( 3 )
 position = Vector2( 801, 402 )
 frames = SubResource( 9 )
 animation = "run"
-frame = 7
+frame = 5
 playing = true
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

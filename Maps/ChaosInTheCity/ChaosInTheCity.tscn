@@ -1,16 +1,16 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/FighterPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyPunk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemySoldier.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/EnemyBiker.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Maps/ChaosInTheCity/Objects/Barrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/BarrelLife.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/ExplodingBarrel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/ChaosInTheCity/Weapons/Stick.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Maps/ChaosInTheCity/Screen/Hud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/FinalBoss.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Maps/ChaosInTheCity/Objects/FirstAidKit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Maps/ChaosInTheCity/Objects/BarrelBullets.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Maps/ChaosInTheCity/Objects/Rat.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Maps/ChaosInTheCity/Weapons/Taser.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Maps/ChaosInTheCity/Enemies/Scooter.tscn" type="PackedScene" id=14]
@@ -27,10 +27,10 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemySoldier3.gd" type="Script" id=25]
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowEnemyBiker2.gd" type="Script" id=26]
 [ext_resource path="res://Maps/ChaosInTheCity/Shadows/ShadowFinalBoss.gd" type="Script" id=27]
-[ext_resource path="res://Maps/ChaosInTheCity/Bullets.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Maps/ChaosInTheCity/HudBullets.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Maps/ChaosInTheCity/Screen/HudBullets.tscn" type="PackedScene" id=29]
 
 [node name="ChaosInTheCity" type="Node2D"]
+position = Vector2( -1, 0 )
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3, -18 )
@@ -103,28 +103,22 @@ scale = Vector2( 3.55, 2 )
 texture = ExtResource( 18 )
 script = ExtResource( 27 )
 
-[node name="FirstAidKit" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 376, 540 )
-
-[node name="FirstAidKit2" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 965, 520 )
-
-[node name="Bullets" parent="Characters" instance=ExtResource( 28 )]
-position = Vector2( 287, 595 )
-
-[node name="Bullets2" parent="Characters" instance=ExtResource( 28 )]
-position = Vector2( 651, 602 )
-
 [node name="ExplodingBarrel" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 115, 616 )
 
-[node name="Barrel" parent="Characters" instance=ExtResource( 6 )]
+[node name="BarrelBullets" parent="Characters" instance=ExtResource( 11 )]
+position = Vector2( 325, 610 )
+
+[node name="BarrelBullets2" parent="Characters" instance=ExtResource( 11 )]
+position = Vector2( 1348, 616 )
+
+[node name="BarrelLife" parent="Characters" instance=ExtResource( 6 )]
 position = Vector2( 306, 526 )
 collision_layer = 32
 collision_mask = 25
 
-[node name="Barrel2" parent="Characters" instance=ExtResource( 6 )]
-position = Vector2( 1539, 592 )
+[node name="BarrelLife2" parent="Characters" instance=ExtResource( 6 )]
+position = Vector2( 1568, 592 )
 collision_layer = 32
 collision_mask = 25
 
