@@ -466,6 +466,17 @@ func _on_HitZone_area_entered(area):
 			$Dead.play()
 			self.state = States.DEAD
 			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
+	if area.get_name() == "MetalPunchArea":
+		if life > 0:
+			$AnimationPlayer.play("Hurt")
+			life -= 1
+			$Hurt.play()
+			hud.update_life(life)
+			print(life)
+		if life <= 0:
+			$Dead.play()
+			self.state = States.DEAD
+			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "GranadeArea":
 		if life > 0:
 			$AnimationPlayer.play("Hurt")

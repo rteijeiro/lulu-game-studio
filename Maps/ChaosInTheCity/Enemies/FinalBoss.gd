@@ -6,6 +6,7 @@ enum States {
 	RUN,
 	HURT,
 	ATTACK, 
+	PUNCHMETAL,
 	DEAD
 }
 #
@@ -13,19 +14,23 @@ var direction:Vector2 = Vector2.ZERO
 onready var animation_state = $AnimationTree.get('parameters/playback')
 var state = States.IDLE
 var is_attacking = false
+var is_punching = false
 var life = 10
 var is_switching_direction:bool = false
 var target = null
 
+
 func _physics_process(delta: float) -> void:
 
 	if state != States.HURT:
-		if state != States.ATTACK:
+		if state != States.ATTACK and state != States.PUNCHMETAL:
 			$AnimatedSprite.play("Run")
 			var collision = move_and_collide(direction)
 			if collision != null:
 				if collision.collider.name == "FighterPlayer" :
-						$AnimationPlayer.play("Attack")
+						$AnimationPlayer.play("Attack") 
+				if collision.collider.name == "FighterPlayer":
+						$AnimationPlayer.play("PunchMetal")
 				else:
 						direction = Vector2(-1,-1)
 						scale.x = 1
@@ -39,6 +44,10 @@ func _physics_process(delta: float) -> void:
 			if body.name == "FighterPlayer" and !is_attacking:
 				$AnimationPlayer.play("Attack")
 				state = States.ATTACK
+		for body in $MetalPunchArea.get_overlapping_bodies():
+			if body.name == "FighterPlayer" and !is_punching:
+				$AnimationPlayer.play("PunchMetal")
+				state = States.PUNCHMETAL
 			else:
 				state = States.IDLE
 
@@ -53,6 +62,8 @@ func set_state(new_state):
 			animation_state.travel("Run")
 		States.ATTACK:
 			animation_state.travel("Attack")
+		States.PUNCHMETAL:
+			animation_state.travel("PunchMetal")
 		States.HURT:
 			animation_state.travel("Hurt")
 		States.DEAD:
@@ -98,14 +109,24 @@ func throw():
 	granade3.global_position = $Mullet3.global_position
 	get_parent().add_child(granade3)
 	
+
 func attacking():
 	is_attacking = true
 	$Timer.start(3)
 	throw()
+	
+func punch():
+	self.state = States.PUNCHMETAL
+func punching():
+	is_punching = true
+	$Timer2.start(3)
+	punch()
 
-
+	
 func _on_Timer_timeout():
 	is_attacking = false 
+func _on_Timer2_timeout():
+	is_punching = false
 
 func hit():
 	self.state = States.HURT
@@ -118,6 +139,13 @@ func hit():
 func is_not_hit():
 	self.state = States.IDLE
 	
+
+
+func _on_MetalPunchArea_body_entered(body):
+	if body.name == "FighterPlayer":
+		punch()
+		self.state = States.PUNCHMETAL
+
 func _on_AttackArea_body_entered(body):
 	if body.name == "FighterPlayer":
 		throw()
@@ -159,6 +187,15 @@ func animation_over():
 	queue_free()
 	get_tree().change_scene("res://World.tscn")
 	
+
+
+
+
+
+
+
+
+
 
 
 

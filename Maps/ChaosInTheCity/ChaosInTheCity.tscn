@@ -164,7 +164,8 @@ position = Vector2( 2076, 545 )
 position = Vector2( 73, 593 )
 
 [node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 23, 529 )
+position = Vector2( 22, 529 )
+collision_mask = 17
 
 [node name="Hud" parent="Characters" instance=ExtResource( 9 )]
 

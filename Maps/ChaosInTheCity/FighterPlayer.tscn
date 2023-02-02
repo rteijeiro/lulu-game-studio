@@ -30,6 +30,9 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/FighterPlayer/Taser/taseerwalk.png" type="Texture" id=28]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/FighterPlayer/Electricity.wav" type="AudioStream" id=29]
 
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 20.5, 5.5 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.5, 3.5 )
 
@@ -1530,9 +1533,6 @@ graph_offset = Vector2( -111.988, 235.077 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=244]
 
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 20.5, 5.5 )
-
 [sub_resource type="RectangleShape2D" id=115]
 extents = Vector2( 21, 28 )
 
@@ -1553,8 +1553,12 @@ extents = Vector2( 18.5, 8.25 )
 [node name="FighterPlayer" type="KinematicBody2D"]
 position = Vector2( -8, -10 )
 collision_layer = 8
-collision_mask = 17
+collision_mask = 4113
 script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -19.5, 46.5 )
+shape = SubResource( 41 )
 
 [node name="Mullet" type="Position2D" parent="."]
 position = Vector2( 15, -1 )
@@ -1639,10 +1643,6 @@ parameters/playback = SubResource( 214 )
 tree_root = SubResource( 243 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 244 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -19.5, 46.5 )
-shape = SubResource( 41 )
 
 [node name="HitZone" type="Area2D" parent="."]
 collision_layer = 8192
