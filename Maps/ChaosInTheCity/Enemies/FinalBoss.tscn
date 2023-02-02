@@ -69,9 +69,6 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/FinalBoss/body_hit_large_32.wav" type="AudioStream" id=67]
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/Enemies/FinalBoss/Monster_Grunt1.mp3" type="AudioStream" id=68]
 
-[sub_resource type="RectangleShape2D" id=120]
-extents = Vector2( 30, 3.5 )
-
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 128, 128 )
@@ -375,6 +372,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=120]
+extents = Vector2( 30, 3.5 )
+
 [sub_resource type="Animation" id=21]
 resource_name = "Attack"
 length = 2.0
@@ -563,12 +563,12 @@ states/Run/node = SubResource( 26 )
 states/Run/position = Vector2( 845, 41 )
 transitions = [ "Idle", "Attack", SubResource( 27 ), "Attack", "Idle", SubResource( 28 ), "Attack", "Run", SubResource( 29 ), "Run", "Attack", SubResource( 30 ), "Idle", "Run", SubResource( 31 ), "Run", "Idle", SubResource( 32 ), "Idle", "Hurt", SubResource( 40 ), "Hurt", "Idle", SubResource( 41 ), "Run", "Hurt", SubResource( 42 ), "Hurt", "Run", SubResource( 43 ), "Hurt", "Dead", SubResource( 52 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 0, 9.98401 )
+graph_offset = Vector2( 0, 16.64 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=34]
 
 [sub_resource type="CircleShape2D" id=123]
-radius = 168.76
+radius = 314.057
 
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 64, 37.5 )
@@ -581,20 +581,26 @@ collision_layer = 16
 collision_mask = 97
 script = ExtResource( 25 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.04062, 1.04062 )
+frames = SubResource( 121 )
+animation = "Idle"
+frame = 11
+playing = true
+flip_h = true
+
 [node name="Mullet" type="Position2D" parent="."]
 position = Vector2( -33, -1 )
+
+[node name="Mullet2" type="Position2D" parent="."]
+position = Vector2( -21, -7 )
+
+[node name="Mullet3" type="Position2D" parent="."]
+position = Vector2( -10, 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, 60.5 )
 shape = SubResource( 120 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.04062, 1.04062 )
-frames = SubResource( 121 )
-animation = "Dead"
-frame = 35
-playing = true
-flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

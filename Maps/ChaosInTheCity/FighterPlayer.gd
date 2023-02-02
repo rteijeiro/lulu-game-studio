@@ -60,13 +60,20 @@ onready var Bullet = preload("res://Maps/ChaosInTheCity/Weapons/Bullet.tscn")
 
 #Actions.
 var fighter_is_jumping:bool = false
-
+	
 #Ready.
 func _ready() -> void:  
 	randomize()
 	hud = get_parent().get_node("Hud")  
 
 	hudbullets = get_parent().get_node("HudBullets")
+	
+	#Limit of the Camera
+	var tilemap_rect = get_parent().get_parent().get_node("Map").get_node("Floor").get_used_rect()
+	var tilemap_cell_size = get_parent().get_parent().get_node("Map").get_node("Floor").cell_size
+	$Camera2D.limit_left = tilemap_rect.position.x * tilemap_cell_size.x
+	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell_size.x
+
 
 
 #Get input from controller.

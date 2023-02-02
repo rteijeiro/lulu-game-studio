@@ -988,7 +988,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -1595,7 +1595,6 @@ position = Vector2( -15, -1 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1676,6 +1675,8 @@ shape = SubResource( 117 )
 [node name="JumpkickZone" type="Area2D" parent="."]
 collision_layer = 32768
 collision_mask = 16384
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpkickZone"]
 position = Vector2( 2.5, -45 )
@@ -1703,12 +1704,18 @@ position = Vector2( -9, -6 )
 shape = SubResource( 258 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 182, -174 )
-offset = Vector2( 30, 10 )
-rotating = true
+position = Vector2( 192, -107 )
 current = true
-zoom = Vector2( 0.6, 0.6 )
+zoom = Vector2( 0.65, 0.65 )
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 0.54
+drag_margin_bottom = 1.0
+editor_draw_drag_margin = true
 
 [node name="Timer" type="Timer" parent="."]
 

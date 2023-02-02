@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Maps/ChaosInTheCity/Sprites/FinalBoss/Granade/RCG_Grenade_Exploding_03.png" type="Texture" id=1]
+[ext_resource path="res://Maps/ChaosInTheCity/Enemies/Granade.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 6.0
+
+[node name="Granade2" type="KinematicBody2D"]
+collision_layer = 4096
+collision_mask = 8192
+script = ExtResource( 2 )
+
+[node name="GranadeArea" type="Area2D" parent="."]
+collision_layer = 4096
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GranadeArea"]
+shape = SubResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 9 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 7.15256e-07, 0 )
+scale = Vector2( 0.7, 0.5 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=124 format=2]
 
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Buildings/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/TileMap/Sushi/sushi-1.png" type="Texture" id=2]
@@ -79,6 +79,9 @@ points = PoolVector2Array( 0, 0, 103, 0, 103, 114, 0, 114 )
 
 [sub_resource type="ConvexPolygonShape2D" id=74]
 points = PoolVector2Array( 0, 0, 109, 0, 109, 125, 0, 125 )
+
+[sub_resource type="ConvexPolygonShape2D" id=83]
+points = PoolVector2Array( 0, 0, 204, 0, 204, 51, 0, 51 )
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
@@ -646,9 +649,16 @@ points = PoolVector2Array( 0, 0, 160, 0, 160, 64, 0, 64 )
 42/navigation_offset = Vector2( 0, 0 )
 42/shape_offset = Vector2( 0, 0 )
 42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+42/shape = SubResource( 83 )
 42/shape_one_way = false
-42/shape_one_way_margin = 0.0
-42/shapes = [  ]
+42/shape_one_way_margin = 1.0
+42/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 83 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 42/z_index = 0
 
 [sub_resource type="TileSet" id=11]
@@ -1627,7 +1637,7 @@ position = Vector2( 512, 77 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 524280, 3, 0, 524281, 1, 0, 524282, 2, 0, 524283, 3, 0, 524284, 1, 0, 524285, 2, 0, 524286, 3, 0, 524287, 1, 0, 458752, 2, 0, 458753, 3, 0, 458754, 1, 0, 458755, 2, 0, 458756, 3, 0, 458757, 1, 0, 458758, 2, 0, 458759, 3, 0, 458760, 1, 0, 458761, 2, 0, 458762, 3, 0, 458763, 1, 0, 458764, 2, 0, 458765, 3, 0, 458766, 1, 0, 458767, 2, 0, 983009, 5, 0, 983012, 5, 0, 983015, 5, 0, 983018, 5, 0, 983021, 5, 0, 983024, 5, 0, 983027, 5, 0, 983030, 5, 0, 983033, 5, 0, 983036, 5, 0, 983039, 5, 0, 917506, 5, 0, 917509, 5, 0, 917512, 5, 0, 917515, 5, 0, 917518, 5, 0, 917521, 5, 0, 917524, 5, 0, 917527, 5, 0, 917530, 5, 0, 917533, 5, 0, 917536, 5, 0, 917539, 5, 0, 917542, 5, 0, 917545, 5, 0, 917548, 5, 0, 917551, 5, 0, 917554, 5, 0, 1245153, 7, 0, 1245156, 7, 0, 1245159, 7, 0, 1245162, 7, 0, 1245165, 7, 0, 1245168, 7, 0, 1245171, 7, 0, 1245174, 7, 0, 1245177, 7, 0, 1245180, 7, 0, 1245183, 7, 0, 1179650, 7, 0, 1179653, 7, 0, 1179656, 7, 0, 1179659, 7, 0, 1179662, 7, 0, 1179665, 7, 0, 1179668, 7, 0, 1179671, 7, 0, 1179674, 7, 0, 1179677, 7, 0, 1179680, 7, 0, 1179683, 7, 0, 1179686, 7, 0, 1179689, 7, 0, 1179692, 7, 0, 1179695, 7, 0, 1179698, 7, 0 )
+tile_data = PoolIntArray( 524280, 3, 0, 524281, 1, 0, 524282, 2, 0, 524283, 3, 0, 524284, 1, 0, 524285, 2, 0, 524286, 3, 0, 524287, 1, 0, 458752, 2, 0, 458753, 3, 0, 458754, 1, 0, 458755, 2, 0, 458756, 3, 0, 458757, 1, 0, 458758, 2, 0, 458759, 3, 0, 458760, 1, 0, 458761, 2, 0, 458762, 3, 0, 458763, 1, 0, 458764, 2, 0, 458765, 3, 0, 458766, 1, 0, 458767, 2, 0, 983009, 5, 0, 983012, 5, 0, 983015, 5, 0, 983018, 5, 0, 983021, 5, 0, 983024, 5, 0, 983027, 5, 0, 983030, 5, 0, 983033, 5, 0, 983036, 5, 0, 983039, 5, 0, 917506, 5, 0, 917509, 5, 0, 917512, 5, 0, 917515, 5, 0, 917518, 5, 0, 917521, 5, 0, 917524, 5, 0, 917527, 5, 0, 917530, 5, 0, 917533, 5, 0, 917536, 5, 0, 917539, 5, 0, 917542, 5, 0, 917545, 5, 0, 917548, 5, 0, 917551, 5, 0, 917554, 5, 0, 917557, 5, 0, 917560, 5, 0, 917563, 5, 0, 917566, 5, 0, 917569, 5, 0, 917572, 5, 0, 917575, 5, 0, 917578, 5, 0, 1245153, 7, 0, 1245156, 7, 0, 1245159, 7, 0, 1245162, 7, 0, 1245165, 7, 0, 1245168, 7, 0, 1245171, 7, 0, 1245174, 7, 0, 1245177, 7, 0, 1245180, 7, 0, 1245183, 7, 0, 1179650, 7, 0, 1179653, 7, 0, 1179656, 7, 0, 1179659, 7, 0, 1179662, 7, 0, 1179665, 7, 0, 1179668, 7, 0, 1179671, 7, 0, 1179674, 7, 0, 1179677, 7, 0, 1179680, 7, 0, 1179683, 7, 0, 1179686, 7, 0, 1179689, 7, 0, 1179692, 7, 0, 1179695, 7, 0, 1179698, 7, 0, 1179701, 7, 0, 1179704, 7, 0, 1179707, 7, 0, 1179710, 7, 0, 1179713, 7, 0, 1179716, 7, 0, 1179719, 7, 0, 1179722, 7, 0 )
 
 [node name="Props" type="TileMap" parent="."]
 position = Vector2( 536, 66 )
@@ -1658,7 +1668,6 @@ position = Vector2( 1486, 376 )
 scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 61 )
 animation = "Idle"
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -1675,14 +1684,14 @@ playing = true
 position = Vector2( 1204, 461 )
 frames = SubResource( 38 )
 animation = "Idle"
-frame = 1
+frame = 7
 playing = true
 
 [node name="Can" type="AnimatedSprite" parent="."]
 position = Vector2( 1667, 460 )
 frames = SubResource( 70 )
 animation = "Idle"
-frame = 7
+frame = 5
 playing = true
 
 [node name="Sushi" type="AnimatedSprite" parent="."]
@@ -1695,7 +1704,8 @@ playing = true
 
 [node name="NeonHotel" type="AnimatedSprite" parent="."]
 position = Vector2( 173.15, 365.316 )
-scale = Vector2( -1.03035, -0.903819 )
+rotation = -3.14159
+scale = Vector2( 1.03035, 0.903819 )
 frames = SubResource( 10 )
 animation = "Idle"
 speed_scale = 0.4
@@ -1708,18 +1718,19 @@ position = Vector2( 471, 373 )
 scale = Vector2( 1.08333, 1.08333 )
 frames = SubResource( 24 )
 animation = "Bark"
-frame = 11
 playing = true
 flip_h = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 662, 0 )
 motion_scale = Vector2( 0.75, 1 )
+motion_mirroring = Vector2( 2350, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 662, 93 )
-scale = Vector2( 2.4662, 2.1344 )
+position = Vector2( 532, 266 )
+scale = Vector2( 2.2581, 1.24765 )
 texture = ExtResource( 18 )
 
 [node name="SoundTrack" type="AudioStreamPlayer" parent="."]

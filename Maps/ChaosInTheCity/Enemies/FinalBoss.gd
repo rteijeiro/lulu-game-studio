@@ -67,6 +67,8 @@ func check_direction():
 		$AttackArea/CollisionShape2D.position.x = 95
 		$HitBox/CollisionShape2D.position.x = -1
 		$Mullet.position.x = 66
+		$Mullet2.position.x = 42
+		$Mullet3.position.x = 20
 
 
 	else: # Move left.
@@ -74,18 +76,28 @@ func check_direction():
 		$AttackArea/CollisionShape2D.position.x = -95
 		$HitBox/CollisionShape2D.position.x = 1
 		$Mullet.position.x = -33
-
+		$Mullet2.position.x = -21
+		$Mullet3.position.x = -10
 
 #Granade
 onready var Granade = preload("res://Maps/ChaosInTheCity/Enemies/Granade.tscn")
+onready var Granade2 = preload("res://Maps/ChaosInTheCity/Enemies/Granade2.tscn")
+onready var Granade3 = preload("res://Maps/ChaosInTheCity/Enemies/Granade3.tscn")
 
 func throw():
 	var granade = Granade.instance()
 	granade.direction = direction
 	granade.global_position = $Mullet.global_position
 	get_parent().add_child(granade)
+	var granade2 = Granade2.instance()
+	granade2.direction = direction 
+	granade2.global_position = $Mullet2.global_position
+	get_parent().add_child(granade2)
+	var granade3 = Granade3.instance()
+	granade3.direction = direction 
+	granade3.global_position = $Mullet3.global_position
+	get_parent().add_child(granade3)
 	
-		
 func attacking():
 	is_attacking = true
 	$Timer.start(3)

@@ -186,8 +186,7 @@ shape = SubResource( 2 )
 position = Vector2( 10.75, -14.0862 )
 scale = Vector2( 1.74138, 1.74138 )
 frames = SubResource( 5 )
-animation = "Disappear"
-frame = 4
+animation = "Idle"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
