@@ -1599,6 +1599,7 @@ position = Vector2( -15, -1 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

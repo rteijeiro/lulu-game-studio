@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			if body.name == "FighterPlayer" and !is_attacking:
 				$AnimationPlayer.play("Attack")
 				state = States.ATTACK
-		for body in $MetalPunchArea.get_overlapping_bodies():
+		for body in $AttackPunchArea.get_overlapping_bodies():
 			if body.name == "FighterPlayer" and !is_punching:
 				$AnimationPlayer.play("PunchMetal")
 				state = States.PUNCHMETAL
@@ -75,7 +75,9 @@ func set_state(new_state):
 func check_direction():
 	if direction.x > 0: # Move right.
 		$AnimatedSprite.flip_h = false
-		$AttackArea/CollisionShape2D.position.x = 95
+		$AttackArea/CollisionShape2D.position.x = 222
+		$AttackPunchArea/CollisionShape2D.position.x = 98.5
+		$MetalPunchArea/CollisionShape2D.position.x = 98
 		$HitBox/CollisionShape2D.position.x = -1
 		$Mullet.position.x = 66
 		$Mullet2.position.x = 42
@@ -84,7 +86,9 @@ func check_direction():
 
 	else: # Move left.
 		$AnimatedSprite.flip_h = true
-		$AttackArea/CollisionShape2D.position.x = -95
+		$AttackArea/CollisionShape2D.position.x = -222
+		$AttackPunchArea/CollisionShape2D.position.x = -98.5
+		$MetalPunchArea/CollisionShape2D.position.x = -98
 		$HitBox/CollisionShape2D.position.x = 1
 		$Mullet.position.x = -33
 		$Mullet2.position.x = -21
@@ -114,13 +118,15 @@ func attacking():
 	is_attacking = true
 	$Timer.start(3)
 	throw()
-	
-func punch():
-	self.state = States.PUNCHMETAL
+
+
 func punching():
 	is_punching = true
-	$Timer2.start(3)
-	punch()
+	$Timer2.start(1)
+
+
+func is_not_punching():
+	self.state = States.IDLE
 
 	
 func _on_Timer_timeout():
@@ -138,12 +144,11 @@ func hit():
 
 func is_not_hit():
 	self.state = States.IDLE
-	
 
 
-func _on_MetalPunchArea_body_entered(body):
+func _on_AttackPunchArea_body_entered(body):
 	if body.name == "FighterPlayer":
-		punch()
+		punching()
 		self.state = States.PUNCHMETAL
 
 func _on_AttackArea_body_entered(body):
@@ -186,7 +191,7 @@ func death():
 func animation_over():
 	queue_free()
 	get_tree().change_scene("res://World.tscn")
-	
+
 
 
 
