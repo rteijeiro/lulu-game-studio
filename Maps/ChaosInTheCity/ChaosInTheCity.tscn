@@ -32,8 +32,8 @@
 [sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
-glow_intensity = 2.04
-glow_strength = 0.83
+glow_intensity = 1.21
+glow_strength = 0.93
 glow_blend_mode = 1
 glow_hdr_threshold = 2.0
 glow_high_quality = true
@@ -47,141 +47,141 @@ environment = SubResource( 1 )
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 
-[node name="Characters" type="YSort" parent="."]
+[node name="Components" type="YSort" parent="."]
 position = Vector2( 7, 17 )
 
-[node name="Shadows" type="Node2D" parent="Characters"]
+[node name="Shadows" type="Node2D" parent="Components"]
 
-[node name="ShadowPlayer" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowPlayer" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 4, 576 )
 scale = Vector2( 2.29687, 1.57423 )
 texture = ExtResource( 18 )
 script = ExtResource( 17 )
 
-[node name="ShadowEnemyPunk" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemyPunk" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 216, 558 )
 scale = Vector2( 3.1, 1.75 )
 texture = ExtResource( 18 )
 script = ExtResource( 19 )
 
-[node name="ShadowEnemyPunk2" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemyPunk2" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 1131, 588 )
 scale = Vector2( 2.99999, 1.6875 )
 texture = ExtResource( 18 )
 script = ExtResource( 20 )
 
-[node name="ShadowEnemyPunk3" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemyPunk3" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 493, 546 )
 scale = Vector2( 2.75, 1.625 )
 texture = ExtResource( 18 )
 script = ExtResource( 21 )
 
-[node name="ShadowEnemyBiker" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemyBiker" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 661, 551 )
 scale = Vector2( 2.65, 1.50001 )
 texture = ExtResource( 18 )
 script = ExtResource( 22 )
 
-[node name="ShadowEnemyBiker2" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemyBiker2" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 811.5, 634 )
 scale = Vector2( 2.65, 1.25 )
 texture = ExtResource( 18 )
 script = ExtResource( 26 )
 
-[node name="ShadowEnemySoldier" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemySoldier" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 1228, 640 )
 scale = Vector2( 2.3, 1.375 )
 texture = ExtResource( 18 )
 script = ExtResource( 23 )
 
-[node name="ShadowEnemySoldier2" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemySoldier2" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 538.25, 623 )
 scale = Vector2( 2.375, 1.25 )
 texture = ExtResource( 18 )
 script = ExtResource( 24 )
 
-[node name="ShadowEnemySoldier3" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowEnemySoldier3" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 1388, 548 )
 scale = Vector2( 2.85, 1.5 )
 texture = ExtResource( 18 )
 script = ExtResource( 25 )
 
-[node name="ShadowFinalBoss" type="Sprite" parent="Characters/Shadows"]
+[node name="ShadowFinalBoss" type="Sprite" parent="Components/Shadows"]
 position = Vector2( 1842.5, 626 )
 scale = Vector2( 3.55, 2 )
 texture = ExtResource( 18 )
 script = ExtResource( 27 )
 
-[node name="ExplodingBarrel" parent="Characters" instance=ExtResource( 7 )]
-position = Vector2( 209, 580 )
+[node name="BarrelBullets" parent="Components" instance=ExtResource( 11 )]
+position = Vector2( 429, 595 )
 
-[node name="BarrelBullets" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 433, 602 )
+[node name="BarrelBullets2" parent="Components" instance=ExtResource( 11 )]
+position = Vector2( 2241, 596 )
 
-[node name="BarrelBullets2" parent="Characters" instance=ExtResource( 11 )]
-position = Vector2( 2209, 589 )
-
-[node name="BarrelBullets3" parent="Characters" instance=ExtResource( 11 )]
+[node name="BarrelBullets3" parent="Components" instance=ExtResource( 11 )]
 position = Vector2( 1840, 610 )
 
-[node name="BarrelLife" parent="Characters" instance=ExtResource( 6 )]
+[node name="ExplodingBarrel" parent="Components" instance=ExtResource( 7 )]
+position = Vector2( 210, 586 )
+
+[node name="BarrelLife" parent="Components" instance=ExtResource( 6 )]
 position = Vector2( 306, 526 )
 collision_layer = 32
 collision_mask = 25
 
-[node name="BarrelLife2" parent="Characters" instance=ExtResource( 6 )]
+[node name="BarrelLife2" parent="Components" instance=ExtResource( 6 )]
 position = Vector2( 1829, 529 )
 collision_layer = 32
 collision_mask = 25
 
-[node name="Stick" parent="Characters" instance=ExtResource( 8 )]
+[node name="Stick" parent="Components" instance=ExtResource( 8 )]
 position = Vector2( 872, 606 )
 
-[node name="Taser" parent="Characters" instance=ExtResource( 13 )]
+[node name="Taser" parent="Components" instance=ExtResource( 13 )]
 position = Vector2( 28, 611 )
 collision_layer = 4096
 collision_mask = 8192
 
-[node name="Rat" parent="Characters" instance=ExtResource( 12 )]
+[node name="Rat" parent="Components" instance=ExtResource( 12 )]
 position = Vector2( 28, 244 )
 
-[node name="EnemyPunk" parent="Characters" instance=ExtResource( 3 )]
+[node name="EnemyPunk" parent="Components" instance=ExtResource( 3 )]
 position = Vector2( 218, 508 )
 
-[node name="EnemyPunk2" parent="Characters" instance=ExtResource( 3 )]
+[node name="EnemyPunk2" parent="Components" instance=ExtResource( 3 )]
 position = Vector2( 1133, 538 )
 
-[node name="EnemyPunk3" parent="Characters" instance=ExtResource( 3 )]
+[node name="EnemyPunk3" parent="Components" instance=ExtResource( 3 )]
 position = Vector2( 495, 497 )
 
-[node name="EnemyBiker" parent="Characters" instance=ExtResource( 5 )]
+[node name="EnemyBiker" parent="Components" instance=ExtResource( 5 )]
 position = Vector2( 667, 516 )
 
-[node name="EnemyBiker2" parent="Characters" instance=ExtResource( 5 )]
+[node name="EnemyBiker2" parent="Components" instance=ExtResource( 5 )]
 position = Vector2( 815, 600 )
 
-[node name="EnemySoldier" parent="Characters" instance=ExtResource( 4 )]
+[node name="EnemySoldier" parent="Components" instance=ExtResource( 4 )]
 position = Vector2( 1231, 612 )
 
-[node name="EnemySoldier2" parent="Characters" instance=ExtResource( 4 )]
+[node name="EnemySoldier2" parent="Components" instance=ExtResource( 4 )]
 position = Vector2( 542, 595 )
 
-[node name="EnemySoldier3" parent="Characters" instance=ExtResource( 4 )]
+[node name="EnemySoldier3" parent="Components" instance=ExtResource( 4 )]
 position = Vector2( 1390, 520 )
 
-[node name="FinalBoss" parent="Characters" instance=ExtResource( 10 )]
-position = Vector2( 2076, 545 )
+[node name="FinalBoss" parent="Components" instance=ExtResource( 10 )]
+position = Vector2( 2159, 523 )
 
-[node name="Scooter" parent="Characters" instance=ExtResource( 14 )]
+[node name="Scooter" parent="Components" instance=ExtResource( 14 )]
 position = Vector2( 73, 593 )
 
-[node name="FighterPlayer" parent="Characters" instance=ExtResource( 2 )]
-position = Vector2( 22, 529 )
+[node name="FighterPlayer" parent="Components" instance=ExtResource( 2 )]
+position = Vector2( 23, 529 )
 collision_mask = 17
 
-[node name="Hud" parent="Characters" instance=ExtResource( 9 )]
+[node name="Hud" parent="Components" instance=ExtResource( 9 )]
 
-[node name="HudBullets" parent="Characters" instance=ExtResource( 29 )]
+[node name="HudBullets" parent="Components" instance=ExtResource( 29 )]
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -1, 0 )

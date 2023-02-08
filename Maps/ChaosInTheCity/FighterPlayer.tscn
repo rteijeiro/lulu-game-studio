@@ -1553,7 +1553,7 @@ extents = Vector2( 18.5, 8.25 )
 [node name="FighterPlayer" type="KinematicBody2D"]
 position = Vector2( -8, -10 )
 collision_layer = 8
-collision_mask = 4113
+collision_mask = 4145
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1579,7 +1579,6 @@ visible = false
 position = Vector2( -2, 0 )
 frames = SubResource( 5 )
 animation = "Bullet"
-frame = 2
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bullet"]
@@ -1599,7 +1598,7 @@ position = Vector2( -15, -1 )
 scale = Vector2( 1.64286, 1.64286 )
 frames = SubResource( 242 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1647,7 +1646,7 @@ parameters/playback = SubResource( 244 )
 
 [node name="HitZone" type="Area2D" parent="."]
 collision_layer = 8192
-collision_mask = 6144
+collision_mask = 6192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
 position = Vector2( -22, 2 )

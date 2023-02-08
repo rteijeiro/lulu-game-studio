@@ -159,7 +159,7 @@ extents = Vector2( 22.5, 28.5 )
 
 [node name="BarrelLife" type="Area2D"]
 collision_layer = 16
-collision_mask = 89
+collision_mask = 8281
 script = ExtResource( 2 )
 
 [node name="FirstAidKit" type="Area2D" parent="."]
@@ -186,6 +186,7 @@ position = Vector2( 10.75, -12.5 )
 scale = Vector2( 1.74138, 1.65789 )
 frames = SubResource( 12 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
