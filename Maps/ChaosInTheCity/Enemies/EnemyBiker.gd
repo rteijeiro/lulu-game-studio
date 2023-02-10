@@ -106,6 +106,14 @@ func hit_electricity():
 	if life <= 0:
 		$AnimationPlayer.play("Dead")
 		$Dead.play()
+		
+func hit_stick():
+	self.state = States.HURT
+	$AnimationPlayer.play("Hurt")
+	life -= 2
+	if life <=0:
+		$AnimationPlayer.play("Dead")
+		$Dead.play()
 
 
 func is_not_hit():
@@ -113,8 +121,10 @@ func is_not_hit():
 
 func is_not_hit_electricity():
 	self.state = States.IDLE
-
-
+	
+func is_not_hit_stick():
+	self.state = States.IDLE
+	
 func _on_AttackArea_body_entered(body):
 	if body.name == "FighterPlayer":
 		self.state = States.ATTACK
@@ -146,7 +156,7 @@ func _on_HitBox_area_entered(area):
 		self.hit()
 	if area.get_name() == "StickZone":
 		$Hurt.play()
-		self.hit()
+		self.hit_stick()
 	if area.get_name() == "TaserZone":
 		$Hurt.play()
 		self.hit_electricity()

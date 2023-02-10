@@ -9,7 +9,7 @@ enum States {
 	PUNCHMETAL,
 	DEAD
 }
-#
+
 var direction:Vector2 = Vector2.ZERO
 onready var animation_state = $AnimationTree.get('parameters/playback')
 var state = States.IDLE

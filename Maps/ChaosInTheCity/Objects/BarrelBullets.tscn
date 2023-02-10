@@ -159,7 +159,7 @@ extents = Vector2( 23, 30.5 )
 
 [node name="BarrelBullets" type="Area2D"]
 collision_layer = 16
-collision_mask = 8281
+collision_mask = 41049
 script = ExtResource( 3 )
 
 [node name="Bullets" type="Area2D" parent="."]

@@ -507,12 +507,12 @@ func _on_HitZone_area_entered(area):
 			hud.update_life(life)
 	if area.get_name() == "Bullets":
 			$Reload.play()
-			bullets += 4
+			bullets += 5
 			hudbullets.update_bullets(bullets)
 			$AnimationTreeGun.active =true
 	if area.get_name() == "Bullets2":
 			$Reload.play()
-			bullets += 4
+			bullets += 5
 			hudbullets.update_bullets(bullets)
 			$AnimationTreeGun.active = true
 	if area.get_name() == "Stick":
@@ -525,7 +525,6 @@ func _on_HitZone_area_entered(area):
 		$AnimationTreeFighter.active = false
 		$AnimationTreeGun.active = false
 		$AnimationTreeStick.active = false
-		
 
 
 #Jump and Kick at the same time

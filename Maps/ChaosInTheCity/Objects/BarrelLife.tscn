@@ -159,7 +159,7 @@ extents = Vector2( 22.5, 28.5 )
 
 [node name="BarrelLife" type="Area2D"]
 collision_layer = 16
-collision_mask = 8281
+collision_mask = 41049
 script = ExtResource( 2 )
 
 [node name="FirstAidKit" type="Area2D" parent="."]
