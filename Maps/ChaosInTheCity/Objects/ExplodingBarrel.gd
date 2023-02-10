@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 	
 
 func _on_AreaExplodingBarrel_area_entered(area):

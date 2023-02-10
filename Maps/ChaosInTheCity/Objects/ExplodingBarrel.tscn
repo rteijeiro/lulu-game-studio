@@ -6,7 +6,7 @@
 [ext_resource path="res://Maps/ChaosInTheCity/SoundEffects/ExplodingBarrel/Explosion 19 (1).wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.5, 5.5 )
+extents = Vector2( 22, 5 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 3 )
@@ -131,33 +131,34 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 22.5, 28.5 )
 
-[node name="ExplodingBarrel" type="Area2D"]
+[node name="ExplodingBarrel" type="StaticBody2D"]
 collision_layer = 32
-collision_mask = 32857
+collision_mask = 33113
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 19.5, 21.5 )
+position = Vector2( 18, 20 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 24, -49 )
+position = Vector2( 19, 24 )
 scale = Vector2( 1.72656, 1.6489 )
 frames = SubResource( 29 )
 animation = "Idle"
 playing = true
+offset = Vector2( 2.89593, -44.2719 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Exploding = SubResource( 16 )
 anims/Idle = SubResource( 43 )
 
 [node name="AreaExplodingBarrel" type="Area2D" parent="."]
-position = Vector2( 0, 42 )
+position = Vector2( 17, 0 )
 collision_layer = 32
 collision_mask = 32856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExplodingBarrel"]
-position = Vector2( 19, -48.5 )
+position = Vector2( 1, -5 )
 shape = SubResource( 15 )
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]

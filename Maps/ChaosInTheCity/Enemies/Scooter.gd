@@ -19,14 +19,16 @@ func _physics_process(_delta: float) -> void:
 	
 
 func _on_Timer_timeout():
-	$AnimatedSprite.flip_h = true
-	direction = -1
+	$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
+	direction *= -1
 	$Scooter.stream_paused = false
-
+	
+		
 func _on_VisibilityNotifier2D_screen_exited():
 	$Scooter.stream_paused = true
-	$Timer.start(5)
-	direction = 0
+	$Timer.start(2)
+
+
 
 
 

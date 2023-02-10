@@ -7,6 +7,9 @@
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Idle.png" type="Texture" id=5]
 [ext_resource path="res://Maps/ChaosInTheCity/Sprites/Objects/Barrel/Broken.png" type="Texture" id=6]
 
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 25, 10 )
+
 [sub_resource type="Animation" id=1]
 resource_name = "Floating"
 length = 2.0
@@ -151,16 +154,17 @@ tracks/0/keys = {
 "values": [ "Idle" ]
 }
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 25, 8 )
-
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 23, 30.5 )
 
-[node name="BarrelBullets" type="Area2D"]
-collision_layer = 16
-collision_mask = 41049
+[node name="BarrelBullets" type="StaticBody2D"]
+collision_layer = 32
+collision_mask = 41305
 script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9, 13 )
+shape = SubResource( 12 )
 
 [node name="Bullets" type="Area2D" parent="."]
 position = Vector2( 6, -5 )
@@ -183,21 +187,18 @@ position = Vector2( 0, -1.2196 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 10.75, -14.0862 )
+position = Vector2( 7, 12 )
 scale = Vector2( 1.74138, 1.74138 )
 frames = SubResource( 5 )
 animation = "Idle"
 frame = 1
 playing = true
+offset = Vector2( 2.15346, -14.9802 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Disappear = SubResource( 11 )
 anims/Idle = SubResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
-shape = SubResource( 12 )
 
 [node name="AreaBarrel" type="Area2D" parent="."]
 collision_layer = 16

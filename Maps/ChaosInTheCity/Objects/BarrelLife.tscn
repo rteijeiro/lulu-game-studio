@@ -152,14 +152,14 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 24, 11.5 )
+extents = Vector2( 24.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 22.5, 28.5 )
 
-[node name="BarrelLife" type="Area2D"]
-collision_layer = 16
-collision_mask = 41049
+[node name="BarrelLife" type="StaticBody2D"]
+collision_layer = 32
+collision_mask = 41305
 script = ExtResource( 2 )
 
 [node name="FirstAidKit" type="Area2D" parent="."]
@@ -182,12 +182,13 @@ anims/Floating = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 10.75, -12.5 )
+position = Vector2( 8, 12 )
 scale = Vector2( 1.74138, 1.65789 )
 frames = SubResource( 12 )
 animation = "Idle"
 frame = 1
 playing = true
+offset = Vector2( 1.57921, -14.7778 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -195,7 +196,7 @@ anims/Disappear = SubResource( 14 )
 anims/Idle = SubResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 9, 8.5 )
+position = Vector2( 7.5, 12 )
 shape = SubResource( 6 )
 
 [node name="AreaBarrel" type="Area2D" parent="."]

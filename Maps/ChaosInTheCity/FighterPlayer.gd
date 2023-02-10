@@ -75,7 +75,6 @@ func _ready() -> void:
 	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell_size.x
 
 
-
 #Get input from controller.
 func get_input():
 	velocity.x = 0
@@ -298,7 +297,7 @@ func get_input():
 		
 # Physics processing.
 func _physics_process(delta):
-
+	
 	get_input()
 	shoot()
 
@@ -345,6 +344,8 @@ func set_state(new_state):
 			animation_state_nogun.travel("Walk")
 		States.HURT:
 			animation_state_nogun.travel("Hurt")
+		States.DEAD:
+			animation_state_nogun.travel("Dead")
 
 	state = new_state
 	
@@ -439,8 +440,6 @@ func shoot():
 		if bullets <= 0:
 			$AnimationTreeFighter.active = true
 
-
-
 #Is Hit.
 func hit(hurt):
 	if state != States.DEAD and life > 0:
@@ -451,7 +450,6 @@ func hit(hurt):
 #Not hit.
 func is_not_hit():
 		state = States.IDLE
-
 
 #Contact Areas:
 func _on_HitZone_area_entered(area):
@@ -464,19 +462,18 @@ func _on_HitZone_area_entered(area):
 			print(life)
 		if life <= 0:
 			$Dead.play()
+			$AnimationPlayer.play("Dead")
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "MetalPunchArea":
 		if life > 0:
 			$AnimationPlayer.play("Hurt")
 			life -= 1
 			$Hurt.play()
 			hud.update_life(life)
-			print(life)
 		if life <= 0:
 			$Dead.play()
+			$AnimationPlayer.play("Dead")
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "GranadeArea":
 		if life > 0:
 			$AnimationPlayer.play("Hurt")
@@ -485,18 +482,18 @@ func _on_HitZone_area_entered(area):
 			hud.update_life(life)
 		if life <=0:
 			$Dead.play()
+			$AnimationPlayer.play("Dead")
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "RunoverArea":
 		if life > 0:
-			$AnimatedSpritePlayer.play("Hurt")
+			$AnimationPlayer.play("Hurt")
 			life -= 1
 			$Hurt.play()
 			hud.update_life(life)
 		if life <= 0:
 			$Dead.play()
+			$AnimationPlayer.play("Dead")
 			self.state = States.DEAD
-			get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 	if area.get_name() == "FirstAidKit":
 			$GetLife.play()
 			life += 5
@@ -526,6 +523,9 @@ func _on_HitZone_area_entered(area):
 		$AnimationTreeGun.active = false
 		$AnimationTreeStick.active = false
 
+func change_scene():
+	queue_free()
+	get_tree().change_scene("res://Maps/ChaosInTheCity/GameOver/GameOver.tscn")
 
 #Jump and Kick at the same time
 var is_jumpkick setget set_jumpkick, get_jumpkick

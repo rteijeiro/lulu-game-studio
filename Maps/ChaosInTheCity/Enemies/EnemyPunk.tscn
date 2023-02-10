@@ -264,36 +264,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.5 ),
+"times": PoolRealArray( 1.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "animation_over"
 } ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("HitBox:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("HitBox:monitorable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -405,7 +381,7 @@ extents = Vector2( 18.5, 8.63636 )
 [node name="EnemyPunk" type="KinematicBody2D"]
 scale = Vector2( 1.1, 1.1 )
 collision_layer = 16
-collision_mask = 97
+collision_mask = 121
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -413,12 +389,14 @@ position = Vector2( -1.81818, 43 )
 shape = SubResource( 17 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.81818, 43.6364 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
-animation = "Dead"
+animation = "Idle"
 frame = 1
 speed_scale = 0.9
 playing = true
+offset = Vector2( 1.21212, -29.0909 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 30 )

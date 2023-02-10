@@ -703,11 +703,13 @@ collision_mask = 97
 script = ExtResource( 25 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 62 )
 scale = Vector2( 1.04062, 1.04062 )
 frames = SubResource( 121 )
-animation = "PunchMetal"
-frame = 7
+animation = "Idle"
+frame = 6
 playing = true
+offset = Vector2( -0.960966, -59.5799 )
 flip_h = true
 
 [node name="Mullet" type="Position2D" parent="."]
@@ -780,8 +782,10 @@ position = Vector2( -1, 0 )
 shape = SubResource( 54 )
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
+one_shot = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 67 )

@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 			if body.name == "FighterPlayer" and !is_punching:
 				$AnimationPlayer.play("PunchMetal")
 				state = States.PUNCHMETAL
+				$Timer2.start(4)
 			else:
 				state = States.IDLE
 
@@ -112,18 +113,14 @@ func throw():
 	granade3.direction = direction 
 	granade3.global_position = $Mullet3.global_position
 	get_parent().add_child(granade3)
+	$Timer.start(4)
 	
-
 func attacking():
 	is_attacking = true
-	$Timer.start(3)
 	throw()
-
 
 func punching():
 	is_punching = true
-	$Timer2.start(1)
-
 
 func is_not_punching():
 	self.state = States.IDLE
